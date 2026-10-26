@@ -1,99 +1,59 @@
 ---
-version: "designmd-maker-2026-10-25"
-name: "Website Design Company in India at  \u20b92999 or $49 | Web Designers"
-description: "Design system extracted from https://www.NarnaulOnline.com/ on 2026-10-25 (code-based analysis)."
-logo:
-  src: "https:\/\/www.NarnaulOnline.com\/themes\/default\/frontend_assets\/images\/logo\/NarnaulOnline-logo.webp"
+version: "designmd-maker-2026-10-26"
+name: "NarnaulOnline."
+description: "Design system extracted from https://www.saipharmasolutions.com/ on 2026-10-26 (code-based analysis)."
 colors:
-  primary: "#FFFFFF"
-  accent: "#F04D0C"
   background: "#FFFFFF"
-  surface: "#EEEEEE"
-  text-primary: "#000000"
+  surface: "#FFFFFF"
+  text-primary: "#12213F"
+  primary: "#E66A1B"
+  accent: "#E66A1B"
   secondary: "#000000"
-  text-secondary: "#333333"
-  border: "#999999"
-  on-primary: "#000000"
+  text-secondary: "#53B94A"
+  border: "#CCCCCC"
+  on-primary: "#FFFFFF"
   on-secondary: "#FFFFFF"
   on-accent: "#FFFFFF"
-  surface-container-lowest: "#FFFFFF"
-  surface-container-low: "#F8F8F8"
-  surface-container: "#F5F5F5"
-  surface-container-high: "#F2F2F2"
-  surface-container-highest: "#EEEEEE"
 typography:
-  fontFamily: "\"Open Sans\", sans-serif, Arial, Helvetica"
-  headline-lg:
-    fontSize: "42px"
-    fontWeight: "300"
+  fontFamily: "var(--font-mono)"
+  display:
+    fontSize: "112px"
     lineHeight: "1"
-  headline-md:
-    fontSize: "30px"
-    fontWeight: "300"
-    lineHeight: "1"
-  title-lg:
-    fontSize: "22px"
-    fontWeight: "300"
-  body-lg:
-    fontSize: "18px"
-    fontWeight: "300"
-    lineHeight: "1.42857143"
+    letterSpacing: "-.04em"
   body-md:
     fontSize: "16px"
-    fontWeight: "300"
-    lineHeight: "1.42857143"
-  label-md:
-    fontSize: "14px"
-    fontWeight: "300"
-    letterSpacing: "1px"
+    lineHeight: "1.5"
   label-sm:
-    fontSize: "12px"
-    fontWeight: "300"
-    letterSpacing: "1px"
-  weights: [300, 400, 500, 600, 700, 800, 900]
-spacing:
-  xs: "2px"
-  sm: "8px"
-  md: "20px"
-  lg: "40px"
-  xl: "60px"
+    fontSize: "12.8px"
+    letterSpacing: ".14em"
 rounded:
-  sm: "3px"
-  md: "8px"
-  lg: "35px"
-  pill: "50%"
-elevation:
-  sm: "none"
-  md: "0 3px 9px rgba(0,0,0,.5)"
-  lg: "5px 10px 15px rgb(0 0 0 / 50%)"
+  sm: "2px"
+  md: "12px"
+  lg: "24px"
 layout:
-  containerMaxWidth: "767px"
-  gridColumns: 3
+  containerMaxWidth: "768px"
+  gridColumns: 5
 components:
-  button-primary:
-    textColor: "#FFFFFF"
-  button-secondary:
-    textColor: "#FFFFFF"
   card:
     background: "{colors.surface}"
     border: "1px solid {colors.border}"
-    radius: "35px"
-    boxShadow: "{elevation.md}"
+    radius: "24px"
+  button-primary:
+    background: "{colors.primary}"
+    radius: "12px"
 ---
 
-# Design Specification — Website Design Company in India at  ₹2999 or $49 | Web Designers
+# Design Specification — NarnaulOnline.
 
 | Field | Value |
 |---|---|
-| Site / Project | https://www.NarnaulOnline.com/ |
-| Analyzed on | 2026-10-25 |
+| Site / Project | https://www.saipharmasolutions.com/ |
+| Analyzed on | 2026-10-26 |
 | Analysis mode | Automated code extraction (no AI) |
 
 ## Overview
 
-This design system was extracted programmatically from the source page. It is built on a light canvas (#FFFFFF), ink text (#000000), a vivid accent (#F04D0C). All type is set in `"Open Sans", sans-serif, Arial, Helvetica`. Detected font weights: 300, 400, 500, 600, 700, 800, 900. Detected style signatures: glassmorphism; soft-ui / layered elevation; gradient-rich / aurora; rounded / pill-heavy; technical / mono accents.
-
-Logo asset(s): `https://www.NarnaulOnline.com/themes/default/frontend_assets/images/logo/NarnaulOnline-logo.webp`
+This design system was extracted programmatically from the source page. It is built on a light canvas (#FFFFFF), ink text (#12213F), a vivid accent (#E66A1B). All type is set in `var(--font-mono)`. Detected style signatures: gradient-rich / aurora; technical / mono accents.
 
 ## Color System
 
@@ -101,26 +61,26 @@ Logo asset(s): `https://www.NarnaulOnline.com/themes/default/frontend_assets/ima
 
 | Hex | RGB | HSL | Count |
 |---|---|---|---|
-| `#FFFFFF` | 255, 255, 255 | 0° 0% 100% | 181 |
-| `#000000` | 0, 0, 0 | 0° 0% 0% | 37 |
-| `#EEEEEE` | 238, 238, 238 | 0° 0% 93% | 30 |
-| `#333333` | 51, 51, 51 | 0° 0% 20% | 28 |
-| `#E4473C` | 228, 71, 60 | 4° 76% 56% | 28 |
-| `#999999` | 153, 153, 153 | 0° 0% 60% | 21 |
-| `#F04D0C` | 240, 77, 12 | 17° 90% 49% | 19 |
-| `#555555` | 85, 85, 85 | 0° 0% 33% | 17 |
-| `#444444` | 68, 68, 68 | 0° 0% 27% | 17 |
-| `#DDDDDD` | 221, 221, 221 | 0° 0% 87% | 14 |
-| `#3F3F3F` | 63, 63, 63 | 0° 0% 25% | 12 |
-| `#FF3D00` | 255, 61, 0 | 14° 100% 50% | 12 |
-| `#CCCCCC` | 204, 204, 204 | 0° 0% 80% | 11 |
-| `#666666` | 102, 102, 102 | 0° 0% 40% | 11 |
-| `#F5F5F5` | 245, 245, 245 | 0° 0% 96% | 10 |
-| `#777777` | 119, 119, 119 | 0° 0% 47% | 10 |
-| `#282828` | 40, 40, 40 | 0° 0% 16% | 9 |
-| `#111111` | 17, 17, 17 | 0° 0% 7% | 6 |
-| `#337AB7` | 51, 122, 183 | 208° 56% 46% | 6 |
-| `#E5E5E5` | 229, 229, 229 | 0° 0% 90% | 6 |
+| `#000000` | 0, 0, 0 | 0° 0% 0% | 73 |
+| `#FFFFFF` | 255, 255, 255 | 0° 0% 100% | 27 |
+| `#12213F` | 18, 33, 63 | 220° 56% 16% | 18 |
+| `#1F63D8` | 31, 99, 216 | 218° 75% 48% | 8 |
+| `#53B94A` | 83, 185, 74 | 115° 44% 51% | 8 |
+| `#CCCCCC` | 204, 204, 204 | 0° 0% 80% | 8 |
+| `#E66A1B` | 230, 106, 27 | 23° 80% 50% | 4 |
+| `#D94747` | 217, 71, 71 | 0° 66% 56% | 3 |
+| `#1C2D4B` | 28, 45, 75 | 218° 46% 20% | 2 |
+| `#2F2C1C` | 47, 44, 28 | 51° 25% 15% | 2 |
+| `#2E7D32` | 46, 125, 50 | 123° 46% 34% | 2 |
+| `#EDF4FF` | 237, 244, 255 | 217° 100% 96% | 2 |
+| `#D7E3F6` | 215, 227, 246 | 217° 63% 90% | 2 |
+| `#11284F` | 17, 40, 79 | 218° 65% 19% | 1 |
+| `#203D73` | 32, 61, 115 | 219° 56% 29% | 1 |
+| `#6C3D4A` | 108, 61, 74 | 343° 28% 33% | 1 |
+| `#D57724` | 213, 119, 36 | 28° 71% 49% | 1 |
+| `#F5F9FF` | 245, 249, 255 | 216° 100% 98% | 1 |
+| `#62708B` | 98, 112, 139 | 220° 17% 46% | 1 |
+| `#C4D5F0` | 196, 213, 240 | 217° 59% 85% | 1 |
 
 ### Assigned roles
 
@@ -128,150 +88,95 @@ Roles are taken from the page's own semantic CSS custom properties when present,
 
 | Token | Hex | RGB | HSL |
 |---|---|---|---|
-| `--color-primary` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
-| `--color-accent` | `#F04D0C` | 240, 77, 12 | 17° 90% 49% |
 | `--color-background` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
-| `--color-surface` | `#EEEEEE` | 238, 238, 238 | 0° 0% 93% |
-| `--color-text-primary` | `#000000` | 0, 0, 0 | 0° 0% 0% |
+| `--color-surface` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
+| `--color-text-primary` | `#12213F` | 18, 33, 63 | 220° 56% 16% |
+| `--color-primary` | `#E66A1B` | 230, 106, 27 | 23° 80% 50% |
+| `--color-accent` | `#E66A1B` | 230, 106, 27 | 23° 80% 50% |
 | `--color-secondary` | `#000000` | 0, 0, 0 | 0° 0% 0% |
-| `--color-text-secondary` | `#333333` | 51, 51, 51 | 0° 0% 20% |
-| `--color-border` | `#999999` | 153, 153, 153 | 0° 0% 60% |
-| `--color-on-primary` | `#000000` | 0, 0, 0 | 0° 0% 0% |
+| `--color-text-secondary` | `#53B94A` | 83, 185, 74 | 115° 44% 51% |
+| `--color-border` | `#CCCCCC` | 204, 204, 204 | 0° 0% 80% |
+| `--color-on-primary` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
 | `--color-on-secondary` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
 | `--color-on-accent` | `#FFFFFF` | 255, 255, 255 | 0° 0% 100% |
 
-### Surface ramp (derived from detected light neutrals)
-
-| Token | Hex |
-|---|---|
-| `--color-surface-container-lowest` | `#FFFFFF` |
-| `--color-surface-container-low` | `#F8F8F8` |
-| `--color-surface-container` | `#F5F5F5` |
-| `--color-surface-container-high` | `#F2F2F2` |
-| `--color-surface-container-highest` | `#EEEEEE` |
-
 ## Gradients
 
-- `radial-gradient(circle at top left, #fdf3ec, transparent 105%)`
-- `linear-gradient(145deg, #ffff 56%, #ff8e67 220%, #ffbfa9 100%)`
-- `linear-gradient(180deg, #ff8a00, #ffb347)`
-- `linear-gradient(180deg, #ff6a00, #ff9f45)`
-- `linear-gradient(180deg, #ff5400, #ff8c42)`
-- `linear-gradient(180deg, #ff3d00, #ff7043)`
-- `linear-gradient(45deg, #ff3d00 0%, #F09819 51%, #FF512F 100%)`
+- `radial-gradient(circle at 12% 0,#1f63d81a,#0000 28%),radial-gradient(circle at 88% 8%,#e66a1b1a,#0000 24%),radial-gradient(circle at 82% 72%,#d9474714,#0000 26%),url("data:image/svg+xml,%3Csvg width='56' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 0H0V56' fill='none' stroke='%231f63d8' stroke-width='0.6' opacity='0.08'/%3E%3C/svg%3E")`
+- `linear-gradient(in lab,red,red))`
+- `linear-gradient(45deg,#12213f1f 1px,#0000 1px),linear-gradient(45deg,#0000 0 47px,#12213f29 47px 49px,#0000 49px),linear-gradient(45deg,#0000 0 95px,#12213f1f 95px 97px,#0000 97px)`
+- `linear-gradient(120deg,#11284f,#203d73 38%,#6c3d4a 72%,#d57724)`
+- `linear-gradient(135deg,#12213f0a 1px,#0000 1px)`
+- `linear-gradient(90deg,#00000047 1px,#0000 1px),linear-gradient(#00000047 1px,#0000 1px)`
+- `linear-gradient(90deg,#1f63d814 1px,#0000 1px),linear-gradient(#1f63d814 1px,#0000 1px)`
+- `radial-gradient(circle at 20% 20%,#0000 0 220px,#00000073 222px,#0000 225px),radial-gradient(circle at 72% 28%,#0000 0 110px,#00000073 112px,#0000 115px),radial-gradient(circle at 55% 80%,#0000 0 420px,#00000052 422px,#0000 425px)`
+
+> 1 additional gradient definitions were framework utility templates (unresolvable `var(--tw-gradient-stops)`) and were omitted.
 
 ## Typography
 
-Primary typeface: **Open Sans** — stack: `"Open Sans", sans-serif, Arial, Helvetica`
+Primary typeface: **var(--font-mono)** — stack: `var(--font-mono)`
 
 ### Font stacks (most used first)
 
-- `"Open Sans", sans-serif, Arial, Helvetica`
-- `"Open Sans",sans-serif,Arial,Helvetica`
-- `inherit`
-- `Raleway, sans-serif`
-- `sans-serif`
-- `Raleway,sans-serif`
-- `"Helvetica Neue", Helvetica, Arial, sans-serif`
-- `"Helvetica Neue",Helvetica,Arial,sans-serif`
-- `'FontAwesome'`
-- `Menlo, Monaco, Consolas, "Courier New", monospace`
+- `var(--font-mono)`
+- `var(--font-sans)`
+- `var(--default-font-family,ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji")`
+- `var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace)`
+- `var(--font-body)`
+- `var(--font-heading)`
+- `Helvetica,Arial,sans-serif`
 
 ### Derived type scale
 
 | Token | Size |
 |---|---|
-| headline-lg | 42px |
-| headline-md | 30px |
-| title-lg | 22px |
-| body-lg | 18px |
+| display | 112px |
 | body-md | 16px |
-| label-md | 14px |
-| label-sm | 12px |
+| label-sm | 12.8px |
 
 ### Font sizes (by frequency)
 
 | Size | Count |
 |---|---|
-| 14px | 48 |
-| 13px | 15 |
-| 15px | 15 |
-| 16px | 15 |
-| 24px | 14 |
-| 18px | 12 |
-| 20px | 8 |
-| 28px | 6 |
-| 30px | 6 |
-| 12px | 6 |
-| 32px | 5 |
-| 36px | 5 |
-| 11px | 4 |
-| 42px | 4 |
-| 17px | 4 |
-| 25px | 4 |
-| 27px | 3 |
-| 10px | 3 |
-| 21px | 3 |
-| 22px | 3 |
-
-Weights in use: 300, 400, 500, 600, 700, 800, 900
+| 1em | 1 |
+| .8rem | 1 |
+| .68rem | 1 |
+| 2.75rem | 1 |
+| 10px | 1 |
+| .72rem | 1 |
+| .78rem | 1 |
+| 4rem | 1 |
+| 5.5rem | 1 |
+| 7rem | 1 |
 
 ### Line heights (by frequency)
 
 | Value | Count |
 |---|---|
-| 1 | 14 |
-| 1.42857143 | 12 |
-| 1.5 | 9 |
-| 1.6 | 6 |
-| 22px | 5 |
-| 1.8 | 5 |
-| 40px | 4 |
-| 44px | 4 |
-| 20px | 3 |
-| 50px | 3 |
+| 1 | 5 |
+| 1.5 | 2 |
+| 1.2 | 1 |
+| 0 | 1 |
+| 1.1 | 1 |
+| 1.05 | 1 |
 
 ### Letter spacing (by frequency)
 
 | Value | Count |
 |---|---|
-| 1px | 9 |
-| 0 | 5 |
-| 2px | 2 |
-| 1.4px | 1 |
+| .14em | 2 |
+| .18em | 2 |
+| -.04em | 1 |
+| .12em | 1 |
+| .16em | 1 |
+| .2em | 1 |
 
 ## Spacing
 
-### Derived spacing scale
-
-| Token | Value |
-|---|---|
-| xs | 2px |
-| sm | 8px |
-| md | 20px |
-| lg | 40px |
-| xl | 60px |
-
-### Raw values (by frequency)
-
 | Value | Count |
 |---|---|
-| 10px | 20 |
-| 20px | 17 |
-| 30px | 15 |
-| 5px | 14 |
-| 15px | 12 |
-| 40px | 11 |
-| 60px | 10 |
-| 2px | 7 |
-| 8px | 7 |
-| 6px | 6 |
-| 12px | 6 |
-| 14px | 4 |
-| 4px | 4 |
-| 3px | 3 |
-| 9px | 3 |
-| 0px | 3 |
+| 1px | 1 |
 
 ## Borders & Radius
 
@@ -279,216 +184,170 @@ Weights in use: 300, 400, 500, 600, 700, 800, 900
 
 | Token | Value |
 |---|---|
-| sm | `3px` |
-| md | `8px` |
-| lg | `35px` |
-| pill | `50%` |
+| sm | `2px` |
+| md | `12px` |
+| lg | `24px` |
 
 ### Raw values (resolved, by frequency)
 
 | Radius | Count |
 |---|---|
-| `4px` | 18 |
-| `10px` | 10 |
-| `3px` | 10 |
-| `20px` | 7 |
-| `5px` | 6 |
-| `35px` | 6 |
-| `0` | 6 |
-| `14px` | 5 |
-| `6px` | 4 |
-| `8px` | 4 |
-| `12px` | 4 |
-| `50%` | 3 |
-
-## Shadows
-
-### Derived elevation
-
-| Token | Value |
-|---|---|
-| sm | `none` |
-| md | `0 3px 9px rgba(0,0,0,.5)` |
-| lg | `5px 10px 15px rgb(0 0 0 / 50%)` |
-
-### All detected shadows
-
-- `none`
-- `0 -1px 4px 0 rgb(0 0 0 / .15)`
-- `inset 0 1px 1px rgba(0,0,0,.075)`
-- `0 6px 12px rgba(0,0,0,.175)`
-- `inset 0 1px 0 rgba(255,255,255,.1)`
-- `0 3px 9px rgba(0,0,0,.5)`
-- `0 5px 15px rgba(0,0,0,.5)`
-- `0 13px 42px 11px rgba(0,0,0,.05)`
-- `5px 10px 15px rgb(0 0 0 / 50%)`
-- `inset 0 -1px 0 rgb(0 0 0 / .25)`
+| `0` | 5 |
+| `.75rem` | 3 |
+| `1.5rem` | 1 |
+| `2px` | 1 |
+| `inherit` | 1 |
+| `3.40282e38px` | 1 |
 
 ## Layout
 
-Container max-width: **767px**
+Container max-width: **768px**
 
-Grid columns (largest detected grid): **3**
+Grid columns (largest detected grid): **5**
 
 ### Breakpoints
 
-- 480px
-- 576px
-- 767px
-- 768px
-- 991px
-- 992px
-- 1199px
-- 1200px
+- 40rem
+- 48rem
+- 64rem
+- 80rem
+- 96rem
 
 ## Animation & Motion
 
-### Transitions
-
-- `margin .4s ease, padding .4s ease`
-- `border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s`
-- `border-color ease-in-out .15s, box-shadow ease-in-out .15s`
-- `opacity .15s linear`
-- `-webkit-transform .3s ease-out`
-- `-o-transform .3s ease-out`
-- `transform .3s ease-out`
-- `color .3s ease-in-out, background-color .3s ease-in-out, width .3s ease-in-out`
-- `opacity .3s ease`
-- `all .2s ease-in-out`
-- `color .3s ease-in-out`
-- `opacity .3s ease-in-out`
 
 ### Easing curves
 
-- `ease`
-- `ease-out`
-- `cubic-bezier(.215, .61, .355, 1)`
-- `cubic-bezier(.755, .05, .855, .06)`
-- `ease-out`
-- `ease-in`
-- `ease-in-out`
-- `cubic-bezier(.55, .055, .675, .19)`
+- `cubic-bezier(.4, 0, 1, 1)`
+- `cubic-bezier(0, 0, .2, 1)`
+- `cubic-bezier(.4, 0, .2, 1)`
+- `cubic-bezier(.4, 0, .6, 1)`
+- `cubic-bezier(.4, 0, .2, 1)`
+- `var(--tw-ease,var(--default-transition-timing-function))`
+- `var(--ease-in)`
+- `var(--ease-in-out)`
 
 ### Keyframes
 
 ```css
-@keyframes slideUp { 0% { top: 100%; opacity: 0; } 100% { top: 50%; opacity: 1; } }
-@keyframes fa-spin { 0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)} }
-@keyframes progress-bar-stripes { from { background-position: 40px 0 } to { background-position: 0 0 } }
-@keyframes BgAnimated { from { background-position: 0 0 } to { background-position: 0 400px } }
-@keyframes fadeOut { 0% { opacity: 1 } 100% { opacity: 0 } }
-@keyframes bouncedelay { 0%, 100%, 80% { transform: scale(0); -webkit-transform: scale(0) } 40% { transform: scale(1); -webkit-transform: scale(1) } }
-@keyframes rotateplane { 0% { transform: perspective(120px) rotateX(0) rotateY(0); -webkit-transform: perspective(120px) rotateX(0) rotateY(0) } 50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0); -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0) } 100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg) } }
-@keyframes cssspinnerbounce { 0%, 100% { transform: scale(0); -webkit-transform: scale(0) } 50% { transform: scale(1); -webkit-transform: scale(1) } }
-@keyframes stretchdelay { 0%, 100%, 40% { transform: scaleY(.4); -webkit-transform: scaleY(.4) } 20% { transform: scaleY(1); -webkit-transform: scaleY(1) } }
-@keyframes cubemove { 25% { transform: translateX(42px) rotate(-90deg) scale(.5); -webkit-transform: translateX(42px) rotate(-90deg) scale(.5) } 50% { transform: translateX(42px) translateY(42px) rotate(-179deg); -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg) } 50.1% { transform: translateX(42px) translateY(42px) rotate(-180deg); -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) } 75% { transform: translateX(0) translateY(42px) rotate(-270deg) scale(.5); -webkit-transform: tra }
-@keyframes scaleout { 0% { transform: scale(0); -webkit-transform: scale(0) } 100% { transform: scale(1); -webkit-transform: scale(1); opacity: 0 } }
-@keyframes ball-grid-pulse { 0% { -webkit-transform: scale(1); transform: scale(1) } 50% { -webkit-transform: scale(.5); transform: scale(.5); opacity: .7 } 100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1 } }
-@keyframes rotate { 0% { -webkit-transform: rotate(0) scale(1); transform: rotate(0) scale(1) } 50% { -webkit-transform: rotate(180deg) scale(.6); transform: rotate(180deg) scale(.6) } 100% { -webkit-transform: rotate(360deg) scale(1); transform: rotate(360deg) scale(1) } }
-@keyframes ballrotate { 0% { -webkit-transform: rotate(0); transform: rotate(0) } 50% { -webkit-transform: rotate(180deg); transform: rotate(180deg) } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg) } }
-@keyframes ball-zig-deflect { 17% { -webkit-transform: translate(-15px, -30px); transform: translate(-15px, -30px) } 34% { -webkit-transform: translate(15px, -30px); transform: translate(15px, -30px) } 50% { -webkit-transform: translate(0, 0); transform: translate(0, 0) } 67% { -webkit-transform: translate(15px, -30px); transform: translate(15px, -30px) } 84% { -webkit-transform: translate(-15px, -30px); transform: translate(-15px, -30px) } 100% { -webkit-transform: translate(0, 0); transform: translate(0, 0) } }
-@keyframes ball-zag-deflect { 17% { -webkit-transform: translate(15px, 30px); transform: translate(15px, 30px) } 34% { -webkit-transform: translate(-15px, 30px); transform: translate(-15px, 30px) } 50% { -webkit-transform: translate(0, 0); transform: translate(0, 0) } 67% { -webkit-transform: translate(-15px, 30px); transform: translate(-15px, 30px) } 84% { -webkit-transform: translate(15px, 30px); transform: translate(15px, 30px) } 100% { -webkit-transform: translate(0, 0); transform: translate(0, 0) } }
-@keyframes ball-scale-multiple { 0% { -webkit-transform: scale(0); transform: scale(0); opacity: 0 } 5% { opacity: 1 } 100% { -webkit-transform: scale(1); transform: scale(1); opacity: 0 } }
+@keyframes pulse { 50%{opacity:.5} }
+@keyframes enter { 0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0));filter:blur(var(--tw-enter-blur,0))} }
+@keyframes exit { to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0));filter:blur(var(--tw-exit-blur,0))} }
+@keyframes accordion-down { 0%{height:0}to{height:var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,var(--ngp-accordion-content-height,auto)))))} }
+@keyframes accordion-up { 0%{height:var(--radix-accordion-content-height,var(--bits-accordion-content-height,var(--reka-accordion-content-height,var(--kb-accordion-content-height,var(--ngp-accordion-content-height,auto)))))}to{height:0} }
+@keyframes caret-blink { 0%,70%,to{opacity:1}20%,50%{opacity:0} }
 ```
 
 ### Animations
 
-- `15s linear hero-1-img-zoomout`
-- `.5s ease-out forwards slideUp`
-- `slideUp 0.5s ease-out forwards`
-- `swiper-preloader-spin 1s steps(12, end) infinite`
-- `scrollLeft 30s linear infinite`
-- `scrollRight 30s linear infinite`
-
-## Components
-
-Extracted from the page's own interactive elements (classes → resolved CSS values).
-
-### button-primary — sample text: “GET A QUOTE”
-
-| Property | Value |
-|---|---|
-| textColor | `#FFFFFF` |
-
-### button-secondary — sample text: “VIEW OUR PORTFOLIO”
-
-| Property | Value |
-|---|---|
-| textColor | `#FFFFFF` |
-
-
-### CTA labels found on page
-
-- GET A QUOTE
-- VIEW OUR PORTFOLIO
-- View more packages
-- Check Our Portfolio
-- Contact us
-
-## Effects
-
-- backdrop-filter: `blur(14px)`
+- `1.25s ease-out infinite caret-blink`
+- `enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none)`
+- `var(--animate-pulse)`
+- `exit var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none)`
+- `accordion-up var(--tw-animation-duration,var(--tw-duration,.2s))var(--tw-ease,ease-out)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none)`
+- `accordion-down var(--tw-animation-duration,var(--tw-duration,.2s))var(--tw-ease,ease-out)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none)`
 
 ## Source Design Tokens (CSS custom properties)
 
 ```css
 :root {
-  --moz-device-pixel-ratio: 2),only screen and (-o-min-device-pixel-ratio:2/1),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx);
-  --primary: #fff;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-red-600: oklch(57.7% .245 27.325);
+  --color-black: #000;
+  --color-white: #fff;
+  --spacing: .25rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+  --text-xs: .75rem;
+  --text-xs--line-height: calc(1 / .75);
+  --text-sm: .875rem;
+  --text-sm--line-height: calc(1.25 / .875);
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  --tracking-tight: -.025em;
+  --tracking-wide: .025em;
+  --tracking-wider: .05em;
+  --tracking-widest: .1em;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-relaxed: 1.625;
+  --ease-in: cubic-bezier(.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+  --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+  --blur-sm: 8px;
+  --blur-lg: 16px;
+  --blur-3xl: 64px;
+  --aspect-video: 16 / 9;
 }
 ```
 
 ## Do's and Don'ts
 
 **Do**
-- Do reserve the accent `#F04D0C` for interactive highlights and key moments — it is used sparingly on the source page.
+- Do reserve the accent `#E66A1B` for interactive highlights and key moments — it is used sparingly on the source page.
 - Do keep the canvas at `#FFFFFF`; surfaces should stay within the detected neutral ramp.
-- Do stick to the detected font weight(s): 300, 400, 500, 600, 700, 800, 900.
 
 **Don't**
 - Don't introduce colors outside the detected palette — every hue above was found in the source.
+- Don't add drop shadows; the source page relies on borders and surface shifts for depth, not elevation.
 
 ## Design Tokens (copy-paste)
 
 ```css
 :root {
-  --color-primary: #FFFFFF;
-  --color-accent: #F04D0C;
   --color-background: #FFFFFF;
-  --color-surface: #EEEEEE;
-  --color-text-primary: #000000;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #12213F;
+  --color-primary: #E66A1B;
+  --color-accent: #E66A1B;
   --color-secondary: #000000;
-  --color-text-secondary: #333333;
-  --color-border: #999999;
-  --color-on-primary: #000000;
+  --color-text-secondary: #53B94A;
+  --color-border: #CCCCCC;
+  --color-on-primary: #FFFFFF;
   --color-on-secondary: #FFFFFF;
   --color-on-accent: #FFFFFF;
-  --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #F8F8F8;
-  --color-surface-container: #F5F5F5;
-  --color-surface-container-high: #F2F2F2;
-  --color-surface-container-highest: #EEEEEE;
-  --font-sans: "Open Sans", sans-serif, Arial, Helvetica;
-  --font-size-headline-lg: 42px;
-  --font-size-headline-md: 30px;
-  --font-size-title-lg: 22px;
-  --font-size-body-lg: 18px;
+  --font-sans: var(--font-mono);
+  --font-size-display: 112px;
   --font-size-body-md: 16px;
-  --font-size-label-md: 14px;
-  --font-size-label-sm: 12px;
-  --radius-sm: 3px;
-  --radius-md: 8px;
-  --radius-lg: 35px;
-  --radius-pill: 50%;
-  --shadow-sm: none;
-  --shadow-md: 0 3px 9px rgba(0,0,0,.5);
-  --shadow-lg: 5px 10px 15px rgb(0 0 0 / 50%);
-  --space-xs: 2px;
-  --space-sm: 8px;
-  --space-md: 20px;
-  --space-lg: 40px;
-  --space-xl: 60px;
-  --tracking-label: 1px;
-  --container-max: 767px;
+  --font-size-label-sm: 12.8px;
+  --radius-sm: 2px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --tracking-display: -.04em;
+  --tracking-label: .14em;
+  --container-max: 768px;
 }
 ```

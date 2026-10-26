@@ -1,9 +1,17 @@
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -73,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={`${openSans.variable} ${jetbrainsMono.variable}`}>
       <body>{children}</body>
     </html>
   );

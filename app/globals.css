@@ -1,97 +1,113 @@
 /* ==========================================================================
    DESIGN SYSTEM — NARNAULONLINE
-   Faithfully implemented from DESIGN.md (Extracted from NarnaulOnline.com)
-   Primary Typeface: Open Sans (weights 300, 400, 500, 600, 700, 800)
-   Color Palette: Canvas (#FFFFFF), Ink (#000000), Accent (#F04D0C)
-   Card Radius: 35px (DESIGN.md radius.lg: 35px)
+   Faithfully implemented from DESIGN.md (Extracted 2026-10-26)
+   Canvas: #FFFFFF, Ink Text: #12213F, Accent: #E66A1B, Secondary: #000000
+   Text Secondary / Growth: #53B94A, Border: #CCCCCC
+   Signature Card Radius: 24px (DESIGN.md radius.lg: 24px)
+   Signature Button Radius: 12px (DESIGN.md button-primary.radius: 12px)
+   Typography: var(--font-sans) with technical accents in var(--font-mono)
    ========================================================================== */
 
 :root {
   /* --------------------------------------------------------------------------
-     1. Exact Source Tokens from DESIGN.md
+     1. Exact Source Tokens from DESIGN.md (Extracted 2026-10-26)
      -------------------------------------------------------------------------- */
-  --color-primary: #FFFFFF;
-  --color-accent: #F04D0C;
   --color-background: #FFFFFF;
-  --color-surface: #EEEEEE;
-  --color-text-primary: #000000;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #12213F;
+  --color-primary: #E66A1B;
+  --color-accent: #E66A1B;
   --color-secondary: #000000;
-  --color-text-secondary: #333333;
-  --color-border: #999999;
-  --color-border-light: #E5E5E5;
-  --color-border-subtle: #DDDDDD;
-  --color-border-card: #CCCCCC;
-  --color-on-primary: #000000;
+  --color-text-secondary: #53B94A;
+  --color-border: #CCCCCC;
+  --color-on-primary: #FFFFFF;
   --color-on-secondary: #FFFFFF;
   --color-on-accent: #FFFFFF;
 
-  /* Surface Ramp from DESIGN.md */
-  --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #F8F8F8;
-  --color-surface-container: #F5F5F5;
-  --color-surface-container-high: #F2F2F2;
-  --color-surface-container-highest: #EEEEEE;
+  /* Additional Detected Palette from DESIGN.md */
+  --color-blue: #1F63D8;
+  --color-blue-dark: #11284F;
+  --color-blue-slate: #203D73;
+  --color-blue-tint: #EDF4FF;
+  --color-blue-subtle: #F5F9FF;
+  --color-orange-dark: #D57724;
+  --color-red: #D94747;
+  --color-border-subtle: #D7E3F6;
+  --color-muted: #62708B;
 
-  /* Semantic shortcuts mapped to DESIGN.md tokens */
-  --primary: #F04D0C;
-  --primary-accent: #FF3D00;
-  --primary-coral: #E4473C;
+  /* Semantic shortcuts mapped to DESIGN.md */
+  --primary: #E66A1B;
+  --primary-accent: #E66A1B;
+  --primary-dark: #D57724;
   --secondary: #000000;
-  --text: #000000;
-  --text-secondary: #333333;
-  --text-muted: #555555;
-  --muted: #555555;
+  --text: #12213F;
+  --text-primary: #12213F;
+  --text-secondary: #53B94A;
+  --text-muted: #62708B;
+  --muted: #62708B;
   --bg: #FFFFFF;
-  --surface: #EEEEEE;
-  --surface-container-lowest: #FFFFFF;
-  --surface-container-low: #F8F8F8;
-  --surface-container: #F5F5F5;
-  --surface-container-high: #F2F2F2;
-  --surface-container-highest: #EEEEEE;
+  --surface: #FFFFFF;
   --panel: #FFFFFF;
-  --line: #E5E5E5;
+  --border: #CCCCCC;
+  --line: #E2E8F0;
+  --line-subtle: rgba(18, 33, 63, 0.08);
+
+  /* Surface Container Ramp */
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F8FAFC;
+  --surface-container: #F1F5F9;
+  --surface-container-high: #E2E8F0;
+  --surface-container-highest: #CBD5E1;
 
   /* --------------------------------------------------------------------------
-     2. Gradients from DESIGN.md (Lines 153-162)
+     2. Gradients from DESIGN.md
      -------------------------------------------------------------------------- */
-  --bg-gradient: radial-gradient(circle at top left, #fdf3ec, transparent 105%);
-  --primary-gradient: linear-gradient(45deg, #ff3d00 0%, #F09819 51%, #FF512F 100%);
-  --secondary-gradient: linear-gradient(180deg, #ff6a00, #ff9f45);
-  --accent-gradient-180: linear-gradient(180deg, #ff3d00, #ff7043);
-  --card-gradient: linear-gradient(145deg, #ffffff 56%, #ff8e67 220%, #ffbfa9 100%);
+  --bg-gradient: radial-gradient(circle at 12% 0, rgba(31, 99, 216, 0.07), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(230, 106, 27, 0.08), transparent 24%),
+    radial-gradient(circle at 82% 72%, rgba(217, 71, 71, 0.05), transparent 26%),
+    url("data:image/svg+xml,%3Csvg width='56' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 0H0V56' fill='none' stroke='%231f63d8' stroke-width='0.6' opacity='0.08'/%3E%3C/svg%3E");
+
+  --primary-gradient: linear-gradient(135deg, #E66A1B 0%, #D57724 100%);
+  --accent-gradient: linear-gradient(120deg, #11284F 0%, #203D73 38%, #6C3D4A 72%, #D57724 100%);
+  --tech-grid: linear-gradient(90deg, rgba(31, 99, 216, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(31, 99, 216, 0.08) 1px, transparent 1px);
+  --card-gradient: linear-gradient(145deg, #FFFFFF 60%, #F8FAFC 100%);
 
   /* --------------------------------------------------------------------------
      3. Typography Tokens from DESIGN.md
      -------------------------------------------------------------------------- */
-  --font-sans: "Open Sans", sans-serif, Arial, Helvetica;
+  --font-sans: var(--font-sans), "Open Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-size-display: 112px;
   --font-size-headline-lg: 42px;
   --font-size-headline-md: 30px;
   --font-size-title-lg: 22px;
   --font-size-body-lg: 18px;
   --font-size-body-md: 16px;
-  --font-size-label-md: 14px;
-  --font-size-label-sm: 12px;
-  --tracking-label: 1px;
+  --font-size-label-sm: 12.8px;
+  --tracking-display: -0.04em;
+  --tracking-tight: -0.025em;
+  --tracking-label: 0.14em;
 
   /* --------------------------------------------------------------------------
-     4. Border Radius from DESIGN.md (sm: 3px, md: 8px, lg: 35px, pill: 50%)
+     4. Border Radius from DESIGN.md (sm: 2px, md: 12px, lg: 24px)
      -------------------------------------------------------------------------- */
-  --radius-sm: 3px;
-  --radius-md: 8px;
-  --radius-lg: 35px; /* SIGNATURE CARD RADIUS FROM DESIGN.MD */
-  --radius-xl: 35px;
+  --radius-sm: 2px;
+  --radius-md: 12px; /* BUTTONS & CONTROLS FROM DESIGN.MD */
+  --radius-lg: 24px; /* SIGNATURE CARDS FROM DESIGN.MD */
+  --radius-xl: 24px;
   --radius-pill: 9999px;
 
   /* --------------------------------------------------------------------------
-     5. Shadows & Elevations from DESIGN.md
+     5. Shadows & Elevations (DESIGN.md: Rely on borders & surface shifts, not elevation)
      -------------------------------------------------------------------------- */
   --shadow-sm: none;
-  --shadow-md: 0 3px 9px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 13px 42px 11px rgba(0, 0, 0, 0.05);
-  --shadow: 0 13px 42px 11px rgba(0, 0, 0, 0.05), 0 3px 9px rgba(0, 0, 0, 0.04);
-  --shadow-hover: 0 18px 42px -10px rgba(240, 77, 12, 0.22), 0 6px 18px rgba(0, 0, 0, 0.05);
-  --shadow-primary: 0 8px 24px -4px rgba(240, 77, 12, 0.4);
-  --shadow-whatsapp: 0 8px 24px -4px rgba(37, 211, 102, 0.45);
+  --shadow-md: 0 1px 3px rgba(18, 33, 63, 0.06);
+  --shadow-lg: 0 8px 24px -6px rgba(18, 33, 63, 0.08);
+  --shadow: none;
+  --shadow-hover: 0 4px 16px -2px rgba(18, 33, 63, 0.08);
+  --shadow-primary: 0 4px 14px rgba(230, 106, 27, 0.3);
+  --shadow-whatsapp: 0 4px 14px rgba(83, 185, 74, 0.3);
 
   /* Spacing Scale from DESIGN.md */
   --space-xs: 2px;
@@ -101,12 +117,13 @@
   --space-xl: 60px;
 
   /* Status Colors */
-  --whatsapp: #25D366;
-  --whatsapp-dark: #1EBE5D;
-  --blue-accent: #337AB7;
+  --whatsapp: #53B94A;
+  --whatsapp-dark: #2E7D32;
+  --blue-accent: #1F63D8;
 
   /* Layout */
-  --container-max: 1160px;
+  --container-max: 1200px;
+  --container-narrow: 768px;
 }
 
 * {
@@ -129,10 +146,10 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   background-color: var(--color-background);
-  background-image: radial-gradient(circle at top left, #fdf3ec, transparent 105%);
+  background-image: var(--bg-gradient);
   background-attachment: fixed;
   color: var(--color-text-primary);
-  line-height: 1.42857143;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   max-width: 100vw;
@@ -292,15 +309,15 @@ button {
 
 .nav-link-item:hover {
   color: var(--primary);
-  background: rgba(240, 77, 12, 0.06);
+  background: rgba(230, 106, 27, 0.06);
   transform: translateY(-1px);
 }
 
 .nav-link-item.active {
   color: var(--primary);
-  background: rgba(240, 77, 12, 0.09);
+  background: rgba(230, 106, 27, 0.09);
   font-weight: 700;
-  box-shadow: inset 0 0 0 1px rgba(240, 77, 12, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(230, 106, 27, 0.22);
 }
 
 .nav-item-badge {
@@ -551,7 +568,7 @@ button {
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  background: rgba(240, 77, 12, 0.08);
+  background: rgba(230, 106, 27, 0.08);
   color: var(--primary);
 }
 
@@ -619,65 +636,71 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
-  border-radius: var(--radius-lg); /* 35px from DESIGN.md */
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  padding: 11px 22px;
+  border-radius: var(--radius-md); /* 12px from DESIGN.md button-primary.radius */
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
 }
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
-/* button-primary from DESIGN.md (linear-gradient 45deg, #ff3d00, #F09819, #FF512F) */
+/* button-primary from DESIGN.md (background: #E66A1B, radius: 12px) */
 .btn-primary {
   color: #FFFFFF;
-  background: var(--primary-gradient);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
   box-shadow: var(--shadow-primary);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(45deg, #FF512F 0%, #F09819 49%, #ff3d00 100%);
-  box-shadow: 0 12px 28px -4px rgba(240, 77, 12, 0.55);
+  background: var(--color-orange-dark);
+  border-color: var(--color-orange-dark);
+  box-shadow: 0 6px 18px rgba(230, 106, 27, 0.42);
   color: #FFFFFF;
 }
 
-/* button-secondary from DESIGN.md */
+/* button-secondary from DESIGN.md (border: #CCCCCC, background: #FFFFFF) */
 .btn-secondary {
-  border: 1.5px solid var(--secondary);
+  border: 1px solid var(--color-border);
   background: #FFFFFF;
-  color: var(--secondary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary);
-  background: #FFF7F3;
-  color: var(--primary);
+  border-color: var(--color-primary);
+  background: var(--color-blue-subtle);
+  color: var(--color-primary);
 }
 
 .btn-whatsapp {
-  background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+  background: var(--color-text-secondary); /* #53B94A from DESIGN.md */
   color: #FFFFFF;
+  border-color: var(--color-text-secondary);
   box-shadow: var(--shadow-whatsapp);
 }
 
 .btn-whatsapp:hover {
-  box-shadow: 0 14px 28px -6px rgba(37, 211, 102, 0.75);
+  background: var(--whatsapp-dark);
+  border-color: var(--whatsapp-dark);
+  box-shadow: 0 6px 18px rgba(83, 185, 74, 0.45);
 }
 
-/* Eyebrow Label (DESIGN.md label-md: 14px/13px, letter-spacing: 1px) */
+/* Eyebrow Label (DESIGN.md label-sm: 12.8px, letter-spacing: .14em, mono) */
 .eyebrow {
   display: inline-block;
-  color: var(--primary);
-  font-size: 13px;
-  letter-spacing: 1px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label-sm); /* 12.8px */
+  letter-spacing: var(--tracking-label); /* .14em */
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -774,11 +797,11 @@ button {
   height: 10px;
   border-radius: 50%;
   background: var(--primary-gradient);
-  box-shadow: 0 0 8px rgba(240, 77, 12, 0.45);
+  box-shadow: 0 0 8px rgba(230, 106, 27, 0.45);
 }
 
 /* ==========================================================================
-   HERO VISUAL & PROFESSIONAL FOCUS CONSOLE (Card Radius: 35px)
+   HERO VISUAL & PROFESSIONAL FOCUS CONSOLE (Card Radius: 24px from DESIGN.md)
    ========================================================================== */
 
 .hero-visual {
@@ -796,7 +819,7 @@ button {
   max-width: 490px;
   background: #FFFFFF;
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg); /* 35px */
+  border-radius: var(--radius-lg); /* 24px */
   padding: 22px 22px;
   box-shadow: var(--shadow);
   position: relative;
@@ -879,7 +902,7 @@ button {
   background: #FFFFFF;
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px -4px rgba(240, 77, 12, 0.15);
+  box-shadow: 0 6px 14px -4px rgba(230, 106, 27, 0.15);
 }
 
 .focus-item-icon {
@@ -1011,11 +1034,11 @@ button {
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -8px rgba(240, 77, 12, 0.18);
+  box-shadow: 0 10px 20px -8px rgba(230, 106, 27, 0.18);
 }
 
 /* ==========================================================================
-   SECTIONS, CARDS & GRIDS (All Cards: border-radius 35px from DESIGN.md)
+   SECTIONS, CARDS & GRIDS (All Cards: border-radius 24px from DESIGN.md)
    ========================================================================== */
 
 .services,
@@ -1060,7 +1083,7 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* ALL CARDS ENFORCE DESIGN.MD CARD RADIUS: 35px */
+/* ALL CARDS ENFORCE DESIGN.MD CARD RADIUS: 24px & BORDER: 1px solid #CCCCCC */
 .service-card,
 .solution-box,
 .process-card,
@@ -1073,12 +1096,12 @@ button {
 .case-card,
 .experiment-card,
 .showcase article {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg); /* 35px */
-  padding: 22px 22px;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); /* 24px from DESIGN.md card.radius */
+  padding: 24px;
+  box-shadow: none; /* DESIGN.md: rely on borders and surface shifts, not elevation */
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background 0.2s ease;
 }
 
 .service-card:hover,
@@ -1092,9 +1115,9 @@ button {
 .skill-cat-card:hover,
 .experiment-card:hover,
 .showcase article:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  background: #FAFBFD;
 }
 
 .service-card h3,
@@ -1195,7 +1218,7 @@ button {
   border-color: transparent;
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px -6px rgba(240, 77, 12, 0.45);
+  box-shadow: 0 8px 18px -6px rgba(230, 106, 27, 0.45);
 }
 
 /* Feature List */
@@ -1280,7 +1303,7 @@ button {
 }
 
 /* ==========================================================================
-   CALL TO ACTION & FORM (35px Radius)
+   CALL TO ACTION & FORM (24px Radius from DESIGN.md)
    ========================================================================== */
 
 .cta-band {
@@ -1316,7 +1339,7 @@ button {
 .form-shell {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg); /* 35px */
+  border-radius: var(--radius-lg); /* 24px */
   padding: 28px 24px;
   box-shadow: var(--shadow);
 }
@@ -1362,7 +1385,7 @@ button {
   outline: none;
   border-color: var(--primary);
   background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(240, 77, 12, 0.2);
+  box-shadow: 0 0 0 3px rgba(230, 106, 27, 0.2);
 }
 
 /* ==========================================================================
@@ -1382,7 +1405,7 @@ button {
 /* Pre-Footer Action Banner (Clean Harmonious Design) */
 .footer-pre-banner {
   background: #FFFFFF;
-  border-radius: var(--radius-lg); /* 35px from DESIGN.md */
+  border-radius: var(--radius-lg); /* 24px from DESIGN.md */
   padding: 30px 36px;
   border: 1px solid var(--line);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
@@ -1628,8 +1651,8 @@ button {
   gap: 6px;
   padding: 6px 12px;
   border-radius: 9999px;
-  background: rgba(240, 77, 12, 0.08);
-  border: 1px solid rgba(240, 77, 12, 0.2);
+  background: rgba(230, 106, 27, 0.08);
+  border: 1px solid rgba(230, 106, 27, 0.2);
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--primary);
@@ -1916,13 +1939,13 @@ button {
 }
 
 .badge-status.development {
-  background: rgba(240, 77, 12, 0.1);
+  background: rgba(230, 106, 27, 0.1);
   color: #C03B08;
-  border-color: rgba(240, 77, 12, 0.28);
+  border-color: rgba(230, 106, 27, 0.28);
 }
 .badge-status.development::before {
-  background: #F04D0C;
-  box-shadow: 0 0 6px rgba(240, 77, 12, 0.5);
+  background: #E66A1B;
+  box-shadow: 0 0 6px rgba(230, 106, 27, 0.5);
   animation: ai-brain-pulse 1.8s infinite ease-in-out;
 }
 
@@ -2050,14 +2073,14 @@ button {
   background: var(--surface-container);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(240, 77, 12, 0.12);
+  box-shadow: 0 6px 14px rgba(230, 106, 27, 0.12);
 }
 
 .domain-tab-btn.active {
   background: var(--primary-gradient);
   color: #FFFFFF;
   border-color: transparent;
-  box-shadow: 0 8px 22px -4px rgba(240, 77, 12, 0.42);
+  box-shadow: 0 8px 22px -4px rgba(230, 106, 27, 0.42);
   transform: translateY(-2px);
 }
 
@@ -2090,7 +2113,7 @@ button {
   position: relative;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg); /* 35px from DESIGN.md */
+  border-radius: var(--radius-lg); /* 24px from DESIGN.md */
   padding: 24px 22px;
   display: flex;
   flex-direction: column;
@@ -2114,7 +2137,7 @@ button {
 
 .competency-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(240, 77, 12, 0.3);
+  border-color: rgba(230, 106, 27, 0.3);
   box-shadow: var(--shadow-hover);
 }
 
@@ -2131,8 +2154,8 @@ button {
   height: 48px;
   min-width: 48px;
   border-radius: 16px;
-  background: rgba(240, 77, 12, 0.08);
-  border: 1px solid rgba(240, 77, 12, 0.2);
+  background: rgba(230, 106, 27, 0.08);
+  border: 1px solid rgba(230, 106, 27, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2145,10 +2168,10 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--primary);
-  background: rgba(240, 77, 12, 0.08);
+  background: rgba(230, 106, 27, 0.08);
   padding: 3px 10px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(240, 77, 12, 0.15);
+  border: 1px solid rgba(230, 106, 27, 0.15);
   display: inline-block;
 }
 
@@ -2214,7 +2237,7 @@ button {
   background: #FFFFFF;
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(240, 77, 12, 0.12);
+  box-shadow: 0 4px 12px rgba(230, 106, 27, 0.12);
 }
 
 .tech-pill-name {
@@ -2299,7 +2322,7 @@ button {
 .stacks-showcase-box {
   margin-top: 36px;
   padding: 28px 24px;
-  border-radius: var(--radius-lg); /* 35px from DESIGN.md */
+  border-radius: var(--radius-lg); /* 24px from DESIGN.md */
   background: linear-gradient(150deg, var(--surface-container-low) 0%, #FFFFFF 100%);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
@@ -2344,7 +2367,7 @@ button {
 
 .stack-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(240, 77, 12, 0.35);
+  border-color: rgba(230, 106, 27, 0.35);
   box-shadow: var(--shadow-hover);
 }
 
@@ -2597,13 +2620,13 @@ button {
 .estimator-option-btn:hover {
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(240, 77, 12, 0.12);
+  box-shadow: 0 8px 18px rgba(230, 106, 27, 0.12);
 }
 
 .estimator-option-btn.selected {
   border-color: var(--primary);
-  background: linear-gradient(145deg, #FFFFFF 60%, rgba(240, 77, 12, 0.08) 100%);
-  box-shadow: 0 8px 24px -6px rgba(240, 77, 12, 0.3);
+  background: linear-gradient(145deg, #FFFFFF 60%, rgba(230, 106, 27, 0.08) 100%);
+  box-shadow: 0 8px 24px -6px rgba(230, 106, 27, 0.3);
   transform: translateY(-2px);
 }
 
@@ -2664,7 +2687,7 @@ button {
 .estimator-feature-pill.active {
   background: #FFFFFF;
   border-color: var(--primary);
-  box-shadow: 0 4px 14px rgba(240, 77, 12, 0.15);
+  box-shadow: 0 4px 14px rgba(230, 106, 27, 0.15);
 }
 
 .estimator-feature-checkbox {
@@ -2699,7 +2722,7 @@ button {
   top: 80px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg); /* 35px from DESIGN.md */
+  border-radius: var(--radius-lg); /* 24px from DESIGN.md */
   padding: 24px 22px;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
@@ -2719,7 +2742,7 @@ button {
   margin: 12px 0 14px;
   padding: 14px 16px;
   border-radius: 18px;
-  background: linear-gradient(145deg, var(--surface-container-low) 0%, rgba(240, 77, 12, 0.05) 100%);
+  background: linear-gradient(145deg, var(--surface-container-low) 0%, rgba(230, 106, 27, 0.05) 100%);
   border: 1px solid var(--line);
   text-align: center;
 }
@@ -2832,8 +2855,8 @@ button {
 .ajax-scope-preview {
   padding: 10px 14px;
   border-radius: 12px;
-  background: rgba(240, 77, 12, 0.05);
-  border: 1px dashed rgba(240, 77, 12, 0.3);
+  background: rgba(230, 106, 27, 0.05);
+  border: 1px dashed rgba(230, 106, 27, 0.3);
   margin-bottom: 12px;
 }
 
