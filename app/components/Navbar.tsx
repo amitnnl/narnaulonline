@@ -63,6 +63,52 @@ export default function Navbar() {
 
   return (
     <header className={`site-header-wrapper ${scrolled ? "scrolled" : ""}`}>
+      {/* Executive Pre-Header Utility Bar */}
+      <div className="site-pre-header" aria-label="Executive Organization Quick Bar">
+        <div className="pre-header-container">
+          {/* Left: Physical Headquarters & Leadership */}
+          <div className="pre-header-left">
+            <span className="pre-header-item">
+              <span className="pre-icon">📍</span>
+              <span className="pre-hq-text">Station Road, Narnaul, Haryana (123001)</span>
+            </span>
+            <span className="pre-header-sep">•</span>
+            <span className="pre-header-item pre-desk-item">
+              <span className="pre-live-dot" title="Engineering Desk Active"></span>
+              <span>Desk: <strong>Amit Jangid</strong></span>
+            </span>
+          </div>
+
+          {/* Center: Zero-DB Architecture Focus */}
+          <div className="pre-header-center">
+            <span className="pre-pill-badge">
+              ⚡ Zero-DB Architecture • ₹0 Monthly Server Overhead
+            </span>
+          </div>
+
+          {/* Right: Quick Direct Contact Desk & SLA */}
+          <div className="pre-header-right">
+            <a href="tel:+919416341097" className="pre-header-link" title="Direct Phone Consultation">
+              <span>📞 +91 9416341097</span>
+            </a>
+            <span className="pre-header-sep">•</span>
+            <a
+              href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20software%20organization%20website%20and%20want%20to%20discuss%20a%20development%20project."
+              className="pre-header-link pre-whatsapp"
+              target="_blank"
+              rel="noreferrer"
+              title="Instant WhatsApp Consultation"
+            >
+              <span>💬 WhatsApp Desk</span>
+            </a>
+            <span className="pre-header-sep">•</span>
+            <span className="pre-header-item pre-sla">
+              <span>⚡ SLA: &lt; 2h</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div className="site-header-island">
         {/* Brand Group */}
         <div className="nav-brand-group">
