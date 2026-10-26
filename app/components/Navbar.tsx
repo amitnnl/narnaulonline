@@ -70,24 +70,9 @@ const archList: ArchItem[] = [
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<"solutions" | "architecture" | "desk" | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navContainerRef = useRef<HTMLElement | null>(null);
-
-  // Track window scroll for subtle elevation adjustment
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 15) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close menus when route/pathname changes
   useEffect(() => {
@@ -151,7 +136,7 @@ export default function Navbar() {
 
   return (
     <header className="site-header-wrapper" ref={navContainerRef}>
-      <div className={`site-header-island ${scrolled ? "scrolled" : ""}`}>
+      <div className="site-header-island">
         {/* Brand Group */}
         <div className="nav-brand-group">
           <Link href="/" className="brand-link" aria-label="NarnaulOnline • Full-Stage Digital Software Development Organization">
