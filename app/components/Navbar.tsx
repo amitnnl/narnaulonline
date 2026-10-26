@@ -12,10 +12,11 @@ interface NavItem {
 
 const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Organization", href: "/about" },
+  { label: "Solutions", href: "/#services" },
+  { label: "Architecture", href: "/#stacks" },
+  { label: "Cost Estimator", href: "/#estimator" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Services", href: "/#services" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -54,10 +55,10 @@ export default function Navbar() {
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav-wrap">
         {/* Brand Logo */}
-        <Link href="/" className="brand" aria-label="Amit Jangid • NarnaulOnline">
+        <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
           <Image
             src="/logo.png"
-            alt="Amit Jangid • NarnaulOnline"
+            alt="NarnaulOnline • Full-Stage Software Development Organization"
             width={230}
             height={56}
             className="brand-logo"

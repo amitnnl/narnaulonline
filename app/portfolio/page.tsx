@@ -286,12 +286,15 @@ export default function PortfolioPage() {
         {/* Page Hero */}
         <section className="hero page-hero">
           <div className="container">
-            <span className="eyebrow">PORTFOLIO & SYSTEM CATALOGUE</span>
-            <h1>Systems Engineered for Real Business Needs.</h1>
-            <p style={{ maxWidth: "780px", color: "var(--muted)", margin: "16px 0 0", fontSize: "1.1rem" }}>
-              A comprehensive showcase of web applications, AI automation platforms, business ERPs,
-              and domain-specific architectures developed or planned by <strong>Amit Jangid</strong>.
-              In accordance with our strict accuracy standards, implementation statuses are explicitly stated.
+            <div className="org-hero-badge" style={{ marginBottom: "14px" }}>
+              <span className="dot" />
+              <span>Full-Stage Software Development Organization • System Deliverables</span>
+            </div>
+            <h1>Systems Engineered for Real Commercial Needs.</h1>
+            <p style={{ maxWidth: "800px", color: "var(--muted)", margin: "16px 0 0", fontSize: "1.1rem", lineHeight: "1.65" }}>
+              A comprehensive showcase of web applications, zero-database architectures, financial loan ERPs,
+              and domain-specific platforms engineered and architected by <strong>NarnaulOnline</strong> (Led by Amit Jangid, Founder & Principal Solutions Architect).
+              In accordance with our strict transparency standards, implementation statuses are explicitly stated.
             </p>
 
             {/* Filter Buttons */}
@@ -457,20 +460,23 @@ export default function PortfolioPage() {
                 textAlign: "center",
               }}
             >
-              <span className="eyebrow">Custom Architecture & Software</span>
+              <span className="eyebrow">Organization Scope & Engineering</span>
               <h2 style={{ fontSize: "2rem", color: "var(--secondary)", margin: "10px 0" }}>
-                Need a similar system built for your business?
+                Need a resilient, zero-database system built for your business?
               </h2>
               <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 24px", fontSize: "1.02rem" }}>
-                Whether you need a full-stack web application, a database-backed ERP, or an AI automation workflow,
-                let&apos;s evaluate your requirements together.
+                Whether you need a full-stack web application, a loan ERP, or a wholesale e-commerce platform,
+                leverage our zero-database architecture starting from <strong>₹2,999 ($49)</strong>.
               </p>
               <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/contact" className="btn btn-primary" style={{ padding: "12px 28px" }}>
-                  GET A QUOTE
+                <Link href="/#estimator" className="btn btn-primary" style={{ padding: "12px 28px" }}>
+                  CALCULATE PROJECT COST
+                </Link>
+                <Link href="/contact" className="btn btn-outline" style={{ padding: "12px 28px" }}>
+                  REQUEST FORMAL PROPOSAL
                 </Link>
                 <a
-                  href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20portfolio%20and%20want%20to%20consult%20about%20a%20new%20system."
+                  href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20a%20project."
                   className="btn btn-whatsapp"
                   target="_blank"
                   rel="noreferrer"
@@ -487,20 +493,24 @@ export default function PortfolioPage() {
       <footer className="site-footer">
         <div className="container footer-wrap">
           <div className="footer-brand">
-            <Link href="/" className="brand" aria-label="Amit Jangid • NarnaulOnline">
+            <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
               <Image
                 src="/logo.png"
-                alt="Amit Jangid • NarnaulOnline"
+                alt="NarnaulOnline Logo"
                 width={200}
                 height={52}
                 className="brand-logo"
               />
             </Link>
+            <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "8px", maxWidth: "300px" }}>
+              NarnaulOnline • Full-Stage Software Development Organization. Led by Amit Jangid, Founder & Principal Architect.
+            </p>
           </div>
 
           <nav className="footer-nav">
             <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
+            <Link href="/about">Organization</Link>
+            <Link href="/#estimator">Cost Estimator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
           </nav>
@@ -508,12 +518,12 @@ export default function PortfolioPage() {
           <div className="footer-contact">
             <a href="tel:+919416341097">+91 9416341097</a>
             <a href="mailto:onlinenarnaul@gmail.com">onlinenarnaul@gmail.com</a>
-            <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>Haryana, India</span>
+            <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>Headquarters: Narnaul, Haryana, India (123001)</span>
           </div>
         </div>
 
         <div className="container footer-bottom">
-          <p>© {new Date().getFullYear()} Amit Jangid • NarnaulOnline. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} NarnaulOnline. All rights reserved. Founded & Led by Amit Jangid.</p>
         </div>
       </footer>
     </>
