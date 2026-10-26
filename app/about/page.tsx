@@ -11,7 +11,7 @@ export const metadata = {
 const organizationPillars = [
   {
     title: "100% Zero-Database Architecture",
-    desc: "We engineer systems that store and process state with decoupled schemas, client ledgers, and serverless compute—slashing database server hosting bills to ₹0.",
+    desc: "We engineer systems that store and process state with decoupled schemas, client ledgers, and serverless compute—eliminating ongoing database server hosting fees entirely.",
     badge: "Architecture",
   },
   {
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <p style={{ maxWidth: "820px", color: "var(--muted)", margin: "16px 0 0", fontSize: "1.12rem", lineHeight: "1.65" }}>
               <strong>NarnaulOnline</strong> is a digital software engineering organization founded and led by <strong>Amit Jangid</strong>. 
               We deconstruct complex business operations and translate them into ultra-reliable, zero-database, serverless applications 
-              with transparent entry pricing from <strong>₹2,999 ($49)</strong>.
+              with tailored milestone scopes and transparent project proposals.
             </p>
           </div>
         </section>
@@ -211,12 +211,12 @@ export default function AboutPage() {
                   Ready to collaborate with NarnaulOnline?
                 </h2>
                 <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 16px", fontSize: "0.98rem" }}>
-                  Transparent entry pricing from <strong>₹2,999 / $49</strong>. Explore our interactive project cost estimator 
+                  Tailored milestone scopes and custom enterprise proposals. Explore our interactive project scope configurator 
                   or speak directly with Founder & Principal Solutions Architect Amit Jangid.
                 </p>
                 <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
                   <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 24px" }}>
-                    CALCULATE PROJECT COST
+                    CONFIGURE PROJECT SCOPE
                   </Link>
                   <Link href="/contact" className="btn btn-outline" style={{ padding: "10px 24px" }}>
                     GET A FORMAL PROPOSAL
@@ -257,7 +257,7 @@ export default function AboutPage() {
           <nav className="footer-nav">
             <Link href="/">Home</Link>
             <Link href="/about">Organization</Link>
-            <Link href="/#estimator">Cost Estimator</Link>
+            <Link href="/#estimator">Scope Configurator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
           </nav>

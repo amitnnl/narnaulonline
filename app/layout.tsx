@@ -40,7 +40,7 @@ export const metadata = {
   openGraph: {
     title: "NarnaulOnline | Full-Stage Digital Software Development Organization",
     description:
-      "Enterprise-grade web applications, business portals, and digital software development starting at ₹2,999 ($49). High performance, zero database overhead.",
+      "Enterprise-grade web applications, business portals, and digital software development with high performance, tailored milestone scopes, and zero database overhead.",
     url: "https://narnaulonline.com",
     siteName: "NarnaulOnline",
     images: [
@@ -59,7 +59,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "NarnaulOnline | Full-Stage Digital Software Development Organization",
     description:
-      "Custom business software, administrative portals, and modern web applications starting at ₹2,999 or $49.",
+      "Custom business software, administrative portals, and modern web applications with tailored milestone scopes and zero database overhead.",
   },
   alternates: {
     canonical: "https://narnaulonline.com",

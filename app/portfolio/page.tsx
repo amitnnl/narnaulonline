@@ -153,7 +153,7 @@ const allProjects: PortfolioProject[] = [
     problem:
       "Travel service providers require a versatile digital showcase that handles both pre-packaged tours and customized inquiry/booking workflows for group and event travel.",
     capabilities: [
-      "Curated tour package showcases with destination itineraries and pricing details",
+      "Curated tour package showcases with destination itineraries and booking workflows",
       "Hotel and accommodation booking workflow integration",
       "Specialized wedding and event-related travel service listings",
       "Lead capture and booking request management dashboard",
@@ -207,7 +207,7 @@ const allProjects: PortfolioProject[] = [
     status: "Project Proposal & Quotation",
     statusClass: "concept",
     overview:
-      "A web application development initiative and detailed project quotation (₹25,000) prepared for a community facility / dharamshala.",
+      "A web application development initiative and detailed project scope quotation prepared for a community facility / dharamshala.",
     problem:
       "Community facilities face challenges tracking room allocations, facility bookings, donor contributions, and maintenance logs across handwritten registers.",
     capabilities: [
@@ -466,11 +466,11 @@ export default function PortfolioPage() {
               </h2>
               <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 16px", fontSize: "0.98rem" }}>
                 Whether you need a full-stack web application, a loan ERP, or a wholesale e-commerce platform,
-                leverage our zero-database architecture starting from <strong>₹2,999 ($49)</strong>.
+                leverage our zero-database architecture with tailored milestone proposals.
               </p>
               <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
                 <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 24px" }}>
-                  CALCULATE PROJECT COST
+                  CONFIGURE PROJECT SCOPE
                 </Link>
                 <Link href="/contact" className="btn btn-outline" style={{ padding: "10px 24px" }}>
                   REQUEST FORMAL PROPOSAL
@@ -510,7 +510,7 @@ export default function PortfolioPage() {
           <nav className="footer-nav">
             <Link href="/">Home</Link>
             <Link href="/about">Organization</Link>
-            <Link href="/#estimator">Cost Estimator</Link>
+            <Link href="/#estimator">Scope Configurator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
           </nav>

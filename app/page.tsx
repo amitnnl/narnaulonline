@@ -483,7 +483,7 @@ const serviceOfferings = [
   {
     id: "01",
     title: "Zero-Database Business Web Applications",
-    desc: "Custom-built, lightning-fast web applications engineered with Next.js or React. Starting at ₹2,999 ($49) with zero database server costs.",
+    desc: "Custom-built, lightning-fast web applications engineered with Next.js or React, tailored to your specifications with zero database server costs.",
   },
   {
     id: "02",
@@ -516,8 +516,6 @@ interface ProjectPackage {
   id: string;
   title: string;
   tagline: string;
-  priceINR: number;
-  priceUSD: number;
   timelineDays: number;
   badge: string;
   description: string;
@@ -527,8 +525,6 @@ interface ProjectPackage {
 interface OptionalFeature {
   id: string;
   label: string;
-  priceINR: number;
-  priceUSD: number;
   daysAdded: number;
   badge: string;
 }
@@ -538,10 +534,8 @@ const projectPackages: ProjectPackage[] = [
     id: "starter",
     title: "Starter Business Website",
     tagline: "DESIGN.md compliant responsive business presence",
-    priceINR: 2999,
-    priceUSD: 49,
     timelineDays: 5,
-    badge: "Official Entry — ₹2,999 / $49",
+    badge: "Essential Setup",
     description: "Fast, responsive business web presence with contact forms, SEO markup, and WhatsApp routing.",
     includedDeliverables: [
       "Custom responsive design (DESIGN.md compliant)",
@@ -555,8 +549,6 @@ const projectPackages: ProjectPackage[] = [
     id: "webapp",
     title: "Full-Stack Web App (SPA / SSR)",
     tagline: "Dynamic, reactive single-page or hybrid application",
-    priceINR: 9999,
-    priceUSD: 149,
     timelineDays: 14,
     badge: "High Growth",
     description: "Component-driven web app with dynamic client state, interactive screens, and lightning-fast edge performance.",
@@ -572,8 +564,6 @@ const projectPackages: ProjectPackage[] = [
     id: "dashboard",
     title: "Custom Admin Dashboard & Portal",
     tagline: "Role-based administrative control & records",
-    priceINR: 14999,
-    priceUSD: 199,
     timelineDays: 20,
     badge: "Operations Ready",
     description: "Administrative command center with role-based permissions, data filtering, and exportable business reports.",
@@ -589,8 +579,6 @@ const projectPackages: ProjectPackage[] = [
     id: "ecommerce",
     title: "E-Commerce & Wholesale Catalog",
     tagline: "Multi-tier pricing, RFQ quotes & order flow",
-    priceINR: 19999,
-    priceUSD: 279,
     timelineDays: 25,
     badge: "Commercial Grade",
     description: "High-speed product catalog with wholesale B2B pricing tiers, RFQ order builder, and WhatsApp direct checkout.",
@@ -606,8 +594,6 @@ const projectPackages: ProjectPackage[] = [
     id: "enterprise",
     title: "Financial Loan & Ledger ERP",
     tagline: "Deterministic amortization & double-entry tracking",
-    priceINR: 29999,
-    priceUSD: 399,
     timelineDays: 30,
     badge: "Enterprise Suite",
     description: "Complete financial operations platform with zero-drift loan EMI algorithms, borrower KYC, and transaction ledgers.",
@@ -625,40 +611,30 @@ const optionalAddons: OptionalFeature[] = [
   {
     id: "rbac",
     label: "Advanced Multi-Tier RBAC (4+ Roles)",
-    priceINR: 2500,
-    priceUSD: 35,
     daysAdded: 3,
     badge: "Security",
   },
   {
     id: "invoicing",
     label: "Dynamic Invoicing & GST Math Engine",
-    priceINR: 3000,
-    priceUSD: 40,
     daysAdded: 4,
     badge: "Accounting",
   },
   {
     id: "multichannel",
     label: "WhatsApp Business API & Webhook Dispatch",
-    priceINR: 2000,
-    priceUSD: 28,
     daysAdded: 2,
     badge: "Messaging",
   },
   {
     id: "customdomain",
     label: "Custom Domain, SSL & Edge CDN Setup",
-    priceINR: 1500,
-    priceUSD: 20,
     daysAdded: 1,
     badge: "DevOps",
   },
   {
     id: "pwa",
     label: "Progressive Web App (PWA) Offline Support",
-    priceINR: 3500,
-    priceUSD: 45,
     daysAdded: 4,
     badge: "Mobile Ready",
   },
@@ -671,12 +647,6 @@ export default function HomePage() {
   const [timelineMode, setTimelineMode] = useState<"standard" | "express" | "flexible">("standard");
 
   const currentPackage = projectPackages.find((p) => p.id === selectedPackageId) || projectPackages[0];
-  const addonCostINR = selectedAddons.reduce((sum, id) => sum + (optionalAddons.find((a) => a.id === id)?.priceINR || 0), 0);
-  const addonCostUSD = selectedAddons.reduce((sum, id) => sum + (optionalAddons.find((a) => a.id === id)?.priceUSD || 0), 0);
-  const timelineModifierINR = timelineMode === "express" ? 2500 : timelineMode === "flexible" ? -1000 : 0;
-  const timelineModifierUSD = timelineMode === "express" ? 35 : timelineMode === "flexible" ? -15 : 0;
-  const calculatedTotalINR = Math.max(2999, currentPackage.priceINR + addonCostINR + timelineModifierINR);
-  const calculatedTotalUSD = Math.max(49, currentPackage.priceUSD + addonCostUSD + timelineModifierUSD);
   const calculatedDays = Math.max(3, currentPackage.timelineDays + selectedAddons.reduce((sum, id) => sum + (optionalAddons.find((a) => a.id === id)?.daysAdded || 0), 0) + (timelineMode === "express" ? -3 : timelineMode === "flexible" ? 5 : 0));
 
   const toggleAddon = (id: string) => {
@@ -722,12 +692,12 @@ export default function HomePage() {
               <p>
                 <strong>NarnaulOnline</strong> is a full-stage digital software development organization delivering
                 responsive web applications, custom administrative ERPs, wholesale e-commerce platforms, and high-performance
-                business software. Engineered with modern decoupled, serverless architectures starting at <strong>₹2,999 ($49)</strong> — with zero database server costs or complex infrastructure dependencies.
+                business software. Engineered with modern decoupled, serverless architectures, tailored milestone scopes, and zero database server costs.
               </p>
 
               <div className="hero-actions">
                 <a href="#estimator" className="btn btn-primary">
-                  ⚡ CALCULATE PROJECT ESTIMATE
+                  ⚡ CONFIGURE SYSTEM SCOPE
                 </a>
                 <a href="#stacks" className="btn btn-secondary">
                   VIEW ARCHITECTURAL STACKS
@@ -794,7 +764,7 @@ export default function HomePage() {
                   <div className="focus-item">
                     <span className="focus-item-icon">🚀</span>
                     <strong>Rapid Sprints</strong>
-                    <small>From ₹2,999 / $49, agile milestones</small>
+                    <small>Milestone delivery & agile sprints</small>
                   </div>
 
                   <div className="focus-item">
@@ -819,9 +789,9 @@ export default function HomePage() {
                   </div>
                   <div>
                     <span style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--primary)", display: "block", fontWeight: 700 }}>
-                      Starting At
+                      Engagement
                     </span>
-                    <strong>₹2,999 / $49</strong>
+                    <strong>Custom Scope</strong>
                   </div>
                 </div>
               </div>
@@ -1302,15 +1272,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Interactive Scope & Budget Estimator (Zero-DB Architecture) */}
+        {/* Interactive System Scope & Delivery Configurator (Zero-DB Architecture) */}
         <section id="estimator" className="services" style={{ background: "var(--surface)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
           <div className="container">
             <div className="section-head reveal">
-              <span className="eyebrow">Zero-Database Scope & Cost Estimator</span>
-              <h2>Configure Your Project Architecture & Instant Budget</h2>
+              <span className="eyebrow">Zero-Database Scope & Delivery Configurator</span>
+              <h2>Configure Your System Specifications & Delivery Milestones</h2>
               <p>
-                Transparent, deterministic pricing starting from <strong>₹2,999 ($49)</strong> per DESIGN.md. 
-                Our zero-database serverless architecture eliminates monthly database server charges, connection limits, and cold-start latency.
+                Select your core application architecture, functional modules, and delivery timeline preferences to generate a formal scope specification and receive a tailored proposal directly from our engineering team.
               </p>
             </div>
 
@@ -1322,7 +1291,7 @@ export default function HomePage() {
                   <div style={{ marginBottom: "16px" }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px", flexWrap: "wrap", gap: "8px" }}>
                       <span style={{ fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)" }}>
-                        Step 1: Choose Core Application Package
+                        Step 1: Choose Core Application Architecture
                       </span>
                       <span className="zero-db-tag">Zero Database Server Needed</span>
                     </div>
@@ -1352,11 +1321,11 @@ export default function HomePage() {
                                 </strong>
                               </div>
                               <div style={{ textAlign: "right", whiteSpace: "nowrap" }}>
-                                <div style={{ fontSize: "1.12rem", fontWeight: "800", color: "var(--primary)" }}>
-                                  ₹{pkg.priceINR.toLocaleString("en-IN")}
+                                <div style={{ fontSize: "0.92rem", fontWeight: "700", color: "var(--primary)" }}>
+                                  ~{pkg.timelineDays} Days Sprint
                                 </div>
-                                <div style={{ fontSize: "0.78rem", color: "var(--muted)" }}>
-                                  approx ${pkg.priceUSD} USD
+                                <div style={{ fontSize: "0.75rem", color: "var(--muted)" }}>
+                                  Custom Scope Quote
                                 </div>
                               </div>
                             </div>
@@ -1389,7 +1358,7 @@ export default function HomePage() {
                   {/* Step 2: Optional Architectural Add-ons */}
                   <div style={{ marginBottom: "16px" }}>
                     <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "10px" }}>
-                      Step 2: Add-on Capabilities & Modules
+                      Step 2: Add-on Capabilities & Functional Modules
                     </span>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "8px" }}>
                       {optionalAddons.map((addon) => {
@@ -1430,12 +1399,12 @@ export default function HomePage() {
                                   {addon.label}
                                 </strong>
                                 <span style={{ fontSize: "0.74rem", color: "var(--muted)" }}>
-                                  +{addon.daysAdded} {addon.daysAdded === 1 ? "day" : "days"} • {addon.badge}
+                                  +{addon.daysAdded} {addon.daysAdded === 1 ? "day" : "days"} sprint • {addon.badge}
                                 </span>
                               </div>
                             </div>
-                            <span style={{ fontSize: "0.86rem", fontWeight: "700", color: isChecked ? "var(--primary)" : "var(--muted)", whiteSpace: "nowrap" }}>
-                              +₹{addon.priceINR}
+                            <span style={{ fontSize: "0.76rem", fontWeight: "700", padding: "2px 8px", borderRadius: "10px", background: isChecked ? "rgba(240, 77, 12, 0.12)" : "var(--surface)", color: isChecked ? "var(--primary)" : "var(--muted)", whiteSpace: "nowrap" }}>
+                              +{addon.daysAdded}d
                             </span>
                           </div>
                         );
@@ -1456,7 +1425,7 @@ export default function HomePage() {
                         style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
                         <strong style={{ display: "block", fontSize: "0.92rem" }}>Standard Sprint</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Calculated pace • Base fee</span>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Calculated agile pace</span>
                       </button>
 
                       <button
@@ -1466,7 +1435,7 @@ export default function HomePage() {
                         style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
                         <strong style={{ display: "block", fontSize: "0.92rem", color: "var(--primary)" }}>⚡ Express Rush</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>3-4 days faster • +₹2,500 ($35)</span>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>3-4 days faster • Priority queue</span>
                       </button>
 
                       <button
@@ -1476,7 +1445,7 @@ export default function HomePage() {
                         style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
                         <strong style={{ display: "block", fontSize: "0.92rem" }}>🌱 Flexible Window</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Relaxed pace • Save ₹1,000 ($15)</span>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Extended milestone buffer</span>
                       </button>
                     </div>
                   </div>
@@ -1486,7 +1455,7 @@ export default function HomePage() {
                 <div>
                   <div className="estimator-summary-panel">
                     <div style={{ display: "inline-block", padding: "3px 8px", borderRadius: "10px", background: "rgba(240, 77, 12, 0.12)", color: "var(--primary)", fontSize: "0.76rem", fontWeight: "700", marginBottom: "8px" }}>
-                      ESTIMATED QUOTATION
+                      SCOPE SPECIFICATION
                     </div>
 
                     <h3 style={{ fontSize: "1.2rem", color: "var(--secondary)", margin: "0 0 4px 0" }}>
@@ -1497,14 +1466,14 @@ export default function HomePage() {
                     </p>
 
                     <div style={{ padding: "12px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", marginBottom: "12px" }}>
-                      <div className="estimator-price-tag">
-                        ₹{calculatedTotalINR.toLocaleString("en-IN")}
+                      <div style={{ fontSize: "1.35rem", fontWeight: "800", color: "var(--secondary)", letterSpacing: "-0.02em" }}>
+                        Custom Scope Quote
                       </div>
-                      <div style={{ fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: "600", marginTop: "2px" }}>
-                        approx ${calculatedTotalUSD} USD
+                      <div style={{ fontSize: "0.86rem", color: "var(--text-muted)", fontWeight: "600", marginTop: "2px" }}>
+                        Tailored to your organizational specifications
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "6px", fontSize: "0.82rem", color: "var(--primary)", fontWeight: "700" }}>
-                        <span>⏱️ Estimated Sprint:</span>
+                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "8px", fontSize: "0.85rem", color: "var(--primary)", fontWeight: "700" }}>
+                        <span>⏱️ Estimated Delivery:</span>
                         <span>~{calculatedDays} Business Days</span>
                       </div>
                     </div>
@@ -1512,8 +1481,8 @@ export default function HomePage() {
                     {/* Breakdown */}
                     <div style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "14px" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                        <span>Base Package:</span>
-                        <strong style={{ color: "var(--secondary)" }}>₹{currentPackage.priceINR.toLocaleString("en-IN")}</strong>
+                        <span>Core Architecture:</span>
+                        <strong style={{ color: "var(--secondary)" }}>{currentPackage.title}</strong>
                       </div>
 
                       {selectedAddons.length > 0 && (
@@ -1525,7 +1494,7 @@ export default function HomePage() {
                             return (
                               <div key={id} style={{ display: "flex", justifyContent: "space-between", paddingLeft: "8px", fontSize: "0.78rem", marginBottom: "2px" }}>
                                 <span>• {addon.label}</span>
-                                <span>+₹{addon.priceINR}</span>
+                                <span style={{ color: "var(--primary)", fontWeight: "600" }}>+{addon.daysAdded}d</span>
                               </div>
                             );
                           })}
@@ -1534,9 +1503,9 @@ export default function HomePage() {
 
                       {timelineMode !== "standard" && (
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                          <span>Timeline ({timelineMode}):</span>
-                          <strong style={{ color: timelineMode === "express" ? "var(--primary)" : "#10b981" }}>
-                            {timelineMode === "express" ? "+₹2,500" : "-₹1,000"}
+                          <span>Timeline Mode:</span>
+                          <strong style={{ color: timelineMode === "express" ? "var(--primary)" : "#10b981", textTransform: "capitalize" }}>
+                            {timelineMode === "express" ? "Priority Sprint" : "Flexible Window"}
                           </strong>
                         </div>
                       )}
@@ -1553,14 +1522,14 @@ export default function HomePage() {
                     <div style={{ display: "grid", gap: "8px" }}>
                       <a
                         href={`https://wa.me/919416341097?text=${encodeURIComponent(
-                          `Hello NarnaulOnline Team,\n\nI configured an estimate on your website:\n• Package: ${currentPackage.title} (Base ₹${currentPackage.priceINR.toLocaleString("en-IN")} / $${currentPackage.priceUSD})\n• Add-ons: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "None"}\n• Timeline Mode: ${timelineMode.toUpperCase()}\n• Estimated Budget: ₹${calculatedTotalINR.toLocaleString("en-IN")} / $${calculatedTotalUSD}\n• Estimated Timeline: ~${calculatedDays} Days\n\nI would like to discuss building this project with your organization!`
+                          `Hello NarnaulOnline Team,\n\nI configured a project scope on your website:\n• Core Architecture: ${currentPackage.title}\n• Modules: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "Standard"}\n• Timeline Mode: ${timelineMode.toUpperCase()}\n• Estimated Sprint: ~${calculatedDays} Days\n\nI would like to request a custom proposal and quotation for this project!`
                         )}`}
                         target="_blank"
                         rel="noreferrer"
                         className="btn btn-whatsapp"
                         style={{ width: "100%", justifyContent: "center", padding: "10px 14px", fontSize: "0.85rem" }}
                       >
-                        💬 Start on WhatsApp (+91 9416341097)
+                        💬 Submit Scope on WhatsApp (+91 9416341097)
                       </a>
 
                       <a
@@ -1728,7 +1697,7 @@ export default function HomePage() {
             <Link href="/about">Organization</Link>
             <Link href="#solutions">Solutions</Link>
             <Link href="#skills">Architecture</Link>
-            <Link href="#estimator">Cost Estimator</Link>
+            <Link href="#estimator">Scope Configurator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="#contact">Contact</Link>
           </nav>

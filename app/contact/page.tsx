@@ -132,16 +132,16 @@ export default function ContactPage() {
               }}
             >
               <div>
-                <span className="eyebrow">Instant Self-Service Calculation</span>
+                <span className="eyebrow">Instant Architecture Configuration</span>
                 <h3 style={{ fontSize: "1.35rem", color: "var(--secondary)", margin: "3px 0 4px" }}>
-                  Want an upfront scope & budget estimate?
+                  Want a structured system scope analysis?
                 </h3>
                 <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", margin: 0, maxWidth: "600px" }}>
-                  Use our interactive Zero-DB Project Cost Estimator to select application specifications, calculate timeline, and generate an upfront quote starting at ₹2,999 / $49.
+                  Use our interactive Zero-DB Project Scope Configurator to select application specifications, calculate timeline, and receive a formal project quotation.
                 </p>
               </div>
               <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 20px" }}>
-                LAUNCH ESTIMATOR →
+                LAUNCH SCOPE CONFIGURATOR →
               </Link>
             </div>
           </div>
@@ -309,7 +309,7 @@ export default function ContactPage() {
           <nav className="footer-nav">
             <Link href="/">Home</Link>
             <Link href="/about">Organization</Link>
-            <Link href="/#estimator">Cost Estimator</Link>
+            <Link href="/#estimator">Scope Configurator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
           </nav>

@@ -15,7 +15,7 @@ const navLinks: NavItem[] = [
   { label: "Organization", href: "/about" },
   { label: "Solutions", href: "/#services" },
   { label: "Architecture", href: "/#stacks" },
-  { label: "Cost Estimator", href: "/#estimator" },
+  { label: "Scope Configurator", href: "/#estimator" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
