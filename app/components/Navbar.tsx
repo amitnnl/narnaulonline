@@ -8,16 +8,18 @@ import { usePathname } from "next/navigation";
 interface NavItem {
   label: string;
   href: string;
+  icon?: string;
+  badge?: string;
 }
 
 const navLinks: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Organization", href: "/about" },
-  { label: "Solutions", href: "/#services" },
-  { label: "Architecture", href: "/#stacks" },
-  { label: "Scope Configurator", href: "/#estimator" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/", icon: "🏠" },
+  { label: "Organization", href: "/about", icon: "🏢" },
+  { label: "Solutions", href: "/#services", icon: "⚡" },
+  { label: "Architecture", href: "/#stacks", icon: "🏗️" },
+  { label: "Scope Configurator", href: "/#estimator", icon: "🎛️", badge: "Live" },
+  { label: "Portfolio", href: "/portfolio", icon: "💼" },
+  { label: "Contact", href: "/contact", icon: "📞" },
 ];
 
 export default function Navbar() {
@@ -53,18 +55,46 @@ export default function Navbar() {
 
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+      {/* Top Live Engineering Desk Ticker Bar */}
+      <div className="nav-topbar">
+        <div className="container nav-topbar-inner">
+          <div className="nav-topbar-left">
+            <span className="live-dot-pulse"></span>
+            <span className="nav-topbar-tag">LIVE ENGINEERING DESK</span>
+            <span className="nav-topbar-sep">•</span>
+            <span className="nav-topbar-text">
+              Direct Architecture with Founder & Principal Solutions Architect <strong>Amit Jangid</strong>
+            </span>
+            <span className="nav-topbar-sep">•</span>
+            <span className="nav-topbar-loc">📍 Narnaul, Haryana (Delhi NCR)</span>
+          </div>
+
+          <div className="nav-topbar-right">
+            <a href="tel:+919416341097" className="nav-topbar-link">
+              📞 +91 9416341097
+            </a>
+            <span className="nav-topbar-sep">|</span>
+            <span className="nav-topbar-badge">Zero-DB Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Glassmorphic Navbar */}
       <div className="container nav-wrap">
-        {/* Brand Logo */}
-        <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
-          <Image
-            src="/logo.png"
-            alt="NarnaulOnline • Full-Stage Software Development Organization"
-            width={230}
-            height={56}
-            className="brand-logo"
-            priority
-          />
-        </Link>
+        {/* Brand Logo & Edition Badge */}
+        <div className="nav-brand-group">
+          <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
+            <Image
+              src="/logo.png"
+              alt="NarnaulOnline • Full-Stage Software Development Organization"
+              width={220}
+              height={52}
+              className="brand-logo"
+              priority
+            />
+          </Link>
+          <span className="nav-edition-badge">Zero-DB</span>
+        </div>
 
         {/* Desktop Navigation Links */}
         <nav className="main-nav desktop-nav" aria-label="Primary Navigation">
@@ -72,9 +102,10 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className={isActive(link.href) ? "active" : ""}
+              className={`nav-link-item ${isActive(link.href) ? "active" : ""}`}
             >
-              {link.label}
+              <span>{link.label}</span>
+              {link.badge && <span className="nav-item-badge">{link.badge}</span>}
             </Link>
           ))}
         </nav>
@@ -82,17 +113,18 @@ export default function Navbar() {
         {/* Desktop Quick Actions */}
         <div className="nav-actions">
           <a
-            href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project."
+            href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20saw%20your%20software%20organization%20website%20and%20want%20to%20discuss%20a%20development%20project."
             className="nav-whatsapp-btn"
             target="_blank"
             rel="noreferrer"
-            aria-label="Chat on WhatsApp with Amit Jangid"
+            aria-label="Chat directly on WhatsApp with Principal Architect Amit Jangid"
           >
-            <span>💬</span> WhatsApp
+            <span className="whatsapp-live-dot"></span>
+            <span>💬 Desk</span>
           </a>
 
-          <Link href="/contact" className="btn btn-primary nav-cta-btn">
-            GET A QUOTE
+          <Link href="/#estimator" className="btn btn-primary nav-cta-btn">
+            SCOPE CONFIGURATOR →
           </Link>
         </div>
 
@@ -114,7 +146,15 @@ export default function Navbar() {
         <div className="mobile-drawer" onClick={() => setMenuOpen(false)}>
           <div className="mobile-drawer-content" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-drawer-header">
-              <span className="mobile-drawer-eyebrow">NAVIGATION</span>
+              <div className="mobile-drawer-brand">
+                <Image
+                  src="/logo.png"
+                  alt="NarnaulOnline Logo"
+                  width={170}
+                  height={42}
+                  className="mobile-brand-logo"
+                />
+              </div>
               <button
                 className="mobile-close-btn"
                 onClick={() => setMenuOpen(false)}
@@ -124,6 +164,19 @@ export default function Navbar() {
               </button>
             </div>
 
+            {/* Mobile Operational Status Card */}
+            <div className="mobile-status-card">
+              <div className="mobile-status-header">
+                <span className="live-dot-pulse"></span>
+                <strong>Live Engineering Desk</strong>
+              </div>
+              <p className="mobile-status-text">
+                Direct Architecture with <strong>Amit Jangid</strong>. In-Person Narnaul/Delhi NCR & Global Remote.
+              </p>
+            </div>
+
+            {/* Mobile Nav Links */}
+            <div className="mobile-nav-group-label">SYSTEM NAVIGATION</div>
             <nav className="mobile-nav-list">
               {navLinks.map((link) => (
                 <Link
@@ -132,26 +185,41 @@ export default function Navbar() {
                   className={`mobile-nav-link ${isActive(link.href) ? "active" : ""}`}
                   onClick={() => setMenuOpen(false)}
                 >
-                  <span>{link.label}</span>
+                  <span className="mobile-nav-label-wrap">
+                    <span className="mobile-link-icon">{link.icon}</span>
+                    <span className="mobile-link-text">{link.label}</span>
+                    {link.badge && <span className="nav-item-badge">{link.badge}</span>}
+                  </span>
                   <span className="mobile-arrow">→</span>
                 </Link>
               ))}
             </nav>
 
+            {/* Mobile Contact Quick Cards */}
+            <div className="mobile-drawer-contact-cards">
+              <a href="tel:+919416341097" className="mobile-contact-pill">
+                <span>📞 Call Amit Jangid: +91 9416341097</span>
+              </a>
+              <a href="mailto:onlinenarnaul@gmail.com" className="mobile-contact-pill">
+                <span>✉️ onlinenarnaul@gmail.com</span>
+              </a>
+            </div>
+
+            {/* Mobile Drawer Actions */}
             <div className="mobile-drawer-actions">
               <Link
-                href="/contact"
+                href="/#estimator"
                 className="btn btn-primary"
-                style={{ width: "100%", justifyContent: "center", padding: "12px" }}
+                style={{ width: "100%", justifyContent: "center", padding: "14px" }}
                 onClick={() => setMenuOpen(false)}
               >
-                GET A QUOTE
+                ⚡ SCOPE CONFIGURATOR
               </Link>
 
               <a
-                href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project."
+                href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20saw%20your%20software%20organization%20website%20and%20want%20to%20discuss%20a%20development%20project."
                 className="btn btn-whatsapp"
-                style={{ width: "100%", justifyContent: "center", padding: "12px" }}
+                style={{ width: "100%", justifyContent: "center", padding: "14px" }}
                 target="_blank"
                 rel="noreferrer"
               >

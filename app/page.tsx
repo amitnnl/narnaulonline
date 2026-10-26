@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 interface FeaturedProject {
   id: string;
@@ -1675,45 +1676,8 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="site-footer">
-        <div className="container footer-wrap">
-          <div className="footer-brand">
-            <Link href="#top" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
-              <Image
-                src="/logo.png"
-                alt="NarnaulOnline Logo"
-                width={200}
-                height={52}
-                className="brand-logo"
-              />
-            </Link>
-            <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "8px", maxWidth: "320px" }}>
-              NarnaulOnline • Full-Stage Software Development Organization. Led by Amit Jangid, Founder & Principal Solutions Architect.
-            </p>
-          </div>
-
-          <nav className="footer-nav">
-            <Link href="#top">Home</Link>
-            <Link href="/about">Organization</Link>
-            <Link href="#solutions">Solutions</Link>
-            <Link href="#stacks">Architecture</Link>
-            <Link href="#estimator">Scope Configurator</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="#contact">Contact</Link>
-          </nav>
-
-          <div className="footer-contact">
-            <a href="tel:+919416341097">+91 9416341097</a>
-            <a href="mailto:onlinenarnaul@gmail.com">onlinenarnaul@gmail.com</a>
-            <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>Headquarters: Narnaul, Haryana, India (123001)</span>
-          </div>
-        </div>
-
-        <div className="container footer-bottom">
-          <p>© {new Date().getFullYear()} NarnaulOnline. All rights reserved. Founded & Led by Amit Jangid.</p>
-        </div>
-      </footer>
+      {/* Enterprise Multi-Column Footer */}
+      <Footer />
     </>
   );
 }
