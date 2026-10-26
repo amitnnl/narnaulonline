@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main 4-Column Footer Navigation Grid */}
+      {/* Main 5-Column Footer Navigation Grid */}
       <div className="container footer-main-grid">
         {/* Column 1: Organization Identity & Headquarters */}
         <div className="footer-col footer-col-brand">
@@ -60,13 +60,13 @@ export default function Footer() {
           <div className="footer-location-chip">
             <span className="chip-icon">📍</span>
             <div>
-              <strong>Headquarters:</strong> Narnaul, Haryana, India (123001)
+              <strong>Headquarters:</strong> Station Road, Narnaul, Haryana (123001)
               <span className="chip-sub">In-Person Delhi NCR & Global Remote Delivery</span>
             </div>
           </div>
         </div>
 
-        {/* Column 2: Engineering & Solutions */}
+        {/* Column 2: Engineering Solutions & Services */}
         <div className="footer-col">
           <h4 className="footer-col-title">Engineering Solutions</h4>
           <ul className="footer-links-list">
@@ -94,7 +94,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Architecture & Organization */}
+        {/* Column 3: Architecture & System Stacks */}
         <div className="footer-col">
           <h4 className="footer-col-title">Architecture & System</h4>
           <ul className="footer-links-list">
@@ -105,7 +105,10 @@ export default function Footer() {
               <Link href="/#estimator">Zero-DB Scope Configurator</Link>
             </li>
             <li>
-              <Link href="/portfolio">Portfolio & Client Deliverables</Link>
+              <Link href="/services">Transparent 4-Phase Delivery</Link>
+            </li>
+            <li>
+              <Link href="/services">₹0 Monthly Database Architecture</Link>
             </li>
             <li>
               <Link href="/about">Organization Overview & Vision</Link>
@@ -114,15 +117,40 @@ export default function Footer() {
               <Link href="/about#leadership">Leadership: Amit Jangid</Link>
             </li>
             <li>
-              <Link href="/contact#map">Physical Office & Regional Presence</Link>
-            </li>
-            <li>
-              <Link href="/contact#contact-form">Project Intake & RFQ Form</Link>
+              <Link href="/contact#map">Physical Office & Presence</Link>
             </li>
           </ul>
         </div>
 
-        {/* Column 4: Direct Engineering Desk & Contact */}
+        {/* Column 4: Client Portfolio & Case Studies */}
+        <div className="footer-col">
+          <h4 className="footer-col-title">Verified Portfolio</h4>
+          <ul className="footer-links-list">
+            <li>
+              <Link href="/portfolio">12+ Client Case Studies</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">Jai Bharat Cables (Wholesale B2B)</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">LoanFlow Microfinance System</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">SmartCity Media OS (AI Newsroom)</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">Vardan Eye Hospital Queue System</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">Haryana Machinery Mart Parts</Link>
+            </li>
+            <li>
+              <Link href="/contact#contact-form">Request Custom Demo Commits</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 5: Direct Engineering Desk & Contact */}
         <div className="footer-col">
           <h4 className="footer-col-title">Direct Engineering Desk</h4>
           <p className="footer-desk-desc">
@@ -162,6 +190,24 @@ export default function Footer() {
 
           <div className="footer-sla-badge">
             <span>⚡ Typical Response SLA: Under 2 Hours</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Directory Quick-Pill Band */}
+      <div className="container">
+        <div className="footer-directory-band">
+          <span className="directory-label">Zero-DB Architecture Directory:</span>
+          <div className="directory-tags">
+            <Link href="/services" className="directory-tag">Autonomous AI Pipelines</Link>
+            <Link href="/services" className="directory-tag">Zero-DB Web Applications</Link>
+            <Link href="/services" className="directory-tag">Microfinance ERP</Link>
+            <Link href="/services" className="directory-tag">B2B Wholesale Portal</Link>
+            <Link href="/#stacks" className="directory-tag">Next.js 16 + React 19</Link>
+            <Link href="/#estimator" className="directory-tag">Scope Configurator</Link>
+            <Link href="/portfolio" className="directory-tag">12+ Verified Deliverables</Link>
+            <Link href="/about#leadership" className="directory-tag">Architect: Amit Jangid</Link>
+            <Link href="/contact" className="directory-tag">Station Road Office</Link>
           </div>
         </div>
       </div>
