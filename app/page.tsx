@@ -1061,7 +1061,8 @@ export default function HomePage() {
         </section>
 
         {/* Technical Competencies & Architectural Stacks (portfolio.md Section 5) */}
-        <section id="skills" className="services competencies-section">
+        <div id="skills" style={{ scrollMarginTop: "80px" }} />
+        <section id="stacks" className="services competencies-section" style={{ scrollMarginTop: "80px" }}>
           <div className="container">
             <div className="section-heading reveal">
               <span className="eyebrow">Technical Competencies</span>
@@ -1696,7 +1697,7 @@ export default function HomePage() {
             <Link href="#top">Home</Link>
             <Link href="/about">Organization</Link>
             <Link href="#solutions">Solutions</Link>
-            <Link href="#skills">Architecture</Link>
+            <Link href="#stacks">Architecture</Link>
             <Link href="#estimator">Scope Configurator</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="#contact">Contact</Link>
