@@ -12,14 +12,23 @@ interface NavItem {
   badge?: string;
 }
 
-const navLinks: NavItem[] = [
+const desktopNavLinks: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Solutions", href: "/#services" },
+  { label: "Architecture", href: "/#stacks" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Contact", href: "/contact" },
+];
+
+const mobileNavLinks: NavItem[] = [
   { label: "Home", href: "/", icon: "🏠" },
-  { label: "Organization", href: "/about", icon: "🏢" },
-  { label: "Solutions", href: "/#services", icon: "⚡" },
-  { label: "Architecture", href: "/#stacks", icon: "🏗️" },
+  { label: "About Organization", href: "/about", icon: "🏢" },
+  { label: "Solutions & Services", href: "/#services", icon: "⚡" },
+  { label: "Technical Architecture", href: "/#stacks", icon: "🏗️" },
   { label: "Scope Configurator", href: "/#estimator", icon: "🎛️", badge: "Live" },
-  { label: "Portfolio", href: "/portfolio", icon: "💼" },
-  { label: "Contact", href: "/contact", icon: "📞" },
+  { label: "Systems & Portfolio", href: "/portfolio", icon: "💼" },
+  { label: "Direct Engineering Contact", href: "/contact", icon: "📞" },
 ];
 
 export default function Navbar() {
@@ -63,8 +72,8 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="NarnaulOnline • Full-Stage Software Development Organization"
-              width={210}
-              height={48}
+              width={160}
+              height={36}
               className="brand-logo"
               priority
             />
@@ -76,9 +85,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links (Compact & Streamlined) */}
         <nav className="main-nav desktop-nav" aria-label="Primary Navigation">
-          {navLinks.map((link) => (
+          {desktopNavLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
@@ -104,7 +113,7 @@ export default function Navbar() {
           </a>
 
           <Link href="/#estimator" className="btn btn-primary nav-cta-btn">
-            SCOPE CONFIGURATOR →
+            Scope Config →
           </Link>
         </div>
 
@@ -130,8 +139,8 @@ export default function Navbar() {
                 <Image
                   src="/logo.png"
                   alt="NarnaulOnline Logo"
-                  width={170}
-                  height={42}
+                  width={160}
+                  height={36}
                   className="mobile-brand-logo"
                 />
               </div>
@@ -158,7 +167,7 @@ export default function Navbar() {
             {/* Mobile Nav Links */}
             <div className="mobile-nav-group-label">SYSTEM NAVIGATION</div>
             <nav className="mobile-nav-list">
-              {navLinks.map((link) => (
+              {mobileNavLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
