@@ -1319,15 +1319,15 @@ export default function HomePage() {
                 {/* Left Column: Scope & Feature Configurator */}
                 <div>
                   {/* Step 1: Base System Package */}
-                  <div style={{ marginBottom: "28px" }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px", flexWrap: "wrap", gap: "8px" }}>
+                  <div style={{ marginBottom: "16px" }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px", flexWrap: "wrap", gap: "8px" }}>
                       <span style={{ fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)" }}>
                         Step 1: Choose Core Application Package
                       </span>
                       <span className="zero-db-tag">Zero Database Server Needed</span>
                     </div>
 
-                    <div style={{ display: "grid", gap: "12px" }}>
+                    <div style={{ display: "grid", gap: "10px" }}>
                       {projectPackages.map((pkg) => {
                         const isSelected = pkg.id === selectedPackageId;
                         return (
@@ -1336,31 +1336,31 @@ export default function HomePage() {
                             onClick={() => setSelectedPackageId(pkg.id)}
                             className={`estimator-option-btn ${isSelected ? "active" : ""}`}
                             style={{
-                              padding: "18px 20px",
+                              padding: "14px 16px",
                               cursor: "pointer",
                               textAlign: "left",
                               transition: "all 0.25s ease",
                             }}
                           >
-                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", marginBottom: "8px", flexWrap: "wrap" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "10px", marginBottom: "6px", flexWrap: "wrap" }}>
                               <div>
                                 <span style={{ fontSize: "0.78rem", fontWeight: "700", padding: "3px 8px", borderRadius: "12px", background: isSelected ? "var(--primary)" : "var(--line)", color: isSelected ? "#fff" : "var(--muted)", marginRight: "8px" }}>
                                   {pkg.badge}
                                 </span>
-                                <strong style={{ fontSize: "1.08rem", color: isSelected ? "var(--primary)" : "var(--secondary)" }}>
+                                <strong style={{ fontSize: "1.04rem", color: isSelected ? "var(--primary)" : "var(--secondary)" }}>
                                   {pkg.title}
                                 </strong>
                               </div>
                               <div style={{ textAlign: "right", whiteSpace: "nowrap" }}>
-                                <div style={{ fontSize: "1.15rem", fontWeight: "800", color: "var(--primary)" }}>
+                                <div style={{ fontSize: "1.12rem", fontWeight: "800", color: "var(--primary)" }}>
                                   ₹{pkg.priceINR.toLocaleString("en-IN")}
                                 </div>
-                                <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+                                <div style={{ fontSize: "0.78rem", color: "var(--muted)" }}>
                                   approx ${pkg.priceUSD} USD
                                 </div>
                               </div>
                             </div>
-                            <p style={{ fontSize: "0.88rem", color: "var(--text-muted)", margin: "0 0 10px 0", lineHeight: "1.45" }}>
+                            <p style={{ fontSize: "0.86rem", color: "var(--text-muted)", margin: "0 0 8px 0", lineHeight: "1.4" }}>
                               {pkg.description}
                             </p>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -1368,8 +1368,8 @@ export default function HomePage() {
                                 <span
                                   key={idx}
                                   style={{
-                                    fontSize: "0.76rem",
-                                    padding: "3px 8px",
+                                    fontSize: "0.74rem",
+                                    padding: "2px 8px",
                                     borderRadius: "10px",
                                     background: isSelected ? "rgba(240, 77, 12, 0.08)" : "var(--surface)",
                                     border: `1px solid ${isSelected ? "rgba(240, 77, 12, 0.2)" : "var(--line)"}`,
@@ -1387,11 +1387,11 @@ export default function HomePage() {
                   </div>
 
                   {/* Step 2: Optional Architectural Add-ons */}
-                  <div style={{ marginBottom: "28px" }}>
-                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "14px" }}>
+                  <div style={{ marginBottom: "16px" }}>
+                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "10px" }}>
                       Step 2: Add-on Capabilities & Modules
                     </span>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "8px" }}>
                       {optionalAddons.map((addon) => {
                         const isChecked = selectedAddons.includes(addon.id);
                         return (
@@ -1400,41 +1400,41 @@ export default function HomePage() {
                             onClick={() => toggleAddon(addon.id)}
                             className={`estimator-feature-pill ${isChecked ? "active" : ""}`}
                             style={{
-                              padding: "12px 14px",
+                              padding: "10px 12px",
                               cursor: "pointer",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "space-between",
-                              gap: "10px",
+                              gap: "8px",
                               transition: "all 0.2s ease",
                             }}
                           >
-                            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                               <span style={{
-                                width: "20px",
-                                height: "20px",
-                                borderRadius: "6px",
+                                width: "18px",
+                                height: "18px",
+                                borderRadius: "5px",
                                 border: `2px solid ${isChecked ? "var(--primary)" : "var(--muted)"}`,
                                 background: isChecked ? "var(--primary)" : "transparent",
                                 display: "inline-flex",
                                 alignItems: "center",
                                 justifyContent: "center",
                                 color: "#fff",
-                                fontSize: "0.75rem",
+                                fontSize: "0.72rem",
                                 fontWeight: "bold"
                               }}>
                                 {isChecked ? "✓" : ""}
                               </span>
                               <div>
-                                <strong style={{ fontSize: "0.88rem", display: "block", color: isChecked ? "var(--primary)" : "var(--secondary)" }}>
+                                <strong style={{ fontSize: "0.86rem", display: "block", color: isChecked ? "var(--primary)" : "var(--secondary)" }}>
                                   {addon.label}
                                 </strong>
-                                <span style={{ fontSize: "0.76rem", color: "var(--muted)" }}>
-                                  +{addon.daysAdded} {addon.daysAdded === 1 ? "day" : "days"} delivery • {addon.badge}
+                                <span style={{ fontSize: "0.74rem", color: "var(--muted)" }}>
+                                  +{addon.daysAdded} {addon.daysAdded === 1 ? "day" : "days"} • {addon.badge}
                                 </span>
                               </div>
                             </div>
-                            <span style={{ fontSize: "0.88rem", fontWeight: "700", color: isChecked ? "var(--primary)" : "var(--muted)", whiteSpace: "nowrap" }}>
+                            <span style={{ fontSize: "0.86rem", fontWeight: "700", color: isChecked ? "var(--primary)" : "var(--muted)", whiteSpace: "nowrap" }}>
                               +₹{addon.priceINR}
                             </span>
                           </div>
@@ -1445,38 +1445,38 @@ export default function HomePage() {
 
                   {/* Step 3: Timeline & Sprint Preference */}
                   <div>
-                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "14px" }}>
+                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "10px" }}>
                       Step 3: Timeline & Delivery Speed
                     </span>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "10px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "8px" }}>
                       <button
                         type="button"
                         onClick={() => setTimelineMode("standard")}
                         className={`estimator-option-btn ${timelineMode === "standard" ? "active" : ""}`}
-                        style={{ padding: "14px", textAlign: "center", cursor: "pointer" }}
+                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
-                        <strong style={{ display: "block", fontSize: "0.95rem" }}>Standard Sprint</strong>
-                        <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>Calculated pace • Base fee</span>
+                        <strong style={{ display: "block", fontSize: "0.92rem" }}>Standard Sprint</strong>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Calculated pace • Base fee</span>
                       </button>
 
                       <button
                         type="button"
                         onClick={() => setTimelineMode("express")}
                         className={`estimator-option-btn ${timelineMode === "express" ? "active" : ""}`}
-                        style={{ padding: "14px", textAlign: "center", cursor: "pointer" }}
+                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
-                        <strong style={{ display: "block", fontSize: "0.95rem", color: "var(--primary)" }}>⚡ Express Rush</strong>
-                        <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>3-4 days faster • +₹2,500 ($35)</span>
+                        <strong style={{ display: "block", fontSize: "0.92rem", color: "var(--primary)" }}>⚡ Express Rush</strong>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>3-4 days faster • +₹2,500 ($35)</span>
                       </button>
 
                       <button
                         type="button"
                         onClick={() => setTimelineMode("flexible")}
                         className={`estimator-option-btn ${timelineMode === "flexible" ? "active" : ""}`}
-                        style={{ padding: "14px", textAlign: "center", cursor: "pointer" }}
+                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
                       >
-                        <strong style={{ display: "block", fontSize: "0.95rem" }}>🌱 Flexible Window</strong>
-                        <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>Relaxed pace • Save ₹1,000 ($15)</span>
+                        <strong style={{ display: "block", fontSize: "0.92rem" }}>🌱 Flexible Window</strong>
+                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Relaxed pace • Save ₹1,000 ($15)</span>
                       </button>
                     </div>
                   </div>
@@ -1485,45 +1485,45 @@ export default function HomePage() {
                 {/* Right Column: Sticky Summary & Instant Dispatch */}
                 <div>
                   <div className="estimator-summary-panel">
-                    <div style={{ display: "inline-block", padding: "4px 10px", borderRadius: "12px", background: "rgba(240, 77, 12, 0.12)", color: "var(--primary)", fontSize: "0.78rem", fontWeight: "700", marginBottom: "12px" }}>
+                    <div style={{ display: "inline-block", padding: "3px 8px", borderRadius: "10px", background: "rgba(240, 77, 12, 0.12)", color: "var(--primary)", fontSize: "0.76rem", fontWeight: "700", marginBottom: "8px" }}>
                       ESTIMATED QUOTATION
                     </div>
 
-                    <h3 style={{ fontSize: "1.3rem", color: "var(--secondary)", margin: "0 0 6px 0" }}>
+                    <h3 style={{ fontSize: "1.2rem", color: "var(--secondary)", margin: "0 0 4px 0" }}>
                       {currentPackage.title}
                     </h3>
-                    <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", margin: "0 0 16px 0" }}>
+                    <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", margin: "0 0 12px 0" }}>
                       {currentPackage.tagline}
                     </p>
 
-                    <div style={{ padding: "16px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", marginBottom: "16px" }}>
+                    <div style={{ padding: "12px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", marginBottom: "12px" }}>
                       <div className="estimator-price-tag">
                         ₹{calculatedTotalINR.toLocaleString("en-IN")}
                       </div>
-                      <div style={{ fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: "600", marginTop: "2px" }}>
+                      <div style={{ fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: "600", marginTop: "2px" }}>
                         approx ${calculatedTotalUSD} USD
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "8px", fontSize: "0.85rem", color: "var(--primary)", fontWeight: "700" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "6px", fontSize: "0.82rem", color: "var(--primary)", fontWeight: "700" }}>
                         <span>⏱️ Estimated Sprint:</span>
                         <span>~{calculatedDays} Business Days</span>
                       </div>
                     </div>
 
                     {/* Breakdown */}
-                    <div style={{ fontSize: "0.84rem", color: "var(--text-muted)", marginBottom: "20px" }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <div style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "14px" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
                         <span>Base Package:</span>
                         <strong style={{ color: "var(--secondary)" }}>₹{currentPackage.priceINR.toLocaleString("en-IN")}</strong>
                       </div>
 
                       {selectedAddons.length > 0 && (
-                        <div style={{ marginBottom: "6px" }}>
-                          <span style={{ display: "block", marginBottom: "4px", color: "var(--secondary)", fontWeight: "600" }}>Selected Add-ons ({selectedAddons.length}):</span>
+                        <div style={{ marginBottom: "4px" }}>
+                          <span style={{ display: "block", marginBottom: "2px", color: "var(--secondary)", fontWeight: "600" }}>Selected Add-ons ({selectedAddons.length}):</span>
                           {selectedAddons.map((id) => {
                             const addon = optionalAddons.find((a) => a.id === id);
                             if (!addon) return null;
                             return (
-                              <div key={id} style={{ display: "flex", justifyContent: "space-between", paddingLeft: "8px", fontSize: "0.8rem", marginBottom: "2px" }}>
+                              <div key={id} style={{ display: "flex", justifyContent: "space-between", paddingLeft: "8px", fontSize: "0.78rem", marginBottom: "2px" }}>
                                 <span>• {addon.label}</span>
                                 <span>+₹{addon.priceINR}</span>
                               </div>
@@ -1533,7 +1533,7 @@ export default function HomePage() {
                       )}
 
                       {timelineMode !== "standard" && (
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
                           <span>Timeline ({timelineMode}):</span>
                           <strong style={{ color: timelineMode === "express" ? "var(--primary)" : "#10b981" }}>
                             {timelineMode === "express" ? "+₹2,500" : "-₹1,000"}
@@ -1541,16 +1541,16 @@ export default function HomePage() {
                         </div>
                       )}
 
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "10px", borderRadius: "12px", background: "var(--surface)", border: "1px dashed var(--line)", fontSize: "0.78rem" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "10px", padding: "8px", borderRadius: "10px", background: "var(--surface)", border: "1px dashed var(--line)", fontSize: "0.76rem" }}>
                         <span>🛡️</span>
                         <span>
-                          <strong>100% Zero-Database Architecture:</strong> Zero monthly database server bills, zero socket leaks, 99.99% serverless uptime.
+                          <strong>Zero-Database:</strong> Zero monthly database bills, zero socket leaks, 99.99% serverless uptime.
                         </span>
                       </div>
                     </div>
 
                     {/* Action buttons */}
-                    <div style={{ display: "grid", gap: "10px" }}>
+                    <div style={{ display: "grid", gap: "8px" }}>
                       <a
                         href={`https://wa.me/919416341097?text=${encodeURIComponent(
                           `Hello NarnaulOnline Team,\n\nI configured an estimate on your website:\n• Package: ${currentPackage.title} (Base ₹${currentPackage.priceINR.toLocaleString("en-IN")} / $${currentPackage.priceUSD})\n• Add-ons: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "None"}\n• Timeline Mode: ${timelineMode.toUpperCase()}\n• Estimated Budget: ₹${calculatedTotalINR.toLocaleString("en-IN")} / $${calculatedTotalUSD}\n• Estimated Timeline: ~${calculatedDays} Days\n\nI would like to discuss building this project with your organization!`
@@ -1558,7 +1558,7 @@ export default function HomePage() {
                         target="_blank"
                         rel="noreferrer"
                         className="btn btn-whatsapp"
-                        style={{ width: "100%", justifyContent: "center", padding: "12px" }}
+                        style={{ width: "100%", justifyContent: "center", padding: "10px 14px", fontSize: "0.85rem" }}
                       >
                         💬 Start on WhatsApp (+91 9416341097)
                       </a>
@@ -1566,13 +1566,13 @@ export default function HomePage() {
                       <a
                         href="#contact"
                         className="btn btn-outline"
-                        style={{ width: "100%", justifyContent: "center", padding: "12px" }}
+                        style={{ width: "100%", justifyContent: "center", padding: "10px 14px", fontSize: "0.85rem" }}
                       >
                         📋 Request Formal Scope Proposal
                       </a>
                     </div>
 
-                    <p style={{ fontSize: "0.75rem", color: "var(--muted)", textAlign: "center", margin: "14px 0 0 0" }}>
+                    <p style={{ fontSize: "0.72rem", color: "var(--muted)", textAlign: "center", margin: "10px 0 0 0" }}>
                       Direct communication with Principal Architect Amit Jangid • Narnaul, Haryana, India
                     </p>
                   </div>
@@ -1586,20 +1586,20 @@ export default function HomePage() {
         <section id="contact" className="cta-band">
           <div className="container cta-wrap reveal">
             <div>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 16px", borderRadius: "var(--radius-pill)", background: "var(--surface-container-high)", border: "1px solid var(--line)", marginBottom: "12px", fontSize: "0.85rem", fontWeight: "600", color: "var(--primary)" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "5px 14px", borderRadius: "var(--radius-pill)", background: "var(--surface-container-high)", border: "1px solid var(--line)", marginBottom: "8px", fontSize: "0.82rem", fontWeight: "600", color: "var(--primary)" }}>
                 <span>📍</span>
                 <span>Headquarters: Narnaul, Haryana, India (123001)</span>
               </div>
               <span className="eyebrow" style={{ display: "block" }}>Organization Project Intake</span>
               <h2>Ready to build something smarter with NarnaulOnline?</h2>
-              <p style={{ color: "var(--muted)", marginTop: "8px", maxWidth: "620px", fontSize: "1.05rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--muted)", marginTop: "6px", maxWidth: "620px", fontSize: "1rem", lineHeight: "1.5" }}>
                 Based in <strong>Narnaul, Haryana, India</strong>. Have a project idea, business workflow bottleneck, or custom zero-database software requirement?
                 Inquiries are routed directly to our engineering team at <strong>onlinenarnaul@gmail.com</strong>.
               </p>
             </div>
 
             <div className="cta-actions">
-              <a href="mailto:onlinenarnaul@gmail.com" className="btn btn-primary">
+              <a href="mailto:onlinenarnaul@gmail.com" className="btn btn-primary" style={{ padding: "10px 22px" }}>
                 Email onlinenarnaul@gmail.com
               </a>
               <a
@@ -1607,6 +1607,7 @@ export default function HomePage() {
                 className="btn btn-whatsapp"
                 target="_blank"
                 rel="noreferrer"
+                style={{ padding: "10px 22px" }}
               >
                 💬 Chat on WhatsApp (+91 9416341097)
               </a>
@@ -1614,38 +1615,38 @@ export default function HomePage() {
           </div>
 
           {/* Quick Contact & Location Cards */}
-          <div className="container" style={{ marginBottom: "32px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
-              <div className="service-card reveal" style={{ padding: "22px 24px" }}>
-                <span style={{ fontSize: "1.4rem", display: "block", marginBottom: "6px" }}>📍</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "1rem" }}>Current Location</strong>
-                <span style={{ fontSize: "0.92rem", color: "var(--text-muted)" }}>Narnaul, Haryana, India (123001)</span>
+          <div className="container" style={{ marginBottom: "18px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px" }}>
+              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
+                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>📍</span>
+                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Current Location</strong>
+                <span style={{ fontSize: "0.88rem", color: "var(--text-muted)" }}>Narnaul, Haryana, India (123001)</span>
               </div>
-              <div className="service-card reveal" style={{ padding: "22px 24px" }}>
-                <span style={{ fontSize: "1.4rem", display: "block", marginBottom: "6px" }}>✉️</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "1rem" }}>Organization Email</strong>
-                <a href="mailto:onlinenarnaul@gmail.com" style={{ fontSize: "0.92rem", color: "var(--primary)", fontWeight: "600" }}>onlinenarnaul@gmail.com</a>
+              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
+                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>✉️</span>
+                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Organization Email</strong>
+                <a href="mailto:onlinenarnaul@gmail.com" style={{ fontSize: "0.88rem", color: "var(--primary)", fontWeight: "600" }}>onlinenarnaul@gmail.com</a>
               </div>
-              <div className="service-card reveal" style={{ padding: "22px 24px" }}>
-                <span style={{ fontSize: "1.4rem", display: "block", marginBottom: "6px" }}>💬</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "1rem" }}>WhatsApp Lead Desk</strong>
-                <a href="https://wa.me/919416341097" target="_blank" rel="noreferrer" style={{ fontSize: "0.92rem", color: "#128C7E", fontWeight: "600" }}>+91 9416341097</a>
+              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
+                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>💬</span>
+                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>WhatsApp Lead Desk</strong>
+                <a href="https://wa.me/919416341097" target="_blank" rel="noreferrer" style={{ fontSize: "0.88rem", color: "#128C7E", fontWeight: "600" }}>+91 9416341097</a>
               </div>
-              <div className="service-card reveal" style={{ padding: "22px 24px" }}>
-                <span style={{ fontSize: "1.4rem", display: "block", marginBottom: "6px" }}>⚡</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "1rem" }}>Engineering Availability</strong>
-                <span style={{ fontSize: "0.92rem", color: "var(--text-muted)" }}>Open for new client projects & digital transformation</span>
+              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
+                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>⚡</span>
+                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Engineering Availability</strong>
+                <span style={{ fontSize: "0.88rem", color: "var(--text-muted)" }}>Open for new client projects & digital transformation</span>
               </div>
             </div>
           </div>
 
           <div className="container form-shell" style={{ display: "block" }}>
-            <div style={{ textAlign: "center", marginBottom: "28px" }}>
+            <div style={{ textAlign: "center", marginBottom: "18px" }}>
               <span className="eyebrow">Project Intake Form</span>
-              <h3 style={{ fontSize: "1.75rem", color: "var(--secondary)", margin: "6px 0" }}>
+              <h3 style={{ fontSize: "1.6rem", color: "var(--secondary)", margin: "4px 0" }}>
                 Ready to build something smarter?
               </h3>
-              <p style={{ color: "var(--text-muted)", fontSize: "0.98rem" }}>
+              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
                 Tell our engineering team about your organization requirements. Inquiries are delivered directly to <strong>onlinenarnaul@gmail.com</strong>.
               </p>
             </div>

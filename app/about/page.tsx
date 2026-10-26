@@ -65,33 +65,33 @@ export default function AboutPage() {
         </section>
 
         {/* Narrative & Philosophy */}
-        <section className="solutions" style={{ paddingBottom: "60px" }}>
+        <section className="solutions" style={{ paddingBottom: "36px" }}>
           <div className="container">
-            <div style={{ display: "grid", gap: "32px" }}>
+            <div style={{ display: "grid", gap: "20px" }}>
               {/* Organization Overview Card */}
               <div
                 style={{
                   background: "var(--panel)",
                   border: "1px solid var(--line)",
                   borderRadius: "var(--radius-lg)",
-                  padding: "40px",
+                  padding: "26px 24px",
                   boxShadow: "var(--shadow)",
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px", marginBottom: "8px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "10px", marginBottom: "6px" }}>
                   <span className="eyebrow">Organization Overview</span>
                   <span className="zero-db-tag">Zero Database Setup Needed</span>
                 </div>
-                <h2 style={{ fontSize: "1.85rem", margin: "8px 0 16px", color: "var(--secondary)" }}>
+                <h2 style={{ fontSize: "1.75rem", margin: "6px 0 10px", color: "var(--secondary)" }}>
                   Engineering Practical Software Without Costly Database Overheads
                 </h2>
-                <p style={{ color: "var(--text)", lineHeight: "1.75", fontSize: "1.04rem" }}>
+                <p style={{ color: "var(--text)", lineHeight: "1.7", fontSize: "1.02rem" }}>
                   Traditional development agencies often burden clients with complex, expensive database server instances 
                   that require constant maintenance, database connection pool tuning, and monthly server hosting bills. 
                   At <strong>NarnaulOnline</strong>, we challenge this convention by championing <strong>Zero-Database Architectures</strong> 
                   and modern serverless engineering.
                 </p>
-                <p style={{ color: "var(--text-muted)", lineHeight: "1.75", fontSize: "1.02rem", marginTop: "14px" }}>
+                <p style={{ color: "var(--text-muted)", lineHeight: "1.7", fontSize: "1rem", marginTop: "10px" }}>
                   By decoupling data into immutable JSON schemas, client-side transactional ledgers, and edge-routed 
                   serverless endpoints, we deliver systems that run at lightning speed, never suffer from cold-start database socket 
                   leaks, and cost virtually nothing to maintain.
@@ -104,30 +104,30 @@ export default function AboutPage() {
                   background: "var(--surface-container-low)",
                   border: "1px solid var(--line)",
                   borderRadius: "var(--radius-lg)",
-                  padding: "36px",
+                  padding: "24px 22px",
                 }}
               >
                 <span className="eyebrow">Leadership & Architectural Vision</span>
-                <h3 style={{ fontSize: "1.6rem", margin: "8px 0 16px", color: "var(--secondary)" }}>
+                <h3 style={{ fontSize: "1.5rem", margin: "6px 0 10px", color: "var(--secondary)" }}>
                   Amit Jangid — Founder & Principal Solutions Architect
                 </h3>
-                <p style={{ color: "var(--text)", lineHeight: "1.75", fontSize: "1.02rem" }}>
+                <p style={{ color: "var(--text)", lineHeight: "1.7", fontSize: "1rem" }}>
                   As Founder & Principal Solutions Architect, Amit leads engineering strategy, system architecture, and 
                   code execution at NarnaulOnline. With extensive experience spanning full-stack web applications, financial calculation 
                   engines, e-commerce portals, and enterprise administrative dashboards, Amit ensures that every project conforms to 
                   the highest engineering benchmarks:
                 </p>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px", marginTop: "20px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "14px", marginTop: "16px" }}>
                   {organizationPillars.map((pillar) => (
-                    <div key={pillar.title} style={{ background: "#FFFFFF", padding: "20px", borderRadius: "var(--radius-md)", border: "1px solid var(--line)" }}>
-                      <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                    <div key={pillar.title} style={{ background: "#FFFFFF", padding: "16px", borderRadius: "var(--radius-md)", border: "1px solid var(--line)" }}>
+                      <span style={{ fontSize: "0.72rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                         {pillar.badge}
                       </span>
-                      <strong style={{ color: "var(--secondary)", display: "block", margin: "4px 0 6px", fontSize: "1.02rem" }}>
+                      <strong style={{ color: "var(--secondary)", display: "block", margin: "3px 0 5px", fontSize: "0.98rem" }}>
                         {pillar.title}
                       </strong>
-                      <span style={{ fontSize: "0.88rem", color: "var(--text-muted)", lineHeight: "1.5", display: "block" }}>
+                      <span style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.45", display: "block" }}>
                         {pillar.desc}
                       </span>
                     </div>
@@ -139,8 +139,8 @@ export default function AboutPage() {
               <div className="solution-grid">
                 <div className="solution-box">
                   <span className="eyebrow">Organizational Mission</span>
-                  <h3 style={{ fontSize: "1.4rem", margin: "8px 0 12px" }}>Democratizing High-Grade Software</h3>
-                  <p style={{ fontSize: "1.02rem", lineHeight: "1.7", color: "var(--text)" }}>
+                  <h3 style={{ fontSize: "1.35rem", margin: "6px 0 8px" }}>Democratizing High-Grade Software</h3>
+                  <p style={{ fontSize: "0.98rem", lineHeight: "1.65", color: "var(--text)" }}>
                     To engineer high-performance, robust, and zero-maintenance digital systems that empower small businesses, 
                     enterprises, and organizations to digitize operations without prohibitive upfront infrastructure or database costs.
                   </p>
@@ -148,8 +148,8 @@ export default function AboutPage() {
 
                 <div className="solution-box">
                   <span className="eyebrow">Strategic Horizon</span>
-                  <h3 style={{ fontSize: "1.4rem", margin: "8px 0 12px" }}>Next-Gen Software Ecosystems</h3>
-                  <p style={{ fontSize: "1.02rem", lineHeight: "1.7", color: "var(--text)" }}>
+                  <h3 style={{ fontSize: "1.35rem", margin: "6px 0 8px" }}>Next-Gen Software Ecosystems</h3>
+                  <p style={{ fontSize: "0.98rem", lineHeight: "1.65", color: "var(--text)" }}>
                     To establish NarnaulOnline as India&apos;s foremost authority in zero-database enterprise engineering, 
                     delivering resilient applications that achieve 99.99% uptime with zero ongoing database maintenance overhead.
                   </p>
@@ -162,33 +162,33 @@ export default function AboutPage() {
                   background: "var(--panel)",
                   border: "1px solid var(--line)",
                   borderRadius: "var(--radius-lg)",
-                  padding: "40px",
+                  padding: "26px 24px",
                   boxShadow: "var(--shadow)",
                 }}
               >
                 <span className="eyebrow">Industry Experience</span>
-                <h3 style={{ fontSize: "1.6rem", margin: "8px 0 16px", color: "var(--secondary)" }}>
+                <h3 style={{ fontSize: "1.5rem", margin: "6px 0 10px", color: "var(--secondary)" }}>
                   Domains Engineered & Delivered
                 </h3>
-                <p style={{ color: "var(--text-muted)", marginBottom: "22px" }}>
+                <p style={{ color: "var(--text-muted)", marginBottom: "14px", fontSize: "0.95rem" }}>
                   Proven software architecture and system deployment across diverse commercial domains:
                 </p>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "12px" }}>
                   {industries.map((ind) => (
                     <div
                       key={ind.name}
                       style={{
-                        padding: "18px",
+                        padding: "14px 16px",
                         background: "var(--surface-container-low)",
                         borderRadius: "var(--radius-md)",
                         border: "1px solid var(--line)",
                       }}
                     >
-                      <strong style={{ color: "var(--secondary)", display: "block", fontSize: "0.98rem", marginBottom: "6px" }}>
+                      <strong style={{ color: "var(--secondary)", display: "block", fontSize: "0.95rem", marginBottom: "4px" }}>
                         {ind.name}
                       </strong>
-                      <span style={{ fontSize: "0.88rem", color: "var(--text-muted)", lineHeight: "1.5", display: "block" }}>
+                      <span style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.45", display: "block" }}>
                         {ind.desc}
                       </span>
                     </div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
               {/* Call to Connect */}
               <div
                 style={{
-                  padding: "48px 36px",
+                  padding: "30px 24px",
                   borderRadius: "var(--radius-lg)",
                   border: "1px solid var(--line)",
                   background: "var(--surface-container)",
@@ -207,18 +207,18 @@ export default function AboutPage() {
                 }}
               >
                 <span className="eyebrow">Organization Engagement</span>
-                <h2 style={{ fontSize: "2rem", color: "var(--secondary)", margin: "10px 0" }}>
+                <h2 style={{ fontSize: "1.85rem", color: "var(--secondary)", margin: "6px 0" }}>
                   Ready to collaborate with NarnaulOnline?
                 </h2>
-                <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 24px", fontSize: "1.04rem" }}>
+                <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 16px", fontSize: "0.98rem" }}>
                   Transparent entry pricing from <strong>₹2,999 / $49</strong>. Explore our interactive project cost estimator 
                   or speak directly with Founder & Principal Solutions Architect Amit Jangid.
                 </p>
-                <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
-                  <Link href="/#estimator" className="btn btn-primary" style={{ padding: "12px 28px" }}>
+                <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+                  <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 24px" }}>
                     CALCULATE PROJECT COST
                   </Link>
-                  <Link href="/contact" className="btn btn-outline" style={{ padding: "12px 28px" }}>
+                  <Link href="/contact" className="btn btn-outline" style={{ padding: "10px 24px" }}>
                     GET A FORMAL PROPOSAL
                   </Link>
                   <a

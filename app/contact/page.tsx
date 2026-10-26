@@ -51,30 +51,30 @@ export default function ContactPage() {
         </section>
 
         {/* 4 Contact Channels including Location */}
-        <section className="services" style={{ paddingBottom: "24px" }}>
+        <section className="services" style={{ paddingBottom: "16px" }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "22px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
               <article className="service-card reveal">
                 <div className="icon">📍</div>
                 <h3>Headquarters Location</h3>
-                <p style={{ color: "var(--muted)", marginBottom: "8px" }}>
+                <p style={{ color: "var(--muted)", marginBottom: "6px" }}>
                   Operating from southern Haryana.
                 </p>
-                <strong style={{ color: "var(--secondary)", fontSize: "1.05rem", display: "block" }}>
+                <strong style={{ color: "var(--secondary)", fontSize: "1rem", display: "block" }}>
                   Narnaul, Haryana, India
                 </strong>
-                <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>PIN: 123001 • In-Person & Global Remote</span>
+                <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>PIN: 123001 • In-Person & Global Remote</span>
               </article>
 
               <article className="service-card reveal">
                 <div className="icon">✉️</div>
                 <h3>Organization Email</h3>
-                <p style={{ color: "var(--muted)", marginBottom: "8px" }}>
+                <p style={{ color: "var(--muted)", marginBottom: "6px" }}>
                   Direct inbox delivery to principal engineering.
                 </p>
                 <a
                   href="mailto:onlinenarnaul@gmail.com"
-                  style={{ color: "var(--primary)", fontWeight: "700", fontSize: "1.05rem", wordBreak: "break-all" }}
+                  style={{ color: "var(--primary)", fontWeight: "700", fontSize: "1rem", wordBreak: "break-all" }}
                 >
                   onlinenarnaul@gmail.com
                 </a>
@@ -83,7 +83,7 @@ export default function ContactPage() {
               <article className="service-card reveal">
                 <div className="icon">💬</div>
                 <h3>WhatsApp Business Desk</h3>
-                <p style={{ color: "var(--muted)", marginBottom: "8px" }}>
+                <p style={{ color: "var(--muted)", marginBottom: "6px" }}>
                   Instant messaging, estimate sharing & scope discussion.
                 </p>
                 <a
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   className="btn btn-secondary"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ display: "inline-flex", padding: "8px 18px", fontSize: "0.88rem" }}
+                  style={{ display: "inline-flex", padding: "6px 16px", fontSize: "0.85rem" }}
                 >
                   +91 9416341097 →
                 </a>
@@ -100,12 +100,12 @@ export default function ContactPage() {
               <article className="service-card reveal">
                 <div className="icon">📞</div>
                 <h3>Direct Consultation Call</h3>
-                <p style={{ color: "var(--muted)", marginBottom: "8px" }}>
+                <p style={{ color: "var(--muted)", marginBottom: "6px" }}>
                   Speak directly with Principal Architect Amit Jangid.
                 </p>
                 <a
                   href="tel:+919416341097"
-                  style={{ color: "var(--primary)", fontWeight: "700", fontSize: "1.05rem" }}
+                  style={{ color: "var(--primary)", fontWeight: "700", fontSize: "1rem" }}
                 >
                   +91 9416341097
                 </a>
@@ -115,7 +115,7 @@ export default function ContactPage() {
         </section>
 
         {/* Quick Estimator Callout */}
-        <section style={{ padding: "10px 0 24px" }}>
+        <section style={{ padding: "8px 0 16px" }}>
           <div className="container">
             <div
               className="reveal"
@@ -123,24 +123,24 @@ export default function ContactPage() {
                 background: "linear-gradient(135deg, rgba(240, 77, 12, 0.08), rgba(240, 77, 12, 0.02))",
                 border: "1px solid rgba(240, 77, 12, 0.25)",
                 borderRadius: "var(--radius-lg)",
-                padding: "28px 36px",
+                padding: "18px 24px",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
                 flexWrap: "wrap",
-                gap: "20px",
+                gap: "14px",
               }}
             >
               <div>
                 <span className="eyebrow">Instant Self-Service Calculation</span>
-                <h3 style={{ fontSize: "1.45rem", color: "var(--secondary)", margin: "4px 0 6px" }}>
+                <h3 style={{ fontSize: "1.35rem", color: "var(--secondary)", margin: "3px 0 4px" }}>
                   Want an upfront scope & budget estimate?
                 </h3>
-                <p style={{ color: "var(--text-muted)", fontSize: "0.98rem", margin: 0, maxWidth: "600px" }}>
+                <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", margin: 0, maxWidth: "600px" }}>
                   Use our interactive Zero-DB Project Cost Estimator to select application specifications, calculate timeline, and generate an upfront quote starting at ₹2,999 / $49.
                 </p>
               </div>
-              <Link href="/#estimator" className="btn btn-primary" style={{ padding: "12px 24px" }}>
+              <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 20px" }}>
                 LAUNCH ESTIMATOR →
               </Link>
             </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
         </section>
 
         {/* Location Map & Details Module */}
-        <section style={{ padding: "10px 0 40px" }}>
+        <section style={{ padding: "8px 0 20px" }}>
           <div className="container">
             <div
               className="reveal"
@@ -156,37 +156,37 @@ export default function ContactPage() {
                 background: "var(--panel)",
                 border: "1px solid var(--line)",
                 borderRadius: "var(--radius-lg)",
-                padding: "36px",
+                padding: "24px 22px",
                 boxShadow: "var(--shadow)",
                 display: "grid",
                 gridTemplateColumns: "1.1fr 0.9fr",
-                gap: "32px",
+                gap: "20px",
                 alignItems: "center",
               }}
             >
               <div>
                 <span className="eyebrow">Location Overview</span>
-                <h3 style={{ fontSize: "1.7rem", margin: "8px 0 12px", color: "var(--secondary)" }}>
+                <h3 style={{ fontSize: "1.5rem", margin: "4px 0 8px", color: "var(--secondary)" }}>
                   Operating from Narnaul, Haryana
                 </h3>
-                <p style={{ color: "var(--text)", lineHeight: "1.7", fontSize: "1rem" }}>
+                <p style={{ color: "var(--text)", lineHeight: "1.65", fontSize: "0.98rem" }}>
                   <strong>NarnaulOnline</strong> is based in <strong>Narnaul</strong>, District Mahendragarh, Haryana, India.
                   Available for in-person consultations across Delhi NCR & Haryana, and engineering zero-database digital applications for clients worldwide.
                 </p>
-                <div style={{ display: "grid", gap: "12px", marginTop: "20px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+                <div style={{ display: "grid", gap: "8px", marginTop: "12px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
                     <span style={{ color: "var(--primary)", fontWeight: 700 }}>Headquarters:</span>
                     <span>Narnaul, District Mahendragarh, Haryana</span>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
                     <span style={{ color: "var(--primary)", fontWeight: 700 }}>Postal Code:</span>
                     <span>123001, India</span>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
                     <span style={{ color: "var(--primary)", fontWeight: 700 }}>Timezone:</span>
                     <span>Indian Standard Time (IST, UTC+5:30)</span>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
                     <span style={{ color: "var(--primary)", fontWeight: 700 }}>Primary Email:</span>
                     <a href="mailto:onlinenarnaul@gmail.com" style={{ color: "var(--primary)", fontWeight: 600 }}>onlinenarnaul@gmail.com</a>
                   </div>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   borderRadius: "24px",
                   overflow: "hidden",
                   border: "1px solid var(--line)",
-                  height: "280px",
+                  height: "230px",
                   position: "relative",
                   background: "var(--surface-container)",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
@@ -222,12 +222,12 @@ export default function ContactPage() {
         </section>
 
         {/* Project Inquiry Form Section */}
-        <section id="contact-form" style={{ padding: "10px 0 80px" }}>
+        <section id="contact-form" style={{ padding: "10px 0 36px" }}>
           <div className="container">
-            <div className="section-heading" style={{ marginBottom: "32px" }}>
+            <div className="section-heading" style={{ marginBottom: "16px" }}>
               <span className="eyebrow">Organization Project Intake</span>
               <h2>Ready to build something smarter with NarnaulOnline?</h2>
-              <p style={{ maxWidth: "680px", margin: "10px auto 0", color: "var(--text-muted)", fontSize: "1.02rem" }}>
+              <p style={{ maxWidth: "680px", margin: "6px auto 0", color: "var(--text-muted)", fontSize: "0.98rem" }}>
                 Tell our engineering team about your business requirements, timeline, or operational challenge.
                 Submissions are sent directly to <strong>onlinenarnaul@gmail.com</strong>.
               </p>
@@ -271,7 +271,7 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
-                    rows={6}
+                    rows={4}
                     required
                     placeholder="Describe your system requirements, estimated timeline, key features, and any preferred architectural preferences..."
                   />
@@ -280,7 +280,7 @@ export default function ContactPage() {
                 <input type="hidden" name="_subject" value="New Organization Project Intake - NarnaulOnline" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <button type="submit" className="btn btn-primary" style={{ width: "100%", padding: "14px", fontSize: "1rem" }}>
+                <button type="submit" className="btn btn-primary" style={{ width: "100%", padding: "12px", fontSize: "0.95rem" }}>
                   GET A QUOTE • SUBMIT PROJECT INTAKE TO ONLINENARNAUL@GMAIL.COM
                 </button>
               </form>

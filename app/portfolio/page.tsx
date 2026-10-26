@@ -298,7 +298,7 @@ export default function PortfolioPage() {
             </p>
 
             {/* Filter Buttons */}
-            <div className="filter-bar" style={{ marginTop: "36px" }}>
+            <div className="filter-bar" style={{ marginTop: "18px" }}>
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -313,9 +313,9 @@ export default function PortfolioPage() {
         </section>
 
         {/* Projects Showcase Grid */}
-        <section className="showcase" style={{ paddingBottom: "90px" }}>
+        <section className="showcase" style={{ paddingBottom: "36px" }}>
           <div className="container">
-            <div style={{ display: "grid", gap: "34px" }}>
+            <div style={{ display: "grid", gap: "20px" }}>
               {filteredProjects.map((project) => (
                 <article
                   key={project.id}
@@ -323,7 +323,7 @@ export default function PortfolioPage() {
                     background: "var(--panel)",
                     border: "1px solid var(--line)",
                     borderRadius: "var(--radius-lg)",
-                    padding: "36px",
+                    padding: "24px 22px",
                     boxShadow: "var(--shadow)",
                     transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                   }}
@@ -334,14 +334,14 @@ export default function PortfolioPage() {
                       justifyContent: "space-between",
                       alignItems: "flex-start",
                       flexWrap: "wrap",
-                      gap: "12px",
-                      marginBottom: "16px",
+                      gap: "10px",
+                      marginBottom: "10px",
                     }}
                   >
                     <div>
                       <span
                         style={{
-                          fontSize: "0.82rem",
+                          fontSize: "0.8rem",
                           textTransform: "uppercase",
                           letterSpacing: "0.08em",
                           color: "var(--primary)",
@@ -350,26 +350,26 @@ export default function PortfolioPage() {
                       >
                         {project.category}
                       </span>
-                      <h2 style={{ fontSize: "1.8rem", margin: "6px 0 2px", color: "var(--secondary)" }}>
+                      <h2 style={{ fontSize: "1.7rem", margin: "4px 0 2px", color: "var(--secondary)" }}>
                         {project.title}
                       </h2>
                       {project.tagline && (
-                        <p style={{ color: "var(--primary)", fontStyle: "italic", fontSize: "0.95rem", margin: "2px 0 8px" }}>
+                        <p style={{ color: "var(--primary)", fontStyle: "italic", fontSize: "0.92rem", margin: "2px 0 6px" }}>
                           “{project.tagline}”
                         </p>
                       )}
                     </div>
 
-                    <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
+                    <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                       <span className={`badge-status ${project.statusClass}`}>
                         {project.status}
                       </span>
                       <span
                         style={{
-                          padding: "5px 12px",
+                          padding: "4px 10px",
                           borderRadius: "999px",
                           background: "var(--surface-container)",
-                          fontSize: "0.8rem",
+                          fontSize: "0.78rem",
                           fontWeight: "600",
                           color: "var(--muted)",
                         }}
@@ -379,7 +379,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
 
-                  <p style={{ color: "var(--text)", fontSize: "1.02rem", lineHeight: "1.65", margin: "10px 0" }}>
+                  <p style={{ color: "var(--text)", fontSize: "0.98rem", lineHeight: "1.6", margin: "6px 0" }}>
                     {project.overview}
                   </p>
 
@@ -388,22 +388,22 @@ export default function PortfolioPage() {
                       background: "var(--surface-container-low)",
                       border: "1px solid var(--line)",
                       borderRadius: "var(--radius-md)",
-                      padding: "16px 20px",
-                      margin: "18px 0",
+                      padding: "12px 16px",
+                      margin: "12px 0",
                     }}
                   >
-                    <strong style={{ fontSize: "0.9rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                    <strong style={{ fontSize: "0.85rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
                       Operational Challenge Addressed:
                     </strong>
-                    <p style={{ margin: "4px 0 0", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+                    <p style={{ margin: "3px 0 0", color: "var(--text-muted)", fontSize: "0.92rem" }}>
                       {project.problem}
                     </p>
                   </div>
 
-                  <strong style={{ fontSize: "0.92rem", color: "var(--secondary)" }}>
+                  <strong style={{ fontSize: "0.9rem", color: "var(--secondary)" }}>
                     Key Planned or Implemented Capabilities:
                   </strong>
-                  <ul className="feature-list" style={{ margin: "10px 0 20px" }}>
+                  <ul className="feature-list" style={{ margin: "6px 0 14px" }}>
                     {project.capabilities.map((cap) => (
                       <li key={cap}>{cap}</li>
                     ))}
@@ -415,21 +415,21 @@ export default function PortfolioPage() {
                       justifyContent: "space-between",
                       alignItems: "center",
                       flexWrap: "wrap",
-                      gap: "14px",
-                      paddingTop: "16px",
+                      gap: "12px",
+                      paddingTop: "12px",
                       borderTop: "1px solid var(--line)",
                     }}
                   >
                     <div className="skills-cloud" style={{ margin: 0 }}>
                       {project.techStack.map((tech) => (
-                        <span key={tech} className="skill-tag" style={{ fontSize: "0.82rem", padding: "5px 12px" }}>
+                        <span key={tech} className="skill-tag" style={{ fontSize: "0.8rem", padding: "4px 10px" }}>
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
-                      <span style={{ fontSize: "0.86rem", color: "var(--muted)", fontStyle: "italic" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+                      <span style={{ fontSize: "0.82rem", color: "var(--muted)", fontStyle: "italic" }}>
                         Role: {project.role}
                       </span>
                       <a
@@ -437,7 +437,7 @@ export default function PortfolioPage() {
                           `Hi Amit, I'm interested in discussing your project: ${project.title} (${project.status})`
                         )}`}
                         className="btn btn-secondary"
-                        style={{ fontSize: "0.85rem", padding: "6px 16px" }}
+                        style={{ fontSize: "0.82rem", padding: "6px 14px" }}
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -452,8 +452,8 @@ export default function PortfolioPage() {
             {/* Inquiries CTA Banner */}
             <div
               style={{
-                marginTop: "60px",
-                padding: "48px 40px",
+                marginTop: "32px",
+                padding: "28px 24px",
                 borderRadius: "var(--radius-lg)",
                 border: "1px solid var(--line)",
                 background: "var(--surface-container)",
@@ -461,18 +461,18 @@ export default function PortfolioPage() {
               }}
             >
               <span className="eyebrow">Organization Scope & Engineering</span>
-              <h2 style={{ fontSize: "2rem", color: "var(--secondary)", margin: "10px 0" }}>
+              <h2 style={{ fontSize: "1.85rem", color: "var(--secondary)", margin: "6px 0" }}>
                 Need a resilient, zero-database system built for your business?
               </h2>
-              <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 24px", fontSize: "1.02rem" }}>
+              <p style={{ color: "var(--muted)", maxWidth: "620px", margin: "0 auto 16px", fontSize: "0.98rem" }}>
                 Whether you need a full-stack web application, a loan ERP, or a wholesale e-commerce platform,
                 leverage our zero-database architecture starting from <strong>₹2,999 ($49)</strong>.
               </p>
-              <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/#estimator" className="btn btn-primary" style={{ padding: "12px 28px" }}>
+              <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+                <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 24px" }}>
                   CALCULATE PROJECT COST
                 </Link>
-                <Link href="/contact" className="btn btn-outline" style={{ padding: "12px 28px" }}>
+                <Link href="/contact" className="btn btn-outline" style={{ padding: "10px 24px" }}>
                   REQUEST FORMAL PROPOSAL
                 </Link>
                 <a
