@@ -55,45 +55,25 @@ export default function Navbar() {
 
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
-      {/* Top Live Engineering Desk Ticker Bar */}
-      <div className="nav-topbar">
-        <div className="container nav-topbar-inner">
-          <div className="nav-topbar-left">
-            <span className="live-dot-pulse"></span>
-            <span className="nav-topbar-tag">LIVE ENGINEERING DESK</span>
-            <span className="nav-topbar-sep">•</span>
-            <span className="nav-topbar-text">
-              Direct Architecture with Founder & Principal Solutions Architect <strong>Amit Jangid</strong>
-            </span>
-            <span className="nav-topbar-sep">•</span>
-            <span className="nav-topbar-loc">📍 Narnaul, Haryana (Delhi NCR)</span>
-          </div>
-
-          <div className="nav-topbar-right">
-            <a href="tel:+919416341097" className="nav-topbar-link">
-              📞 +91 9416341097
-            </a>
-            <span className="nav-topbar-sep">|</span>
-            <span className="nav-topbar-badge">Zero-DB Architecture</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Glassmorphic Navbar */}
+      {/* Sleek Unified Glassmorphic Navbar */}
       <div className="container nav-wrap">
-        {/* Brand Logo & Edition Badge */}
+        {/* Brand Logo & Live Operational Status */}
         <div className="nav-brand-group">
           <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
             <Image
               src="/logo.png"
               alt="NarnaulOnline • Full-Stage Software Development Organization"
-              width={220}
-              height={52}
+              width={210}
+              height={48}
               className="brand-logo"
               priority
             />
           </Link>
-          <span className="nav-edition-badge">Zero-DB</span>
+
+          <div className="nav-status-pill" title="System Operational • Direct Architecture with Amit Jangid">
+            <span className="live-dot-pulse"></span>
+            <span className="nav-status-text">Live Desk</span>
+          </div>
         </div>
 
         {/* Desktop Navigation Links */}

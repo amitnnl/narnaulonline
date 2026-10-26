@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import AjaxContactForm from "../components/AjaxContactForm";
 
 export const metadata = {
   title: "Contact NarnaulOnline | Full-Stage Software Development Organization",
@@ -235,56 +236,7 @@ export default function ContactPage() {
             </div>
 
             <div className="form-shell" style={{ maxWidth: "800px", margin: "0 auto", display: "block" }}>
-              <form
-                action="https://formsubmit.co/onlinenarnaul@gmail.com"
-                method="POST"
-                className="contact-form"
-              >
-                <div className="form-row">
-                  <div className="field">
-                    <label htmlFor="name">Your Name / Organization</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g. Rahul Sharma (Sharma Trading Co.)" />
-                  </div>
-
-                  <div className="field">
-                    <label htmlFor="email">Your Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="name@company.com" />
-                  </div>
-                </div>
-
-                <div className="field">
-                  <label htmlFor="phone">Phone / WhatsApp Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+91 94163 41097" />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="service">Project Category / Topic</label>
-                  <input
-                    type="text"
-                    id="service"
-                    name="service"
-                    placeholder="e.g. Zero-DB Web App, Microfinance Loan ERP, Wholesale E-Commerce, Admin Portal"
-                  />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="message">Project Requirements / Scope Overview</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    placeholder="Describe your system requirements, estimated timeline, key features, and any preferred architectural preferences..."
-                  />
-                </div>
-
-                <input type="hidden" name="_subject" value="New Organization Project Intake - NarnaulOnline" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <button type="submit" className="btn btn-primary" style={{ width: "100%", padding: "12px", fontSize: "0.95rem" }}>
-                  GET A QUOTE • SUBMIT PROJECT INTAKE TO ONLINENARNAUL@GMAIL.COM
-                </button>
-              </form>
+              <AjaxContactForm sourceContext="Dedicated Contact Page" />
             </div>
           </div>
         </section>

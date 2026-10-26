@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AjaxContactForm from "./components/AjaxContactForm";
 
 interface FeaturedProject {
   id: string;
@@ -1618,60 +1619,15 @@ export default function HomePage() {
                 Ready to build something smarter?
               </h3>
               <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
-                Tell our engineering team about your organization requirements. Inquiries are delivered directly to <strong>onlinenarnaul@gmail.com</strong>.
+                Tell our engineering team about your organization requirements. Inquiries are processed asynchronously via AJAX with direct delivery to <strong>onlinenarnaul@gmail.com</strong>.
               </p>
             </div>
 
-            <form
-              action="https://formsubmit.co/onlinenarnaul@gmail.com"
-              method="POST"
-              className="contact-form"
-            >
-              <div className="form-row">
-                <div className="field">
-                  <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name" name="name" required placeholder="e.g. Ramesh Kumar" />
-                </div>
-
-                <div className="field">
-                  <label htmlFor="email">Your Email Address</label>
-                  <input type="email" id="email" name="email" required placeholder="name@company.com" />
-                </div>
-              </div>
-
-              <div className="field">
-                <label htmlFor="phone">Phone / WhatsApp Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
-              </div>
-
-              <div className="field">
-                <label htmlFor="service">Project Topic / Service Needed</label>
-                <input
-                  type="text"
-                  id="service"
-                  name="service"
-                  placeholder="e.g. AI Workflow, Loan ERP, B2B E-Commerce, Custom Dashboard"
-                />
-              </div>
-
-              <div className="field">
-                <label htmlFor="message">Project Requirements / Workflow Details</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  placeholder="Describe what you want to build, the key features needed, and your preferred timeline..."
-                />
-              </div>
-
-              <input type="hidden" name="_subject" value="New Web Inquiry - NarnaulOnline" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <button type="submit" className="btn btn-primary" style={{ padding: "14px", fontSize: "1rem" }}>
-                Send Message to onlinenarnaul@gmail.com
-              </button>
-            </form>
+            <AjaxContactForm
+              defaultService={currentPackage.title}
+              scopeSummary={`Architecture: ${currentPackage.title} | Sprint: ~${calculatedDays} Days (${timelineMode}) | Addons: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "Standard"}`}
+              sourceContext="Home Page Scope & Inquiry"
+            />
           </div>
         </section>
       </main>

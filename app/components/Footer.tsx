@@ -6,20 +6,20 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
-      {/* Pre-Footer Action Banner */}
+      {/* Sleek Pre-Footer Callout */}
       <div className="container">
         <div className="footer-pre-banner">
           <div className="footer-pre-copy">
-            <span className="eyebrow" style={{ color: "var(--primary)" }}>READY TO DIGITIZE YOUR BUSINESS?</span>
+            <span className="eyebrow">READY TO BUILD SOMETHING SMARTER?</span>
             <h3 className="footer-pre-title">
-              Build high-performance web applications with Zero-Database overhead.
+              Architect high-performance web applications with Zero-Database overhead.
             </h3>
             <p className="footer-pre-desc">
-              Connect directly with Founder & Principal Solutions Architect Amit Jangid to design your system architecture, custom ERP, or wholesale commerce platform.
+              Connect directly with Founder & Principal Solutions Architect Amit Jangid for your system blueprint, custom ERP, or wholesale commerce platform.
             </p>
           </div>
           <div className="footer-pre-actions">
-            <Link href="/#estimator" className="btn btn-primary" style={{ padding: "12px 24px" }}>
+            <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 22px", fontSize: "13px" }}>
               ⚡ SCOPE CONFIGURATOR
             </Link>
             <a
@@ -27,7 +27,7 @@ export default function Footer() {
               className="btn btn-whatsapp"
               target="_blank"
               rel="noreferrer"
-              style={{ padding: "12px 24px" }}
+              style={{ padding: "10px 22px", fontSize: "13px" }}
             >
               💬 CHAT ON WHATSAPP
             </a>
