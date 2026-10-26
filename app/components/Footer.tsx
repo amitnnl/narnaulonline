@@ -71,25 +71,25 @@ export default function Footer() {
           <h4 className="footer-col-title">Engineering Solutions</h4>
           <ul className="footer-links-list">
             <li>
-              <Link href="/#services">Zero-DB Web Applications</Link>
+              <Link href="/services">Zero-DB Web Applications</Link>
             </li>
             <li>
-              <Link href="/#services">Microfinance & Loan ERPs</Link>
+              <Link href="/services">Microfinance & Loan ERPs</Link>
             </li>
             <li>
-              <Link href="/#services">Wholesale B2B E-Commerce</Link>
+              <Link href="/services">Wholesale B2B E-Commerce</Link>
             </li>
             <li>
-              <Link href="/#services">Custom Admin Dashboards</Link>
+              <Link href="/services">Custom Admin Dashboards</Link>
             </li>
             <li>
-              <Link href="/#services">Deterministic Billing Engines</Link>
+              <Link href="/services">Deterministic Billing Engines</Link>
             </li>
             <li>
-              <Link href="/#services">Autonomous AI Multi-Agents</Link>
+              <Link href="/services">Autonomous AI Multi-Agents</Link>
             </li>
             <li>
-              <Link href="/#services">Vercel & Hostinger Cloud Edge</Link>
+              <Link href="/services">Vercel & Hostinger Cloud Edge</Link>
             </li>
           </ul>
         </div>
@@ -187,9 +187,9 @@ export default function Footer() {
 
           <div className="footer-bottom-links">
             <Link href="/about">Organization</Link>
-            <Link href="/#stacks">Architecture</Link>
-            <Link href="/#estimator">Scope</Link>
+            <Link href="/services">Services</Link>
             <Link href="/portfolio">Portfolio</Link>
+            <Link href="/#estimator">Scope</Link>
             <Link href="/contact">Intake</Link>
           </div>
         </div>
