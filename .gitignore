@@ -26,6 +26,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# customer leads & inquiries store
+data/inquiries.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

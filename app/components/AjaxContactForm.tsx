@@ -52,6 +52,9 @@ export default function AjaxContactForm({
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [inquiryId, setInquiryId] = useState("");
+  const [needsActivation, setNeedsActivation] = useState(false);
+  const [whatsappUrl, setWhatsappUrl] = useState("");
+  const [mailtoUrl, setMailtoUrl] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -86,6 +89,8 @@ export default function AjaxContactForm({
           email: formData.email,
           phone: formData.phone || "Not provided",
           service: selectedService,
+          budget: selectedBudget,
+          timeline: selectedTimeline,
           message: formData.message,
           scopeSummary: fullScopeDetails,
           sourceContext,
@@ -97,19 +102,30 @@ export default function AjaxContactForm({
       if (response.ok && data.success) {
         setStatus("success");
         setInquiryId(data.inquiryId || `NNL-${Math.random().toString(36).substring(2, 7).toUpperCase()}`);
+        if (data.needsActivation) {
+          setNeedsActivation(true);
+        }
+        if (data.whatsappUrl) {
+          setWhatsappUrl(data.whatsappUrl);
+        }
+        if (data.mailtoUrl) {
+          setMailtoUrl(data.mailtoUrl);
+        }
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Failed to submit inquiry. Please try again or chat via WhatsApp.");
       }
     } catch (err) {
       console.error("AJAX form submission error:", err);
-      // Fallback: Direct FormSubmit endpoint
+      // Fallback: Direct FormSubmit endpoint with browser headers
       try {
         const directRes = await fetch("https://formsubmit.co/ajax/onlinenarnaul@gmail.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Origin: typeof window !== "undefined" ? window.location.origin : "https://narnaulonline.com",
+            Referer: typeof window !== "undefined" ? window.location.href : "https://narnaulonline.com/",
           },
           body: JSON.stringify({
             name: formData.name,
@@ -127,8 +143,12 @@ export default function AjaxContactForm({
         });
 
         if (directRes.ok) {
+          const directData = await directRes.json().catch(() => ({}));
           setStatus("success");
           setInquiryId(`NNL-${Math.random().toString(36).substring(2, 7).toUpperCase()}`);
+          if (directData?.message?.toLowerCase().includes("activation")) {
+            setNeedsActivation(true);
+          }
           return;
         }
       } catch (fallbackErr) {
@@ -150,10 +170,11 @@ export default function AjaxContactForm({
     });
     setStatus("idle");
     setErrorMessage("");
+    setNeedsActivation(false);
   };
 
-  const whatsappText = encodeURIComponent(
-    `Hello Amit, I just submitted an inquiry on NarnaulOnline Studio.\n\nTracking ID: ${inquiryId}\nName: ${formData.name}\nService: ${selectedService}\nBudget: ${selectedBudget}\nTimeline: ${selectedTimeline}`
+  const fallbackWhatsappText = encodeURIComponent(
+    `Hello Amit, I submitted an inquiry on NarnaulOnline Studio:\n• Ref: ${inquiryId}\n• Name: ${formData.name}\n• Service: ${selectedService}\n• Budget: ${selectedBudget}\n• Timeline: ${selectedTimeline}\n• Message: ${formData.message.slice(0, 200)}`
   );
 
   return (
@@ -164,11 +185,30 @@ export default function AjaxContactForm({
             <span className="success-check-mark">✓</span>
           </div>
 
-          <span className="success-eyebrow">INQUIRY DISPATCHED &amp; CONFIRMED</span>
+          <span className="success-eyebrow">INQUIRY DISPATCHED &amp; REGISTERED</span>
           <h3 className="success-title">Project Specification Received!</h3>
           <p className="success-desc">
-            Thank you, <strong>{formData.name}</strong>. Your project requirements have been delivered directly to Principal Software Architect <strong>Amit Jangid</strong> at <strong>hello@narnaulonline.com</strong>.
+            Thank you, <strong>{formData.name}</strong>. Your project requirements have been registered under Reference ID <strong>{inquiryId}</strong> and delivered to Principal Software Architect <strong>Amit Jangid</strong> at <strong>onlinenarnaul@gmail.com</strong>.
           </p>
+
+          {needsActivation && (
+            <div style={{
+              background: "#FFFBEB",
+              border: "1px solid #FCD34D",
+              color: "#92400E",
+              padding: "14px 18px",
+              borderRadius: "8px",
+              fontSize: "0.85rem",
+              margin: "18px 0",
+              textAlign: "left",
+              lineHeight: 1.5,
+            }}>
+              <strong>⚠️ Notice for Website Owner (FormSubmit 1-Time Activation):</strong>
+              <div style={{ marginTop: "4px" }}>
+                FormSubmit has sent a 1-time activation link to <strong>onlinenarnaul@gmail.com</strong>. Please check your inbox (or <em>Spam / Junk</em> folder) and click <strong>&quot;Activate Form&quot;</strong> to activate automatic email delivery.
+              </div>
+            </div>
+          )}
 
           <div className="success-meta-card">
             <div className="meta-row">
@@ -193,15 +233,23 @@ export default function AjaxContactForm({
             </div>
           </div>
 
-          <div className="success-actions">
+          <div className="success-actions" style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center", marginTop: "24px" }}>
             <a
-              href={`https://wa.me/919416341097?text=${whatsappText}`}
+              href={whatsappUrl || `https://wa.me/919416341097?text=${fallbackWhatsappText}`}
               className="btn btn-whatsapp btn-lg"
               target="_blank"
               rel="noreferrer"
             >
-              💬 WhatsApp Follow-up with Tracking ID
+              💬 Send Direct Copy to Amit&apos;s WhatsApp
             </a>
+            {mailtoUrl && (
+              <a
+                href={mailtoUrl}
+                className="btn btn-secondary btn-lg"
+              >
+                ✉️ Open in Email App
+              </a>
+            )}
             <button type="button" className="btn btn-secondary btn-sm" onClick={handleReset}>
               ↺ Submit Another Inquiry
             </button>
