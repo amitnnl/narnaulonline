@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Logo3D from "./Logo3D";
 
 interface NavLink {
   label: string;
@@ -137,14 +138,7 @@ export default function Navbar() {
             {/* Brand Group */}
             <div className="dev-brand-area">
               <Link href="/" className="dev-brand-link" aria-label="NarnaulOnline Studio Home">
-                <Image
-                  src="/logo.png"
-                  alt="NarnaulOnline Studio"
-                  width={142}
-                  height={34}
-                  priority
-                  style={{ objectFit: "contain" }}
-                />
+                <Logo3D width={142} height={34} />
               </Link>
 
               {/* Developer Git Branch & Version Badges */}
@@ -275,13 +269,9 @@ export default function Navbar() {
           <div className="mobile-drawer-overlay" onClick={() => setMenuOpen(false)}>
             <div className="mobile-drawer-panel" onClick={(e) => e.stopPropagation()}>
               <div className="mobile-drawer-top">
-                <Image
-                  src="/logo.png"
-                  alt="NarnaulOnline Studio"
-                  width={140}
-                  height={34}
-                  style={{ objectFit: "contain" }}
-                />
+                <Link href="/" onClick={() => setMenuOpen(false)} aria-label="NarnaulOnline Studio Home">
+                  <Logo3D width={138} height={32} />
+                </Link>
                 <button
                   type="button"
                   className="mobile-close-btn"

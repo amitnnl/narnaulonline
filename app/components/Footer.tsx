@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo3D from "./Logo3D";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,13 +37,7 @@ export default function Footer() {
           {/* Column 1: Brand & Status */}
           <div className="footer-col footer-col-brand">
             <Link href="/" className="brand-link" aria-label="NarnaulOnline Studio Homepage">
-              <Image
-                src="/logo.png"
-                alt="NarnaulOnline Studio"
-                width={170}
-                height={40}
-                style={{ objectFit: "contain" }}
-              />
+              <Logo3D width={170} height={40} />
             </Link>
             <p>
               <strong>NarnaulOnline Studio</strong> is a modern web development & digital engineering agency founded by <strong>Amit Jangid</strong>. We build reactive Next.js frontends, deterministic business logic ERPs, and resilient cloud architectures.
