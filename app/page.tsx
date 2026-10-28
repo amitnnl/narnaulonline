@@ -1497,11 +1497,23 @@ export default function HomePage() {
 
               {/* Right: Contact Form */}
               <div className="contact-form-card">
-                <h3 style={{ fontSize: "1.45rem", fontWeight: 800, marginBottom: "8px" }}>
-                  Send an Inquiry
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px", flexWrap: "wrap", gap: "8px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span className="pre-live-dot" title="Active Intake Desk"></span>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", fontWeight: 700, color: "var(--accent-blue)", letterSpacing: "0.06em" }}>
+                      ENGINEERING INTAKE DESK
+                    </span>
+                  </div>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "#059669", background: "#ECFDF5", padding: "2px 8px", borderRadius: "9999px", fontWeight: 600 }}>
+                    ⚡ SLA: &lt; 2h Response
+                  </span>
+                </div>
+
+                <h3 style={{ fontSize: "1.65rem", fontWeight: 800, letterSpacing: "-0.025em", color: "var(--text-primary)", marginBottom: "6px" }}>
+                  Send Project Inquiry
                 </h3>
-                <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", marginBottom: "24px" }}>
-                  Fill in your requirements to receive a technical blueprint and scope proposal.
+                <p style={{ color: "var(--text-secondary)", fontSize: "0.92rem", lineHeight: "1.5", marginBottom: "26px" }}>
+                  Configure your specifications below to receive a custom architectural blueprint, milestone plan, and estimate from Lead Architect <strong>Amit Jangid</strong>.
                 </p>
 
                 <AjaxContactForm

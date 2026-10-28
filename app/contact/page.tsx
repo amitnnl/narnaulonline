@@ -235,7 +235,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="form-shell" style={{ maxWidth: "800px", margin: "0 auto", display: "block" }}>
+            <div className="contact-form-card" style={{ maxWidth: "840px", margin: "0 auto" }}>
               <AjaxContactForm sourceContext="Dedicated Contact Page" />
             </div>
           </div>
