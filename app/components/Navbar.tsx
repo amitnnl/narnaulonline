@@ -8,16 +8,17 @@ import { usePathname } from "next/navigation";
 interface NavLink {
   label: string;
   href: string;
-  icon: string;
   badge?: string;
 }
 
 const navLinks: NavLink[] = [
-  { label: "Home", href: "/", icon: "🏠" },
-  { label: "About", href: "/about", icon: "🏢" },
-  { label: "Services", href: "/services", icon: "⚡" },
-  { label: "Portfolio", href: "/portfolio", icon: "💼", badge: "12+" },
-  { label: "Contact", href: "/contact", icon: "📍" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Architectures", href: "/#architectures" },
+  { label: "Case Studies", href: "/portfolio", badge: "12+" },
+  { label: "Scope Estimator", href: "/#estimator" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -38,7 +39,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile drawer when pathname changes
+  // Close mobile drawer when route changes
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
@@ -63,83 +64,62 @@ export default function Navbar() {
 
   return (
     <header className={`site-header-wrapper ${scrolled ? "scrolled" : ""}`}>
-      {/* Executive Pre-Header Utility Bar */}
-      <div className="site-pre-header" aria-label="Executive Organization Quick Bar">
+      {/* Top Pre-Header Utility Bar */}
+      <div className="site-pre-header" aria-label="Studio Quick Status">
         <div className="pre-header-container">
-          {/* Left: Physical Headquarters & Leadership */}
           <div className="pre-header-left">
-            <span className="pre-header-item">
-              <span className="pre-icon">📍</span>
-              <span className="pre-hq-text">Station Road, Narnaul, Haryana (123001)</span>
-            </span>
-            <span className="pre-header-sep">•</span>
-            <span className="pre-header-item pre-desk-item">
-              <span className="pre-live-dot" title="Engineering Desk Active"></span>
-              <span>Desk: <strong>Amit Jangid</strong></span>
-            </span>
+            <span className="pre-live-dot" title="Engineering Desk Active"></span>
+            <span><strong>NarnaulOnline Studio</strong> • Digital Software Engineering Agency</span>
           </div>
 
-          {/* Center: Zero-DB Architecture Focus */}
           <div className="pre-header-center">
             <span className="pre-pill-badge">
-              ⚡ Zero-DB Architecture • ₹0 Monthly Server Overhead
+              ⚡ Next.js 16 • React 19 • TypeScript • Edge Deployment
             </span>
           </div>
 
-          {/* Right: Quick Direct Contact Desk & SLA */}
           <div className="pre-header-right">
-            <a href="tel:+919416341097" className="pre-header-link" title="Direct Phone Consultation">
-              <span>📞 +91 9416341097</span>
+            <a href="mailto:hello@narnaulonline.com" className="pre-header-link" title="Direct Email">
+              <span>✉ hello@narnaulonline.com</span>
             </a>
-            <span className="pre-header-sep">•</span>
+            <span style={{ opacity: 0.3 }}>|</span>
             <a
-              href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20software%20organization%20website%20and%20want%20to%20discuss%20a%20development%20project."
+              href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20am%20interested%20in%20building%20a%20web%20application."
               className="pre-header-link pre-whatsapp"
               target="_blank"
               rel="noreferrer"
-              title="Instant WhatsApp Consultation"
+              title="Instant WhatsApp Desk"
             >
-              <span>💬 WhatsApp Desk</span>
+              <span>💬 WhatsApp (+91 9416341097)</span>
             </a>
-            <span className="pre-header-sep">•</span>
-            <span className="pre-header-item pre-sla">
-              <span>⚡ SLA: &lt; 2h</span>
-            </span>
           </div>
         </div>
       </div>
 
+      {/* Main Sticky Island */}
       <div className="site-header-island">
-        {/* Brand Group */}
+        {/* Brand */}
         <div className="nav-brand-group">
-          <Link
-            href="/"
-            className="brand-link"
-            aria-label="NarnaulOnline • Full-Stage Digital Software Development Organization"
-          >
+          <Link href="/" className="brand-link" aria-label="NarnaulOnline Studio Homepage">
             <Image
               src="/logo.png"
-              alt="NarnaulOnline • Full-Stage Software Development Organization"
-              width={145}
-              height={34}
-              className="brand-logo"
+              alt="NarnaulOnline Studio"
+              width={150}
+              height={36}
               priority
+              style={{ objectFit: "contain" }}
             />
           </Link>
-
-          <div className="brand-meta-badge" title="Full-Stage Digital Development Organization">
-            <span className="brand-org-text">ORG</span>
-            <span className="brand-live-dot" title="Engineering Desk Active"></span>
-          </div>
+          <span className="brand-meta-badge">STUDIO</span>
         </div>
 
-        {/* Desktop Navigation Links — Direct & Consistent Functioning Across All Links */}
-        <nav className="main-nav desktop-nav" aria-label="Primary Navigation">
+        {/* Desktop Navigation Links */}
+        <nav className="desktop-nav" aria-label="Primary Navigation">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className={`nav-link-item ${active ? "active" : ""}`}
                 aria-current={active ? "page" : undefined}
@@ -151,30 +131,29 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop Action Cluster */}
+        {/* Desktop Action CTAs */}
         <div className="nav-action-cluster">
           <a
-            href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20software%20organization%20website%20and%20want%20to%20discuss%20a%20development%20project."
+            href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20would%20like%20to%20consult%20with%20your%20engineering%20desk."
             className="nav-whatsapp-btn"
             target="_blank"
             rel="noreferrer"
-            aria-label="Direct WhatsApp Desk with Principal Architect Amit Jangid"
           >
             <span className="whatsapp-live-dot"></span>
-            <span>💬 Desk</span>
+            <span>WhatsApp Desk</span>
           </a>
 
-          <Link href="/contact" className="btn btn-primary nav-primary-cta">
-            <span>Start Project</span>
-            <span className="cta-arrow">→</span>
+          <Link href="/contact" className="btn btn-primary btn-sm">
+            <span>Start a Project</span>
+            <span>→</span>
           </Link>
         </div>
 
-        {/* Mobile Hamburger Toggle Button */}
+        {/* Mobile Toggle Button */}
         <button
           type="button"
           className={`menu-toggle ${menuOpen ? "open" : ""}`}
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
@@ -188,18 +167,14 @@ export default function Navbar() {
       {menuOpen && (
         <div className="mobile-drawer-overlay" onClick={() => setMenuOpen(false)}>
           <div className="mobile-drawer-panel" onClick={(e) => e.stopPropagation()}>
-            {/* Drawer Top Header */}
             <div className="mobile-drawer-top">
-              <div className="mobile-brand-wrap">
-                <Image
-                  src="/logo.png"
-                  alt="NarnaulOnline Logo"
-                  width={140}
-                  height={32}
-                  className="mobile-brand-logo"
-                />
-              </div>
-
+              <Image
+                src="/logo.png"
+                alt="NarnaulOnline Studio"
+                width={140}
+                height={34}
+                style={{ objectFit: "contain" }}
+              />
               <button
                 type="button"
                 className="mobile-close-btn"
@@ -210,71 +185,43 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Principal Architect Direct Contact Card */}
-            <div className="mobile-architect-card">
-              <div className="architect-head">
-                <div className="architect-badge">
-                  <span className="pulse-green-dot"></span>
-                  <strong>Live Engineering Desk</strong>
-                </div>
-                <span className="architect-leader">Amit Jangid</span>
-              </div>
-              <p className="architect-sub">
-                Principal Software Architect. In-Person Narnaul/Delhi NCR & Global Delivery.
-              </p>
-              <div className="architect-quick-buttons">
-                <a
-                  href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20am%20interested%20in%20discussing%20a%20development%20project."
-                  className="btn btn-whatsapp architect-btn"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  💬 WhatsApp
-                </a>
-                <a href="tel:+919416341097" className="btn btn-secondary architect-btn">
-                  📞 Call Desk
-                </a>
-              </div>
+            <div className="mobile-links-stack">
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={`mobile-item-link ${active ? "active" : ""}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span>{link.label}</span>
+                    {link.badge ? (
+                      <span className="nav-count-pill">{link.badge}</span>
+                    ) : (
+                      <span>→</span>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
-            {/* Mobile Nav Links — Direct and matching */}
-            <div className="mobile-nav-scroll-area">
-              <div className="mobile-group-title">NAVIGATION</div>
-              <div className="mobile-links-stack">
-                {navLinks.map((link) => {
-                  const active = isActive(link.href);
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`mobile-item-link ${active ? "active" : ""}`}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      <span className="item-icon">{link.icon}</span>
-                      <div className="item-text">
-                        <strong>{link.label}</strong>
-                      </div>
-                      {link.badge && <span className="nav-count-pill">{link.badge}</span>}
-                      <span className="item-arrow">→</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Mobile Drawer Bottom Actions */}
-            <div className="mobile-drawer-bottom">
+            <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "10px" }}>
               <Link
                 href="/contact"
-                className="btn btn-primary mobile-cta-btn"
+                className="btn btn-primary"
                 onClick={() => setMenuOpen(false)}
               >
-                <span>⚡ START PROJECT / GET IN TOUCH</span>
-                <span>→</span>
+                Start a Project →
               </Link>
-              <div className="mobile-drawer-office-tag">
-                Station Road, Narnaul, Haryana 123001 • Global Remote
-              </div>
+              <a
+                href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20want%20to%20discuss%20a%20project."
+                className="btn btn-whatsapp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                💬 Chat on WhatsApp
+              </a>
             </div>
           </div>
         </div>

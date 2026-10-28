@@ -6,237 +6,111 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
-      {/* Sleek Pre-Footer Callout */}
       <div className="container">
+        {/* Pre-Footer Callout Banner (Stripe / Apple Style) */}
         <div className="footer-pre-banner">
           <div className="footer-pre-copy">
-            <span className="eyebrow">READY TO BUILD SOMETHING SMARTER?</span>
-            <h3 className="footer-pre-title">
-              Architect high-performance web applications with Zero-Database overhead.
-            </h3>
-            <p className="footer-pre-desc">
-              Connect directly with Founder & Principal Solutions Architect Amit Jangid for your system blueprint, custom ERP, or wholesale commerce platform.
+            <span className="eyebrow eyebrow-primary">READY TO BUILD SOMETHING EXCEPTIONAL?</span>
+            <h3>Engineering high-performance web applications & custom business platforms.</h3>
+            <p>
+              Partner with NarnaulOnline Studio to architect, develop, and deploy your custom web app, enterprise ERP, or wholesale commerce platform with zero database maintenance overhead.
             </p>
           </div>
           <div className="footer-pre-actions">
-            <Link href="/#estimator" className="btn btn-primary" style={{ padding: "10px 22px", fontSize: "13px" }}>
-              ⚡ SCOPE CONFIGURATOR
+            <Link href="/#estimator" className="btn btn-accent">
+              ⚡ Scope Estimator
             </Link>
             <a
-              href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20website%20and%20would%20like%20to%20discuss%20a%20development%20project."
+              href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20would%20like%20to%20discuss%20a%20software%20project."
               className="btn btn-whatsapp"
               target="_blank"
               rel="noreferrer"
-              style={{ padding: "10px 22px", fontSize: "13px" }}
             >
-              💬 CHAT ON WHATSAPP
+              💬 WhatsApp Desk
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Main 5-Column Footer Navigation Grid */}
-      <div className="container footer-main-grid">
-        {/* Column 1: Organization Identity & Headquarters */}
-        <div className="footer-col footer-col-brand">
-          <Link href="/" className="brand" aria-label="NarnaulOnline • Full-Stage Software Development Organization">
-            <Image
-              src="/logo.png"
-              alt="NarnaulOnline Logo"
-              width={210}
-              height={50}
-              className="brand-logo"
-            />
-          </Link>
-          <p className="footer-brand-text">
-            <strong>NarnaulOnline</strong> is a full-stage digital software engineering organization founded and led by <strong>Amit Jangid</strong>. We specialize in zero-database serverless architectures, custom business portals, wholesale catalogs, and deterministic financial calculation engines.
-          </p>
-
-          <div className="footer-status-badge">
-            <span className="footer-status-dot"></span>
-            <span>All Systems Operational • Zero-DB Architecture</span>
-          </div>
-
-          <div className="footer-location-chip">
-            <span className="chip-icon">📍</span>
-            <div>
-              <strong>Headquarters:</strong> Station Road, Narnaul, Haryana (123001)
-              <span className="chip-sub">In-Person Delhi NCR & Global Remote Delivery</span>
+        {/* 5-Column Navigation Grid */}
+        <div className="footer-main-grid">
+          {/* Column 1: Brand & Status */}
+          <div className="footer-col footer-col-brand">
+            <Link href="/" className="brand-link" aria-label="NarnaulOnline Studio Homepage">
+              <Image
+                src="/logo.png"
+                alt="NarnaulOnline Studio"
+                width={170}
+                height={40}
+                style={{ objectFit: "contain" }}
+              />
+            </Link>
+            <p>
+              <strong>NarnaulOnline Studio</strong> is a modern web development & digital engineering agency founded by <strong>Amit Jangid</strong>. We build reactive Next.js frontends, deterministic business logic ERPs, and resilient cloud architectures.
+            </p>
+            <div className="footer-status-pill">
+              <span className="pre-live-dot"></span>
+              <span>All Systems Operational • Edge CDN Live</span>
             </div>
           </div>
-        </div>
 
-        {/* Column 2: Engineering Solutions & Services */}
-        <div className="footer-col">
-          <h4 className="footer-col-title">Engineering Solutions</h4>
-          <ul className="footer-links-list">
-            <li>
-              <Link href="/services">Zero-DB Web Applications</Link>
-            </li>
-            <li>
-              <Link href="/services">Microfinance & Loan ERPs</Link>
-            </li>
-            <li>
-              <Link href="/services">Wholesale B2B E-Commerce</Link>
-            </li>
-            <li>
-              <Link href="/services">Custom Admin Dashboards</Link>
-            </li>
-            <li>
-              <Link href="/services">Deterministic Billing Engines</Link>
-            </li>
-            <li>
-              <Link href="/services">Autonomous AI Multi-Agents</Link>
-            </li>
-            <li>
-              <Link href="/services">Vercel & Hostinger Cloud Edge</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 3: Architecture & System Stacks */}
-        <div className="footer-col">
-          <h4 className="footer-col-title">Architecture & System</h4>
-          <ul className="footer-links-list">
-            <li>
-              <Link href="/#stacks">Architectural Stacks in Production</Link>
-            </li>
-            <li>
-              <Link href="/#estimator">Zero-DB Scope Configurator</Link>
-            </li>
-            <li>
-              <Link href="/services">Transparent 4-Phase Delivery</Link>
-            </li>
-            <li>
-              <Link href="/services">₹0 Monthly Database Architecture</Link>
-            </li>
-            <li>
-              <Link href="/about">Organization Overview & Vision</Link>
-            </li>
-            <li>
-              <Link href="/about#leadership">Leadership: Amit Jangid</Link>
-            </li>
-            <li>
-              <Link href="/contact#map">Physical Office & Presence</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 4: Client Portfolio & Case Studies */}
-        <div className="footer-col">
-          <h4 className="footer-col-title">Verified Portfolio</h4>
-          <ul className="footer-links-list">
-            <li>
-              <Link href="/portfolio">12+ Client Case Studies</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">Jai Bharat Cables (Wholesale B2B)</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">LoanFlow Microfinance System</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">SmartCity Media OS (AI Newsroom)</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">Vardan Eye Hospital Queue System</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">Haryana Machinery Mart Parts</Link>
-            </li>
-            <li>
-              <Link href="/contact#contact-form">Request Custom Demo Commits</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 5: Direct Engineering Desk & Contact */}
-        <div className="footer-col">
-          <h4 className="footer-col-title">Direct Engineering Desk</h4>
-          <p className="footer-desk-desc">
-            Direct access to Principal Architect Amit Jangid for project inquiries, technical blueprints, and execution timelines.
-          </p>
-
-          <div className="footer-contact-items">
-            <a href="tel:+919416341097" className="footer-contact-link">
-              <span className="contact-icon">📞</span>
-              <div>
-                <span className="contact-label">Direct Consultation</span>
-                <strong className="contact-val">+91 9416341097</strong>
-              </div>
-            </a>
-
-            <a href="mailto:onlinenarnaul@gmail.com" className="footer-contact-link">
-              <span className="contact-icon">✉️</span>
-              <div>
-                <span className="contact-label">Engineering Inbox</span>
-                <strong className="contact-val">onlinenarnaul@gmail.com</strong>
-              </div>
-            </a>
-
-            <a
-              href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Engineering%20Desk%2C%20I%20have%20a%20project%20inquiry."
-              className="footer-contact-link whatsapp"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="contact-icon">💬</span>
-              <div>
-                <span className="contact-label">WhatsApp Lead Desk</span>
-                <strong className="contact-val">+91 9416341097 (Instant)</strong>
-              </div>
-            </a>
+          {/* Column 2: Engineering Disciplines */}
+          <div className="footer-col">
+            <h4>Engineering</h4>
+            <ul>
+              <li><Link href="/#services">Next.js 16 Web Applications</Link></li>
+              <li><Link href="/#services">Custom Administrative ERPs</Link></li>
+              <li><Link href="/#services">Deterministic Financial Math</Link></li>
+              <li><Link href="/#services">B2B Wholesale Commerce</Link></li>
+              <li><Link href="/#services">Edge CDN & Cloud Setup</Link></li>
+              <li><Link href="/#services">AI Workflow Automation</Link></li>
+            </ul>
           </div>
 
-          <div className="footer-sla-badge">
-            <span>⚡ Typical Response SLA: Under 2 Hours</span>
+          {/* Column 3: Featured Systems */}
+          <div className="footer-col">
+            <h4>Case Studies</h4>
+            <ul>
+              <li><Link href="/portfolio">AI Newsroom OS</Link></li>
+              <li><Link href="/portfolio">Loan Management ERP</Link></li>
+              <li><Link href="/portfolio">Torvo Power Tools B2B</Link></li>
+              <li><Link href="/portfolio">Pragati Fashion Commerce</Link></li>
+              <li><Link href="/portfolio">Spare Parts Inventory Matrix</Link></li>
+              <li><Link href="/portfolio">Community Education Portal</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Architecture Stacks */}
+          <div className="footer-col">
+            <h4>Architectures</h4>
+            <ul>
+              <li><Link href="/#architectures">Stack 01: Modern Web Apps</Link></li>
+              <li><Link href="/#architectures">Stack 02: Fintech ERP Engines</Link></li>
+              <li><Link href="/#architectures">Stack 03: AI Automation OS</Link></li>
+              <li><Link href="/#estimator">Interactive Scope Estimator</Link></li>
+              <li><Link href="/about">Engineering Philosophy</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 5: Studio Desk */}
+          <div className="footer-col">
+            <h4>Studio Desk</h4>
+            <ul>
+              <li><strong style={{ color: "var(--text-primary)" }}>Amit Jangid</strong></li>
+              <li><span style={{ color: "var(--text-muted)", fontSize: "0.84rem" }}>Principal Software Architect</span></li>
+              <li><a href="tel:+919416341097">📞 +91 9416341097</a></li>
+              <li><a href="mailto:hello@narnaulonline.com">✉ hello@narnaulonline.com</a></li>
+              <li><span style={{ color: "var(--text-muted)", fontSize: "0.82rem" }}>Narnaul, Haryana (123001) & Global Remote</span></li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Directory Quick-Pill Band */}
-      <div className="container">
-        <div className="footer-directory-band">
-          <span className="directory-label">Zero-DB Architecture Directory:</span>
-          <div className="directory-tags">
-            <Link href="/services" className="directory-tag">Autonomous AI Pipelines</Link>
-            <Link href="/services" className="directory-tag">Zero-DB Web Applications</Link>
-            <Link href="/services" className="directory-tag">Microfinance ERP</Link>
-            <Link href="/services" className="directory-tag">B2B Wholesale Portal</Link>
-            <Link href="/#stacks" className="directory-tag">Next.js 16 + React 19</Link>
-            <Link href="/#estimator" className="directory-tag">Scope Configurator</Link>
-            <Link href="/portfolio" className="directory-tag">12+ Verified Deliverables</Link>
-            <Link href="/about#leadership" className="directory-tag">Architect: Amit Jangid</Link>
-            <Link href="/contact" className="directory-tag">Station Road Office</Link>
+        {/* Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <div>
+            © {currentYear} NarnaulOnline Studio. All rights reserved. Directed by Amit Jangid.
           </div>
-        </div>
-      </div>
-
-      {/* Bottom Legal & Technology Meta Bar */}
-      <div className="footer-bottom-bar">
-        <div className="container footer-bottom-inner">
-          <div className="footer-copyright">
-            <p>
-              © {currentYear} <strong>NarnaulOnline</strong>. Full-Stage Software Development Organization. Founded & Directed by <strong>Amit Jangid</strong>.
-            </p>
-          </div>
-
-          <div className="footer-tech-stack">
-            <span>Next.js 16</span>
-            <span className="tech-sep">•</span>
-            <span>React 19</span>
-            <span className="tech-sep">•</span>
-            <span>Turbopack</span>
-            <span className="tech-sep">•</span>
-            <span>Zero-DB Architecture</span>
-          </div>
-
-          <div className="footer-bottom-links">
-            <Link href="/about">Organization</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="/#estimator">Scope</Link>
-            <Link href="/contact">Intake</Link>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.78rem" }}>
+            Next.js 16 (Turbopack) • React 19 • TypeScript • Sub-100ms Edge Latency
           </div>
         </div>
       </div>

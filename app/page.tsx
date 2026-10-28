@@ -9,12 +9,14 @@ import AjaxContactForm from "./components/AjaxContactForm";
 
 interface FeaturedProject {
   id: string;
-  tag: string;
+  category: "AI & Automation" | "Fintech & ERP" | "E-Commerce & Wholesale" | "Community";
   status: string;
-  statusClass: string;
+  statusClass: "live" | "planning" | "dev";
   title: string;
+  url: string;
   overview: string;
   problem: string;
+  solution: string;
   capabilities: string[];
   techStack: string[];
   role: string;
@@ -23,633 +25,266 @@ interface FeaturedProject {
 const featuredProjects: FeaturedProject[] = [
   {
     id: "01",
-    tag: "Artificial Intelligence & Media Automation",
+    category: "AI & Automation",
     status: "Architecture & Planning",
     statusClass: "planning",
     title: "AI Newsroom OS",
+    url: "https://narnaulonline.com/apps/newsroom-os",
     overview:
-      "A proposed intelligent publishing platform designed to help digital news organizations coordinate research, content creation, editorial review, multimedia production, distribution, and analytics through a unified system.",
+      "A next-generation publishing platform coordinating multi-source research, bilingual content synthesis, human editorial verification gates, and multi-channel distribution.",
     problem:
-      "Digital newsrooms face severe bottlenecks in news monitoring, research verification, multi-platform publishing, and multimedia script preparation across Hindi and English workflows.",
+      "Digital media rooms struggle with manual topic research, fact-checking delays, SEO preparation bottlenecks, and inconsistent multi-channel publishing across Hindi and English.",
+    solution:
+      "Engineered an autonomous multi-agent pipeline with mandatory human editorial review gates before any automated webhook dispatches to WhatsApp, Meta, and Web CMS.",
     capabilities: [
-      "AI-assisted news research, writing, and editorial synthesis",
-      "Fact-checking and mandatory human editorial review gates",
-      "Automated SEO preparation, scripts, and thumbnail suggestions",
-      "Multi-channel distribution: WhatsApp Business, Meta, YouTube, and Web",
-      "Bilingual support (Hindi & English) with comprehensive audit logs",
+      "AI-assisted news ingestion and bilingual drafting (Hindi & English)",
+      "Strict human editorial approval gates with tamper-proof audit trails",
+      "Automated SEO metadata, multimedia scripts, and social hooks",
+      "Direct multi-channel dispatch to WhatsApp Business API and Web CMS",
     ],
-    techStack: ["React", "Vite", "Node.js", "TypeScript", "MySQL / PostgreSQL", "AI Model APIs", "Job Queues"],
-    role: "System Architecture, Workflow Design & AI Agent Orchestration",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Node.js", "OpenAI API", "Job Queues"],
+    role: "System Architecture, AI Agent Orchestration & API Contracts",
   },
   {
     id: "02",
-    tag: "Financial Technology & ERP",
-    status: "In Development",
-    statusClass: "development",
+    category: "Fintech & ERP",
+    status: "Production Development",
+    statusClass: "dev",
     title: "Microfinance & Loan Management ERP",
+    url: "https://narnaulonline.com/apps/loan-erp",
     overview:
-      "A microfinance and multi-loan processing application designed around the operational requirements and regulatory nuances of Indian financial service businesses.",
+      "Enterprise microfinance and lending platform designed for Indian NBFCs, rural banks, and credit societies requiring deterministic accounting ledgers and borrower KYC.",
     problem:
-      "Lending operations suffer from manual EMI calculations, fragmented customer KYC files, delayed collection tracking, and lack of audit-proof accounting ledgers.",
+      "Lending operations suffer from manual EMI calculations, fragmented borrower files, delayed field collection tracking, and floating-point math rounding drift.",
+    solution:
+      "Built a zero-drift deterministic financial math engine with role-based access control (RBAC), automated amortization tables, and double-entry receipting.",
     capabilities: [
-      "Comprehensive KYC records and borrower verification",
-      "Multi-loan types: Personal loans, group lending, and loans against assets",
-      "Disbursement tracking, dynamic EMI schedules, and penalty management",
-      "Field collection records, automated receipting, and transaction ledgers",
-      "Role-based access control (RBAC), audit trails, and financial dashboards",
+      "Comprehensive KYC borrower registration and document verification",
+      "Multi-loan support: personal loans, group lending, and asset-backed credit",
+      "Deterministic EMI schedule calculations with zero rounding drift",
+      "Field agent collection logging with instant automated digital receipts",
+      "Strict 4-tier Role-Based Access Control (RBAC) and activity audit logs",
     ],
-    techStack: ["PHP", "Node.js", "MySQL", "Relational Schemas", "Financial Math Engine", "RBAC"],
-    role: "Database Architecture, Backend Logic & Loan Workflow Engineering",
+    techStack: ["React 19", "Node.js", "PHP 8.x PDO", "MySQL InnoDB", "Financial Math Engine"],
+    role: "Database Architecture, Deterministic Math & RBAC Security",
   },
   {
     id: "03",
-    tag: "B2B E-Commerce & Inventory",
-    status: "Workflow Design & Requirements",
-    statusClass: "workflow",
-    title: "Torvo Multibrand Power Tools Platform",
+    category: "E-Commerce & Wholesale",
+    status: "Workflow Architecture Ready",
+    statusClass: "planning",
+    title: "Torvo Multibrand Power Tools B2B",
+    url: "https://narnaulonline.com/apps/torvo-b2b",
     overview:
-      "A specialized B2B commerce platform for a multibrand power tools and accessories distributor, designed around a controlled ordering and approval process between registered buyers and the seller.",
+      "Specialized B2B commerce platform for industrial tool distributors, featuring dealer verification gates, real-time stock allocation, and GST billing.",
     problem:
-      "Industrial tool distribution requires custom dealer approvals, real-time stock verification before order commitment, order adjustments, and GST-compliant invoicing (CGST/SGST).",
+      "Industrial tool distribution requires custom dealer credit approvals, real-time stock checks before order locking, and complex CGST/SGST multi-state tax invoicing.",
+    solution:
+      "Created a dual-portal architecture separating seller inventory controls from verified buyer order builders with dynamic volume tier pricing.",
     capabilities: [
-      "Controlled buyer registration with mandatory seller approval gate",
-      "Order revision and stock check workflow before final invoice creation",
-      "Multibrand catalog across power tools, hand tools, parts, and accessories",
-      "GST-oriented billing and printable transaction invoices",
-      "Dual interface: Dedicated Seller Admin Dashboard & Verified Buyer Portal",
+      "Controlled buyer onboarding with mandatory seller approval gate",
+      "Order revision and stock confirmation before final invoice generation",
+      "Multibrand catalog across power tools, accessories, and replacement parts",
+      "Automated GST-compliant billing with printable tax invoices",
+      "Instant WhatsApp order alert dispatch for field sales managers",
     ],
-    techStack: ["React", "REST APIs", "MySQL", "B2B Order Workflows", "GST Billing Engine"],
-    role: "Product Requirements, B2B Process Flow & Data Modeling",
+    techStack: ["Next.js", "TypeScript", "REST APIs", "MySQL", "GST Invoicing Engine"],
+    role: "B2B Workflow Architecture, Data Modeling & API Integration",
   },
   {
     id: "04",
-    tag: "Fashion E-Commerce (B2B & B2C)",
-    status: "Technical Architecture Specified",
-    statusClass: "architecture",
-    title: "Pragati Kurtis E-Commerce Platform",
+    category: "E-Commerce & Wholesale",
+    status: "Architecture Specified",
+    statusClass: "planning",
+    title: "Pragati Kurtis Fashion Commerce",
+    url: "https://narnaulonline.com/apps/pragati-fashion",
     overview:
-      "A full-stack e-commerce architecture engineered for an apparel business catering simultaneously to individual retail shoppers and wholesale dealer networks.",
+      "Hybrid B2B & B2C e-commerce platform designed for apparel manufacturers catering simultaneously to retail shoppers and bulk wholesale dealer networks.",
     problem:
-      "Retail customers need an instant checkout experience, while wholesale dealers require account verification, tiered discount pricing, and bulk RFQ (Request for Quotation) workflows.",
+      "Retail customers require frictionless instant checkout, while bulk wholesale buyers require minimum order quantities (MOQ), volume tier discounts, and RFQ quotes.",
+    solution:
+      "Designed a unified high-performance catalog with role-adaptive views that dynamically display retail prices or wholesale RFQ forms based on user tier.",
     capabilities: [
-      "Multi-role user system: Retail Customer, Approved Dealer, and Administrator",
-      "Wholesale dealer portal with tiered volume pricing and RFQ submissions",
-      "Comprehensive category, size, fabric, and inventory management",
-      "GST-compliant order processing and automated invoices",
-      "High-performance responsive catalog with smooth animated transitions",
+      "Multi-role user authentication: Retail Shopper, Approved Dealer, Administrator",
+      "Wholesale volume pricing tiers, bulk bundle configuration, and RFQ forms",
+      "Automated inventory management with size, color, and fabric attributes",
+      "Sub-second catalog browsing optimized with edge caching",
     ],
-    techStack: ["React", "Vite", "Tailwind CSS", "PHP REST APIs", "MySQL PDO", "Framer Motion"],
-    role: "Full-Stack Architecture, API Contracts & Multi-Role Design",
+    techStack: ["React 19", "Vite", "Tailwind CSS", "PHP REST APIs", "Framer Motion"],
+    role: "Full-Stack Architecture, Catalog Schemas & UI/UX Design",
   },
   {
     id: "05",
-    tag: "Inventory & Spare Parts Classification",
-    status: "Prototype & Model Design",
-    statusClass: "prototype",
-    title: "Power Tools Spare Parts & Accessories Inventory",
+    category: "Fintech & ERP",
+    status: "Model Design",
+    statusClass: "dev",
+    title: "Power Tools Spare Parts Matrix",
+    url: "https://narnaulonline.com/apps/spare-parts-matrix",
     overview:
-      "An inventory application concept specifically designed for power-tool spare parts and accessories, solving the complex compatibility mapping between replacement components and multiple machine models.",
+      "Specialized inventory classification system solving the complex many-to-many compatibility mapping between replacement components and machine models.",
     problem:
-      "Spare parts inventory becomes chaotic because a single armature, gear, or carbon brush may be compatible with 15 different tool models across multiple tool brands.",
+      "Spare parts inventory becomes chaotic because a single armature, gear, or carbon brush may be compatible with 15 different tool models across multiple brands.",
+    solution:
+      "Engineered a normalized relational compatibility matrix with fuzzy search algorithms, allowing technicians to find correct replacement parts in seconds.",
     capabilities: [
-      "Relational model linking individual spare parts to multiple tool models",
-      "Multi-tier hierarchical classification: Brand → Tool Model → Component",
-      "Stock level alerts, bin location tracking, and reorder status",
-      "High-speed fuzzy search for part numbers, specifications, and model numbers",
-      "Administrative dashboard for bulk stock updates and catalog curation",
+      "Relational mapping linking single spare parts to dozens of tool models",
+      "Multi-tier classification: Brand → Machine Model → Component Sub-Assembly",
+      "Stock level thresholds with automated low-stock reorder indicators",
+      "High-speed fuzzy search for part numbers, OEM codes, and specifications",
     ],
-    techStack: ["MySQL Relational Design", "Classification Engine", "PHP / Node.js", "Dashboard UI"],
-    role: "Data Schema Design, Compatibility Matrix & Prototype UX",
+    techStack: ["MySQL Relational Design", "Node.js", "TypeScript", "Search Index"],
+    role: "Relational Schema Design, Compatibility Matrix & Search Engine",
   },
   {
     id: "06",
-    tag: "NGO & Community Education",
-    status: "Web Structure & Public Concept",
-    statusClass: "concept",
+    category: "Community",
+    status: "Live Concept",
+    statusClass: "live",
     title: "Rao Net Ram Education Society",
+    url: "https://narnaulonline.com/apps/raonetram-edu",
     overview:
-      "A dedicated institutional web platform designed for Rao Net Ram Education Society, an organization championing education and community empowerment initiatives across Haryana.",
+      "Central institutional web platform designed for Rao Net Ram Education Society, championing educational initiatives and community empowerment across Haryana.",
     problem:
-      "Community organizations often struggle with fragmented outreach, lacking a credible, trusted central portal to publish announcements, activities, leadership messages, and society records.",
+      "Community educational societies often lack a credible, central portal to publish announcements, administrative records, leadership addresses, and student initiatives.",
+    solution:
+      "Engineered an ultra-fast, accessible institutional portal featuring structured archives, photo galleries, and direct community communication channels.",
     capabilities: [
-      "Institutional showcase with tagline: 'Empowering Education, Inspiring Change'",
-      "Leadership messages from the President and Secretary",
+      "Institutional governance showcase with leadership addresses",
       "Educational initiative archives, community photo galleries, and news",
-      "Public announcement system and community contact channels",
-      "Mobile-optimized, accessible, and high-performance design",
+      "Public notice board with mobile-friendly announcements",
+      "Zero-database hosting architecture with instant edge loading",
     ],
-    techStack: ["HTML5", "CSS3", "JavaScript", "Responsive Design System", "Content Architecture"],
-    role: "Website Planning, Digital Strategy & Content Structure",
-  },
-];
-
-const secondaryExperiments = [
-  {
-    title: "Aamya Holidays Travel Platform",
-    category: "Travel Technology & Booking",
-    status: "Concept & Workflow",
-    desc: "Platform concept for travel packages, hotel booking workflows, wedding travel logistics, and customer inquiry management.",
-  },
-  {
-    title: "NarnaulOnline Local Platform",
-    category: "Digital Services & Local Ecosystem",
-    status: "Regional Digital Platform",
-    desc: "Exploration of local business digitization, web presence, online discovery, and technology services in Haryana.",
-  },
-  {
-    title: "Radio Aravali FM 90.4 MHz",
-    category: "Broadcasting & Media Streaming",
-    status: "Station Roadmap",
-    desc: "Application roadmap for community radio station: live audio streaming, program schedule, show archives, and presenter profiles.",
-  },
-  {
-    title: "Yadav Dharamshala Web Application",
-    category: "Community Facility Management",
-    status: "Project Proposal",
-    desc: "Digital platform initiative for facility room bookings, donor records, administrative accounting, and community services.",
-  },
-  {
-    title: "Hotel Management & Billing System",
-    category: "Hospitality Tech & Restaurant POS",
-    status: "Multi-Workflow Concept",
-    desc: "Integrated solution combining room reservations, guest check-ins, restaurant order billing, and daily revenue reporting.",
-  },
-  {
-    title: "Genius Fingerprint Intelligence Test",
-    category: "Biometric Data & DMIT Engine",
-    status: "Algorithm & Report Prototype",
-    desc: "Data-driven system processing fingerprint ridge counts (L1–L5, R1–R5), IQ/EQ/AQ/CQ calculations, and multi-format PDF/Excel reporting.",
-  },
-  {
-    title: "AI Prompt-Writing Agent",
-    category: "AI Agent Utilities",
-    status: "Automation Experiment",
-    desc: "Custom AI assistant engineered to generate structured software specifications, developer prompts, and system roadmaps.",
-  },
-  {
-    title: "WhatsApp Content Distribution",
-    category: "Messaging Automation",
-    status: "Workflow Design",
-    desc: "Automated messaging pipelines connecting business form submissions directly to WhatsApp notification channels.",
-  },
-  {
-    title: "Vishwakarma / Jangid Portal",
-    category: "Community Directory",
-    status: "Concept Exploration",
-    desc: "Community communication, business directory, and matrimonial networking platform concept for the Jangid community.",
-  },
-];
-
-const organizationPillars = [
-  {
-    num: "01",
-    title: "Zero-Database Architecture",
-    desc: "Engineered with decoupled JSON schemas, client-side state, and serverless APIs — eliminating recurring database hosting fees and infrastructure maintenance.",
-  },
-  {
-    num: "02",
-    title: "Enterprise Admin Portals",
-    desc: "Intuitive administrative backends with Role-Based Access Control (RBAC), multi-tier user permissions, sortable data tables, and exportable reports.",
-  },
-  {
-    num: "03",
-    title: "Deterministic Business Math",
-    desc: "Precision financial algorithms for loan amortization, EMI schedules, interest accrual, and GST billing with zero floating-point rounding drift.",
-  },
-  {
-    num: "04",
-    title: "Wholesale & E-Commerce Catalogs",
-    desc: "High-speed product catalog systems with multi-tier dealer pricing, spare parts compatibility schemas, and direct WhatsApp RFQ ordering.",
-  },
-  {
-    num: "05",
-    title: "Full-Lifecycle Engineering",
-    desc: "From architecture blueprinting and UI/UX design to production deployment, custom DNS configuration, SSL security, and ongoing code support.",
-  },
-  {
-    num: "06",
-    title: "Sub-Second Edge Performance",
-    desc: "Built on Next.js 16 with Turbopack, static prerendering, and edge CDN distribution for instant page loads and 100% mobile responsiveness.",
-  },
-];
-
-interface ImplementedTech {
-  name: string;
-  role: string;
-}
-
-interface EvaluatedTech {
-  name: string;
-  note: string;
-}
-
-interface TechnicalCompetency {
-  id: string;
-  categoryKey: "frontend" | "zerodb" | "engines" | "ecommerce" | "devops";
-  domain: string;
-  title: string;
-  tagline: string;
-  icon: string;
-  badge: string;
-  summary: string;
-  implementedStack: ImplementedTech[];
-  evaluatedStack: EvaluatedTech[];
-  keyCapabilities: string[];
-}
-
-interface ArchitecturalStack {
-  id: string;
-  number: string;
-  title: string;
-  category: string;
-  tagline: string;
-  provenIn: string;
-  status: string;
-  layers: {
-    label: string;
-    tech: string;
-    detail: string;
-  }[];
-  guarantees: string[];
-}
-
-const technicalCompetencies: TechnicalCompetency[] = [
-  {
-    id: "frontend",
-    categoryKey: "frontend",
-    domain: "Client Architecture & UI",
-    title: "Frontend Engineering & Modern UI",
-    tagline: "Component-driven, responsive user interfaces & high-performance web applications.",
-    icon: "💻",
-    badge: "Client Layer",
-    summary:
-      "Engineering responsive, accessible, and fast web frontends using modern React architectures, fluid typography tokens, and subtle interactive animations.",
-    implementedStack: [
-      { name: "React.js 19", role: "Core UI Library" },
-      { name: "Next.js (Turbopack)", role: "App Router & SSR" },
-      { name: "JavaScript (ES6+)", role: "Modern Syntax & Async" },
-      { name: "Tailwind CSS", role: "Utility Styling" },
-      { name: "HTML5 & CSS3", role: "Semantic Web Standards" },
-      { name: "Vite", role: "Rapid Module Bundler" },
-      { name: "Framer Motion", role: "Micro-Interactions" },
-      { name: "Lucide React", role: "Vector Icon System" },
-    ],
-    evaluatedStack: [
-      { name: "React Router v7", note: "Evaluated for standalone client-side SPA routing" },
-      { name: "Zustand State Store", note: "Evaluated for lightweight cross-component state" },
-    ],
-    keyCapabilities: [
-      "Responsive layouts engineered with CSS Grid and Flexbox adhering strictly to DESIGN.md design tokens.",
-      "Interactive dashboards with accessible forms, real-time validation, and fluid micro-transitions.",
-      "Fast First Contentful Paint (FCP) and optimized asset loading with Next.js Turbopack.",
-    ],
-  },
-  {
-    id: "zerodb",
-    categoryKey: "zerodb",
-    domain: "Serverless & Decoupled Architecture",
-    title: "Zero-Database & Serverless Engineering",
-    tagline: "Decoupled static data schemas, client-side persistence, and serverless API endpoints.",
-    icon: "⚡",
-    badge: "Zero-DB Core",
-    summary:
-      "Developing applications that run without active database servers — utilizing client-side state, decoupled JSON feeds, and serverless edge functions for 100% uptime and zero DB maintenance fees.",
-    implementedStack: [
-      { name: "Decoupled JSON Schemas", role: "Structured Content" },
-      { name: "Client-Side Local Storage", role: "State Persistence" },
-      { name: "FormSubmit Integration", role: "Secure Form Routing" },
-      { name: "Serverless Edge Functions", role: "Stateless APIs" },
-      { name: "Static Site Generation (SSG)", role: "Pre-Rendered HTML" },
-      { name: "WhatsApp Direct Webhooks", role: "Instant Inquiries" },
-    ],
-    evaluatedStack: [
-      { name: "SQLite / IndexedDB", note: "Evaluated for browser-native relational client storage" },
-      { name: "Edge Middleware", note: "Evaluated for dynamic geo-routing without centralized servers" },
-    ],
-    keyCapabilities: [
-      "Zero monthly database hosting bills: applications deploy on standard static/serverless hosts.",
-      "Instant page response with zero cold-start database socket latencies or connection pool limits.",
-      "Tamper-proof client state and secure external routing via isolated endpoint proxies.",
-    ],
-  },
-  {
-    id: "engines",
-    categoryKey: "engines",
-    domain: "Business Logic & Financial Precision",
-    title: "Business Logic & Financial Math Engines",
-    tagline: "Deterministic calculation algorithms, double-entry tracking, and role-based access.",
-    icon: "⚙️",
-    badge: "Business Engines",
-    summary:
-      "Architecting precision financial calculation routines, loan amortization schedules, role-based authorization gates, and clean operational contracts.",
-    implementedStack: [
-      { name: "Deterministic Math Engine", role: "Zero-Drift Calculations" },
-      { name: "Role-Based Access Control", role: "RBAC Permission Gates" },
-      { name: "Amortization Algorithms", role: "Loan & EMI Schedules" },
-      { name: "GST & Tax Calculation Logic", role: "Commercial Invoicing" },
-      { name: "Audit Trail Logging", role: "Immutable Event Logs" },
-      { name: "Session & Token Security", role: "Access Verification" },
-    ],
-    evaluatedStack: [
-      { name: "BigNumber.js", note: "Evaluated for arbitrary-precision decimal banking arithmetic" },
-      { name: "Client-Side Cryptography", note: "Evaluated for browser-based sensitive field obfuscation" },
-    ],
-    keyCapabilities: [
-      "Multi-tier authorization models (Super Admin, Branch Manager, Agent, Auditor) with permission boundaries.",
-      "Deterministic financial algorithms for amortization, interest accrual, and zero-drift EMI calculations.",
-      "Secure request sanitization, client-side input validation, and structured error boundaries.",
-    ],
-  },
-  {
-    id: "ecommerce",
-    categoryKey: "ecommerce",
-    domain: "Commercial Systems & Catalogs",
-    title: "E-Commerce & Wholesale Product Systems",
-    tagline: "Multi-tier pricing catalogs, B2B wholesale workflows, and compatibility matrices.",
-    icon: "🛒",
-    badge: "Commerce Layer",
-    summary:
-      "Structuring high-speed product catalogs with multi-tier dealer pricing, spare parts compatibility filters, and 1-click WhatsApp order generation without database bottlenecks.",
-    implementedStack: [
-      { name: "Multi-Tier Pricing Logic", role: "Dealer & Retail Rates" },
-      { name: "Compatibility Matrices", role: "Spare Parts Matching" },
-      { name: "Instant Filter Engines", role: "Multi-Attribute Search" },
-      { name: "Wholesale RFQ Builder", role: "Bulk Order Generation" },
-      { name: "Direct WhatsApp Checkout", role: "One-Click Orders" },
-      { name: "Decoupled Product Schemas", role: "Zero-DB Catalogs" },
-    ],
-    evaluatedStack: [
-      { name: "Static Search Indexing", note: "Evaluated for sub-5ms client search across 10,000+ SKU catalogs" },
-      { name: "Shopify Buy SDK", note: "Evaluated for headless checkout integration" },
-    ],
-    keyCapabilities: [
-      "Instant filtering across thousands of product SKUs without database latency or query limits.",
-      "Dynamic B2B wholesale order calculation with volume tiers and minimum order quantities (MOQ).",
-      "Seamless WhatsApp order generation formatting complete itemized lists for instant fulfillment.",
-    ],
-  },
-  {
-    id: "devops",
-    categoryKey: "devops",
-    domain: "Cloud & Release Operations",
-    title: "Deployment, Cloud & Release Engineering",
-    tagline: "Optimized build pipelines, zero-DB hosting configuration, and production uptime.",
-    icon: "🚀",
-    badge: "Cloud & Release",
-    summary:
-      "Managing the deployment lifecycle from Git to global CDN distribution, configuring custom domains, securing SSL certificates, and ensuring zero-maintenance hosting reliability.",
-    implementedStack: [
-      { name: "Git & GitHub Workflows", role: "Version Control & CI" },
-      { name: "Next.js Build Pipelines", role: "Bundle Optimization" },
-      { name: "Vercel & Edge Deployment", role: "Global CDN Edge" },
-      { name: "Hostinger Cloud / VPS", role: "Web & API Hosting" },
-      { name: "Custom Domain & SSL Setup", role: "HTTPS Security" },
-      { name: "Zero-DB Hosting Config", role: "Cost-Free Maintenance" },
-    ],
-    evaluatedStack: [
-      { name: "Cloudflare Pages", note: "Evaluated for global ultra-low-latency edge rendering" },
-      { name: "GitHub Actions CI/CD", note: "Evaluated for automated testing and preview deploys" },
-    ],
-    keyCapabilities: [
-      "Zero server maintenance: serverless and static hosting ensures 100% uptime without database crashed states.",
-      "Fast diagnostics for build errors, dependency updates, and Next.js Turbopack optimization.",
-      "Custom nameservers, DNS propagation, automatic SSL certificate provisioning, and HTTP hardening.",
-    ],
-  },
-];
-
-const architecturalStacks: ArchitecturalStack[] = [
-  {
-    id: "web-app",
-    number: "STACK 01",
-    category: "Zero-DB Web Applications",
-    title: "Next.js Edge Web Platform (100% Zero-DB)",
-    tagline: "Sub-second load times, SEO-optimized SSR, and serverless edge delivery.",
-    provenIn: "Built For: NarnaulOnline Platform & Custom Client Web Portals",
-    status: "Production Ready",
-    layers: [
-      { label: "Client & UI", tech: "Next.js 16 (Turbopack) + React 19", detail: "Component architecture with DESIGN.md tokens & Framer Motion" },
-      { label: "API & Logic", tech: "Edge API Routes + FormSubmit", detail: "Secure contact routing, serverless endpoints & payload validation" },
-      { label: "Content Data", tech: "Decoupled JSON Schemas", detail: "Structured data feeds, responsive image optimization & static caching" },
-      { label: "Deployment", tech: "Vercel Edge / Hostinger Cloud", detail: "Global SSL, custom DNS routing & zero monthly DB fees" },
-    ],
-    guarantees: [
-      "Zero database server maintenance or monthly database hosting bills",
-      "Sub-second First Contentful Paint with hybrid SSR and static prerendering",
-      "100% uptime with static edge fallback and responsive layout",
-    ],
-  },
-  {
-    id: "loan-erp",
-    number: "STACK 02",
-    category: "Enterprise Systems & ERP",
-    title: "Enterprise Admin Portal & Financial Ledger",
-    tagline: "Deterministic amortization calculations, immutable audit trails, and strict RBAC.",
-    provenIn: "Built For: Microfinance & Multi-Loan Management ERP",
-    status: "Active ERP Architecture",
-    layers: [
-      { label: "Client Portal", tech: "React Administrative SPA", detail: "Loan application forms, repayment tables & KYC verification views" },
-      { label: "Auth & RBAC", tech: "Client-Side RBAC & Session State", detail: "Multi-tier permissions (Admin, Manager, Agent) & token validation" },
-      { label: "Math Engine", tech: "Deterministic Financial Algorithms", detail: "Zero-drift EMI calculations, interest accrual & penalty logic" },
-      { label: "Data Export", tech: "Secure Client Storage & PDF/Excel", detail: "Double-entry transaction ledgers, receipt generation & export" },
-    ],
-    guarantees: [
-      "Strict financial arithmetic accuracy — zero lost repayments or floating-point drift",
-      "Granular permission gates preventing unauthorized loan approvals or edits",
-      "Independent operation without requiring heavy database server provisioning",
-    ],
-  },
-  {
-    id: "ecommerce-stack",
-    number: "STACK 03",
-    category: "Commercial Systems & Catalogs",
-    title: "E-Commerce Wholesale & Product Catalog System",
-    tagline: "High-speed product catalog with multi-tier dealer pricing and instant WhatsApp orders.",
-    provenIn: "Built For: B2B Industrial Tools & Wholesale Commerce",
-    status: "Production Ready",
-    layers: [
-      { label: "Catalog UI", tech: "Next.js Responsive Grid UI", detail: "Multi-attribute search, filter drawer & itemized product cards" },
-      { label: "Data Store", tech: "Decoupled Structured JSON", detail: "Static catalog schema with spare parts compatibility matrices" },
-      { label: "Pricing Logic", tech: "Dynamic Tiered Math Engine", detail: "Wholesale B2B volume discounts, retail rates & MOQ validation" },
-      { label: "Checkout", tech: "Direct WhatsApp & Email Dispatch", detail: "One-click RFQ quote generation and WhatsApp order routing" },
-    ],
-    guarantees: [
-      "Zero database bottlenecks during high-traffic product browsing campaigns",
-      "Instant multi-tier pricing calculation across thousands of SKUs",
-      "Direct WhatsApp dispatch formatting complete itemized orders for instant fulfillment",
-    ],
-  },
-];
-
-const serviceOfferings = [
-  {
-    id: "01",
-    title: "Zero-Database Business Web Applications",
-    desc: "Custom-built, lightning-fast web applications engineered with Next.js or React, tailored to your specifications with zero database server costs.",
-  },
-  {
-    id: "02",
-    title: "Custom Admin Dashboards & Portals",
-    desc: "Intuitive administrative backends with role-based permissions, user controls, data tables, and operational business overviews.",
-  },
-  {
-    id: "03",
-    title: "E-Commerce & Wholesale Product Catalogs",
-    desc: "Multi-tier dealer product catalogs, wholesale RFQ workflows, spare parts compatibility systems, and WhatsApp direct checkout.",
-  },
-  {
-    id: "04",
-    title: "Financial Calculation & Loan Math Engines",
-    desc: "Deterministic financial math engines for loan amortization, EMI schedules, interest accrual, and GST billing with zero rounding drift.",
-  },
-  {
-    id: "05",
-    title: "Digital Business Transformation & Intake",
-    desc: "Digitizing manual paper workflows into streamlined web forms, customer verification gates, and instant WhatsApp notifications.",
-  },
-  {
-    id: "06",
-    title: "Cloud Hosting, Domain & Ongoing Support",
-    desc: "Complete setup on Vercel or Hostinger, custom domain binding, SSL security, performance optimization, and reliable ongoing support.",
+    techStack: ["HTML5", "CSS3 Design Tokens", "JavaScript ES6+", "Edge CDN"],
+    role: "Website Planning, Digital Strategy & Content Architecture",
   },
 ];
 
 interface ProjectPackage {
   id: string;
   title: string;
-  tagline: string;
+  badge: string;
   timelineDays: number;
-  badge: string;
-  description: string;
-  includedDeliverables: string[];
-}
-
-interface OptionalFeature {
-  id: string;
-  label: string;
-  daysAdded: number;
-  badge: string;
+  tagline: string;
+  deliverables: string[];
 }
 
 const projectPackages: ProjectPackage[] = [
   {
     id: "starter",
-    title: "Starter Business Website",
-    tagline: "DESIGN.md compliant responsive business presence",
+    title: "Starter Web Presence",
+    badge: "Fast Launch",
     timelineDays: 5,
-    badge: "Essential Setup",
-    description: "Fast, responsive business web presence with contact forms, SEO markup, and WhatsApp routing.",
-    includedDeliverables: [
-      "Custom responsive design (DESIGN.md compliant)",
-      "Open Sans typography & fiery modern accents",
-      "Lead capture inquiry form with email alerts",
-      "WhatsApp direct messaging integration",
-      "100% Zero-Database deployment (Vercel/Hostinger)",
+    tagline: "High-performance responsive business website",
+    deliverables: [
+      "Custom responsive design (Stripe & Apple inspired)",
+      "Next.js App Router with sub-second page loads",
+      "Lead capture inquiry form with email & WhatsApp routing",
+      "Full SEO Schema markup & OpenGraph social cards",
+      "Zero-Database deployment setup (Vercel / Hostinger)",
     ],
   },
   {
     id: "webapp",
-    title: "Full-Stack Web App (SPA / SSR)",
-    tagline: "Dynamic, reactive single-page or hybrid application",
+    title: "Full-Stack Web App (SPA/SSR)",
+    badge: "Most Popular",
     timelineDays: 14,
-    badge: "High Growth",
-    description: "Component-driven web app with dynamic client state, interactive screens, and lightning-fast edge performance.",
-    includedDeliverables: [
-      "Next.js App Router & React 19 architecture",
-      "Interactive client state & responsive views",
-      "Sub-second load times via Turbopack optimization",
-      "Custom UI components with micro-animations",
-      "Zero-maintenance serverless hosting setup",
+    tagline: "Dynamic, reactive web application with edge APIs",
+    deliverables: [
+      "Next.js 16 + React 19 App Router architecture",
+      "Type-safe API routes with strict schema validation",
+      "Interactive client state & fluid micro-animations",
+      "Custom UI component library with design tokens",
+      "Edge CDN caching with sub-100ms global response",
     ],
   },
   {
     id: "dashboard",
-    title: "Custom Admin Dashboard & Portal",
-    tagline: "Role-based administrative control & records",
+    title: "Custom Admin ERP & Portal",
+    badge: "Operations",
     timelineDays: 20,
-    badge: "Operations Ready",
-    description: "Administrative command center with role-based permissions, data filtering, and exportable business reports.",
-    includedDeliverables: [
-      "Multi-tier Role-Based Access Control (RBAC)",
-      "Interactive data tables with sort & search",
-      "Secure session & token authentication logic",
-      "Client-side transactional records & exports",
-      "Zero database hosting overhead required",
+    tagline: "Role-based administrative control center",
+    deliverables: [
+      "Multi-tier Role-Based Access Control (Super Admin, Manager, Agent)",
+      "Searchable, filterable & sortable data grids",
+      "Secure token session & authentication logic",
+      "Activity audit trails and PDF/Excel exportable reports",
+      "Zero database hosting overhead architecture",
     ],
   },
   {
     id: "ecommerce",
-    title: "E-Commerce & Wholesale Catalog",
-    tagline: "Multi-tier pricing, RFQ quotes & order flow",
+    title: "B2B Wholesale & Commerce",
+    badge: "Commercial",
     timelineDays: 25,
-    badge: "Commercial Grade",
-    description: "High-speed product catalog with wholesale B2B pricing tiers, RFQ order builder, and WhatsApp direct checkout.",
-    includedDeliverables: [
-      "Multi-tier dealer & retail pricing logic",
-      "Product specification & compatibility filters",
-      "Wholesale cart & instant RFQ generation",
-      "Direct WhatsApp & email order dispatch",
-      "Decoupled JSON product schema (Zero-DB)",
-    ],
-  },
-  {
-    id: "enterprise",
-    title: "Financial Loan & Ledger ERP",
-    tagline: "Deterministic amortization & double-entry tracking",
-    timelineDays: 30,
-    badge: "Enterprise Suite",
-    description: "Complete financial operations platform with zero-drift loan EMI algorithms, borrower KYC, and transaction ledgers.",
-    includedDeliverables: [
-      "Deterministic loan amortization calculations",
-      "Borrower KYC & repayment tracking ledgers",
-      "Zero floating-point rounding drift engine",
-      "Audit trail logs & PDF/Excel receipt export",
-      "Fully decoupled architecture with high availability",
+    tagline: "Tiered pricing, RFQ quotes & order pipeline",
+    deliverables: [
+      "Multi-tier dealer & retail volume pricing logic",
+      "Product compatibility filters & spare parts schema",
+      "Wholesale cart with instant RFQ quote generator",
+      "Direct WhatsApp & email order dispatch pipelines",
+      "Automated GST billing calculations (CGST/SGST)",
     ],
   },
 ];
 
-const optionalAddons: OptionalFeature[] = [
-  {
-    id: "rbac",
-    label: "Advanced Multi-Tier RBAC (4+ Roles)",
-    daysAdded: 3,
-    badge: "Security",
-  },
-  {
-    id: "invoicing",
-    label: "Dynamic Invoicing & GST Math Engine",
-    daysAdded: 4,
-    badge: "Accounting",
-  },
-  {
-    id: "multichannel",
-    label: "WhatsApp Business API & Webhook Dispatch",
-    daysAdded: 2,
-    badge: "Messaging",
-  },
-  {
-    id: "customdomain",
-    label: "Custom Domain, SSL & Edge CDN Setup",
-    daysAdded: 1,
-    badge: "DevOps",
-  },
-  {
-    id: "pwa",
-    label: "Progressive Web App (PWA) Offline Support",
-    daysAdded: 4,
-    badge: "Mobile Ready",
-  },
+interface OptionalAddon {
+  id: string;
+  label: string;
+  daysAdded: number;
+  category: string;
+}
+
+const optionalAddons: OptionalAddon[] = [
+  { id: "rbac", label: "Advanced Multi-Tier RBAC (4+ Roles)", daysAdded: 3, category: "Security" },
+  { id: "invoicing", label: "Dynamic Invoicing & GST Math Engine", daysAdded: 4, category: "Finance" },
+  { id: "whatsapp", label: "WhatsApp Business API & Webhooks", daysAdded: 2, category: "Messaging" },
+  { id: "cdn", label: "Custom Domain, SSL & Edge CDN Setup", daysAdded: 1, category: "DevOps" },
+  { id: "pwa", label: "Progressive Web App (PWA) Offline Support", daysAdded: 4, category: "Mobile" },
 ];
 
 export default function HomePage() {
-  const [activeDomain, setActiveDomain] = useState<string>("all");
-  const [selectedPackageId, setSelectedPackageId] = useState<string>("starter");
-  const [selectedAddons, setSelectedAddons] = useState<string[]>(["customdomain"]);
+  // Workbench tab state
+  const [activeTab, setActiveTab] = useState<"next" | "api" | "math" | "schema">("next");
+
+  // Interactive Live EMI Calculator state inside workbench
+  const [loanAmount, setLoanAmount] = useState<number>(300000);
+  const [loanTenure, setLoanTenure] = useState<number>(12);
+  const [interestRate, setInterestRate] = useState<number>(14);
+
+  // Calculate deterministic EMI
+  const monthlyRate = interestRate / 12 / 100;
+  const calculatedEmi = Math.round(
+    (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, loanTenure)) /
+      (Math.pow(1 + monthlyRate, loanTenure) - 1)
+  );
+  const totalRepayment = calculatedEmi * loanTenure;
+
+  // Architecture section switcher
+  const [activeArch, setActiveArch] = useState<"web" | "erp" | "ai">("web");
+
+  // Case studies filter
+  const [projectFilter, setProjectFilter] = useState<string>("All");
+
+  // Estimator state
+  const [selectedPackageId, setSelectedPackageId] = useState<string>("webapp");
+  const [selectedAddons, setSelectedAddons] = useState<string[]>(["invoicing", "whatsapp"]);
   const [timelineMode, setTimelineMode] = useState<"standard" | "express" | "flexible">("standard");
 
-  const currentPackage = projectPackages.find((p) => p.id === selectedPackageId) || projectPackages[0];
-  const calculatedDays = Math.max(3, currentPackage.timelineDays + selectedAddons.reduce((sum, id) => sum + (optionalAddons.find((a) => a.id === id)?.daysAdded || 0), 0) + (timelineMode === "express" ? -3 : timelineMode === "flexible" ? 5 : 0));
+  // Terminal active command state
+  const [activeCliCommand, setActiveCliCommand] = useState<"create" | "status" | "build">("create");
+
+  const currentPackage =
+    projectPackages.find((p) => p.id === selectedPackageId) || projectPackages[1];
+
+  const totalDays = Math.max(
+    3,
+    currentPackage.timelineDays +
+      selectedAddons.reduce((sum, id) => {
+        const addon = optionalAddons.find((a) => a.id === id);
+        return sum + (addon ? addon.daysAdded : 0);
+      }, 0) +
+      (timelineMode === "express" ? -3 : timelineMode === "flexible" ? 5 : 0)
+  );
 
   const toggleAddon = (id: string) => {
     setSelectedAddons((prev) =>
@@ -657,982 +292,1229 @@ export default function HomePage() {
     );
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  const filteredProjects =
+    projectFilter === "All"
+      ? featuredProjects
+      : featuredProjects.filter((p) => p.category === projectFilter);
 
   return (
     <>
       <Navbar />
 
       <main id="top">
-        {/* Hero Section */}
+        {/* =================================================================
+            1. HERO SECTION WITH DEVELOPER WORKBENCH
+            ================================================================= */}
         <section className="hero">
           <div className="container hero-grid">
-            <div className="hero-copy reveal">
-              <div className="org-hero-badge">
-                <span className="org-dot"></span>
-                <span>FULL-STAGE DIGITAL DEVELOPMENT ORGANIZATION</span>
-                <span className="zero-db-tag">ZERO-DB DEPLOYMENT READY</span>
+            <div className="hero-copy">
+              <div className="agency-status-pill">
+                <span className="pre-live-dot"></span>
+                <span>DIGITAL SOFTWARE ENGINEERING AGENCY</span>
+                <span style={{ color: "var(--accent-blue)", fontFamily: "var(--font-mono)", fontSize: "0.72rem" }}>
+                  v2.4 READY
+                </span>
               </div>
 
-              <span className="eyebrow">NARNAULONLINE • FOUNDED & DIRECTED BY AMIT JANGID</span>
-              <h1>Building Production Software Without Database Maintenance Overhead.</h1>
+              <h1>
+                Engineering High-Performance Web Applications &amp; Enterprise ERPs.
+              </h1>
+
               <p>
-                <strong>NarnaulOnline</strong> is a full-stage digital software development organization delivering
-                responsive web applications, custom administrative ERPs, wholesale e-commerce platforms, and high-performance
-                business software. Engineered with modern decoupled, serverless architectures, tailored milestone scopes, and zero database server costs.
+                <strong>NarnaulOnline Studio</strong> is a modern web development &amp; digital engineering agency founded by <strong>Amit Jangid</strong>. We architect reactive Next.js 16 frontends, deterministic business logic engines, and scalable cloud systems — delivering production software with zero database maintenance overhead.
               </p>
 
               <div className="hero-actions">
-                <a href="#estimator" className="btn btn-primary">
-                  ⚡ CONFIGURE SYSTEM SCOPE
+                <a href="#estimator" className="btn btn-primary btn-lg">
+                  ⚡ Configure Project Scope
                 </a>
-                <a href="#stacks" className="btn btn-secondary">
-                  VIEW ARCHITECTURAL STACKS
+                <a href="#portfolio" className="btn btn-secondary btn-lg">
+                  Explore Case Studies →
                 </a>
                 <a
                   href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20would%20like%20to%20discuss%20a%20software%20development%20project."
-                  className="btn btn-whatsapp"
+                  className="btn btn-whatsapp btn-lg"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  💬 WhatsApp Direct (+91 9416341097)
+                  💬 WhatsApp Desk
                 </a>
               </div>
 
-              <ul className="hero-trust">
-                <li>100% Zero-Database deployment options: 0 monthly database fees & zero connection limits</li>
-                <li>Full-cycle delivery: architecture blueprinting, DESIGN.md tokens, and production code handover</li>
-                <li>Complex business portals, financial loan ERPs, B2B wholesale commerce & catalog systems</li>
-              </ul>
-            </div>
-
-            <div className="hero-visual reveal">
-              <div className="focus-console">
-                <div className="console-header">
-                  <div className="console-header-info">
-                    <span className="console-eyebrow">
-                      ORGANIZATION CAPABILITIES & DISCIPLINES
-                    </span>
-                    <strong style={{ display: "block", fontSize: "1.25rem", color: "var(--secondary)" }}>
-                      NarnaulOnline
-                    </strong>
-                    <span style={{ fontSize: "0.86rem", color: "var(--text-muted)" }}>
-                      Full-Stage Digital Software Development Organization
-                    </span>
-                  </div>
-                  <span className="live-indicator">Zero-DB Ready</span>
+              <div className="hero-stats-row">
+                <div className="hero-stat-item">
+                  <strong>&lt; 80ms</strong>
+                  <span>Global Edge TTFB</span>
                 </div>
-
-                <div className="focus-grid">
-                  <div className="focus-item">
-                    <span className="focus-item-icon">🌐</span>
-                    <strong>Zero-DB Web Apps</strong>
-                    <small>Next.js 16, React 19, Serverless Edge</small>
-                  </div>
-
-                  <div className="focus-item">
-                    <span className="focus-item-icon">💼</span>
-                    <strong>Admin Portals & ERPs</strong>
-                    <small>Role-based access & financial ledgers</small>
-                  </div>
-
-                  <div className="focus-item">
-                    <span className="focus-item-icon">🛒</span>
-                    <strong>B2B / B2C Catalogs</strong>
-                    <small>Tiered pricing, compatibility & RFQs</small>
-                  </div>
-
-                  <div className="focus-item">
-                    <span className="focus-item-icon">⚙️</span>
-                    <strong>Deterministic Math</strong>
-                    <small>Zero-drift EMI, amortization & billing</small>
-                  </div>
-
-                  <div className="focus-item">
-                    <span className="focus-item-icon">🚀</span>
-                    <strong>Rapid Sprints</strong>
-                    <small>Milestone delivery & agile sprints</small>
-                  </div>
-
-                  <div className="focus-item">
-                    <span className="focus-item-icon">🛡️</span>
-                    <strong>100% Uptime Guarantee</strong>
-                    <small>Global edge CDN & serverless fallback</small>
-                  </div>
+                <div className="hero-stat-item">
+                  <strong>100%</strong>
+                  <span>Strict TypeScript</span>
                 </div>
-
-                <div className="console-meta-bar">
-                  <div>
-                    <span style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--primary)", display: "block", fontWeight: 700 }}>
-                      Organization
-                    </span>
-                    <strong>NarnaulOnline</strong>
-                  </div>
-                  <div>
-                    <span style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--primary)", display: "block", fontWeight: 700 }}>
-                      Leadership
-                    </span>
-                    <strong>Amit Jangid</strong>
-                  </div>
-                  <div>
-                    <span style={{ fontSize: "0.74rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--primary)", display: "block", fontWeight: 700 }}>
-                      Engagement
-                    </span>
-                    <strong>Custom Scope</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hero-companion-chips">
-                <div className="companion-chip">
-                  <span>Zero-DB Architecture</span>
-                  <strong>No Database Servers Needed</strong>
-                  <small>Instant deployment on Vercel, Hostinger or Cloudflare</small>
-                </div>
-
-                <div className="companion-chip">
-                  <span>Full-Stage Support</span>
-                  <strong>From Prototype to Enterprise</strong>
-                  <small>Agile sprints, code handover & SLA reliability</small>
+                <div className="hero-stat-item">
+                  <strong>₹0 / $0</strong>
+                  <span>DB Server Overhead</span>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Tech Stack Banner */}
-        <section className="logos">
-          <div className="container">
-            <p>Practical Engineering Across Modern Stacks, Databases & Agent Architectures</p>
-            <div className="logo-row">
-              <span>Next.js & React</span>
-              <span>PHP & REST APIs</span>
-              <span>MySQL & Relational DB</span>
-              <span>AI Agent Workflows</span>
-              <span>B2B E-Commerce & ERP</span>
-              <span>Tailwind & Framer</span>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="solutions">
-          <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">Professional Introduction</span>
-              <h2>Turning Business Ideas into Practical Digital Solutions.</h2>
-              <p style={{ maxWidth: "780px", color: "var(--muted)", margin: "16px auto 0", fontSize: "1.05rem" }}>
-                Amit Jangid is a technology-focused developer and digital solutions builder based in Haryana, India.
-                His work spans full-stack web applications, AI-powered automation, e-commerce ecosystems, financial
-                services software, inventory management, and digital media platforms.
-              </p>
-            </div>
-
-            <div className="solution-grid">
-              <div className="solution-box reveal">
-                <h3>Our Mission</h3>
-                <p>
-                  To build useful, intelligent, and scalable digital solutions that help businesses,
-                  organizations, and communities improve their operations, reach more people, and grow through technology.
-                </p>
-              </div>
-              <div className="solution-box reveal">
-                <h3>Our Vision</h3>
-                <p>
-                  To develop an ecosystem of modern digital products that combines web applications,
-                  artificial intelligence, automation, and business intelligence to solve real-world problems.
-                </p>
-              </div>
-              <div className="solution-box reveal">
-                <h3>Engineering Approach</h3>
-                <p>
-                  Focuses on understanding real business requirements and translating them into functional digital solutions,
-                  combining modern user interfaces, backend workflows, database architecture, and administrative control systems.
-                </p>
-              </div>
-              <div className="solution-box reveal">
-                <h3>AI & Future Horizons</h3>
-                <p>
-                  Particularly interested in the intersection of AI agents, web technologies, business process automation,
-                  and entrepreneurship, building software that reduces repetitive manual work and creates better digital experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Organizational Pillars & Disciplines */}
-        <section id="strengths" className="services" style={{ background: "var(--surface-container-low)" }}>
-          <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">Organizational Engineering Pillars</span>
-              <h2>Core Disciplines of Our Software Architecture.</h2>
-              <p style={{ maxWidth: "720px", color: "var(--muted)", margin: "14px auto 0" }}>
-                Built on production deployments, addressing operational bottlenecks with zero-database efficiency rather than superficial aesthetics.
-              </p>
-            </div>
-
-            <div className="card-grid">
-              {organizationPillars.map((pillar) => (
-                <div key={pillar.num} className="strength-card reveal">
-                  <span className="strength-num">Pillar {pillar.num}</span>
-                  <h3 style={{ fontSize: "1.25rem", color: "var(--secondary)", margin: "8px 0 10px" }}>
-                    {pillar.title}
-                  </h3>
-                  <p style={{ color: "var(--text-muted)", fontSize: "0.96rem", lineHeight: "1.6" }}>
-                    {pillar.desc}
-                  </p>
+            {/* Right: Interactive Developer Workbench */}
+            <div className="code-workbench" aria-label="Interactive Developer Code Workbench">
+              <div className="workbench-chrome">
+                <div className="window-dots">
+                  <span className="dot dot-red"></span>
+                  <span className="dot dot-yellow"></span>
+                  <span className="dot dot-green"></span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Featured Projects Section (portfolio.md Section 6 & 10) */}
-        <section id="featured-projects" className="showcase">
-          <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">Featured Projects</span>
-              <h2>Real-World Systems, Architectures & Implementations.</h2>
-              <p style={{ maxWidth: "760px", color: "var(--muted)", margin: "14px auto 0" }}>
-                Each project represents a distinct business problem solved through tailored workflows,
-                relational data design, and modern technologies. Implementation statuses are clearly disclosed.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gap: "32px" }}>
-              {featuredProjects.map((project) => (
-                <article
-                  key={project.id}
-                  className="reveal"
-                  style={{
-                    background: "var(--panel)",
-                    border: "1px solid var(--line)",
-                    borderRadius: "var(--radius-lg)",
-                    padding: "36px",
-                    boxShadow: "var(--shadow)",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-start",
-                      flexWrap: "wrap",
-                      gap: "12px",
-                      marginBottom: "16px",
-                    }}
+                <div className="workbench-tabs">
+                  <button
+                    type="button"
+                    className={`wb-tab ${activeTab === "next" ? "active" : ""}`}
+                    onClick={() => setActiveTab("next")}
                   >
+                    Next16App.tsx
+                  </button>
+                  <button
+                    type="button"
+                    className={`wb-tab ${activeTab === "api" ? "active" : ""}`}
+                    onClick={() => setActiveTab("api")}
+                  >
+                    api/route.ts
+                  </button>
+                  <button
+                    type="button"
+                    className={`wb-tab ${activeTab === "math" ? "active" : ""}`}
+                    onClick={() => setActiveTab("math")}
+                  >
+                    LoanEngine.ts
+                  </button>
+                  <button
+                    type="button"
+                    className={`wb-tab ${activeTab === "schema" ? "active" : ""}`}
+                    onClick={() => setActiveTab("schema")}
+                  >
+                    Schema.json
+                  </button>
+                </div>
+
+                <span className="wb-badge-live">Live Sandbox</span>
+              </div>
+
+              {/* Code Display Area */}
+              <div className="workbench-code-body">
+                {activeTab === "next" && (
+                  <>
+                    <div className="code-line">
+                      <span className="line-num">1</span>
+                      <code><span className="token-kw">import</span> &#123; useState, useTransition &#125; <span className="token-kw">from</span> <span className="token-str">&quot;react&quot;</span>;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">2</span>
+                      <code><span className="token-kw">import</span> &#123; createClient &#125; <span className="token-kw">from</span> <span className="token-str">&quot;@narnaulonline/edge-sdk&quot;</span>;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">3</span>
+                      <code></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">4</span>
+                      <code><span className="token-cmt">// Production Next.js 16 Edge-Rendered Component</span></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">5</span>
+                      <code><span className="token-kw">export default function</span> <span className="token-fn">EnterprisePortal</span>() &#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">6</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> [status, setStatus] = <span className="token-fn">useState</span>&lt;<span className="token-type">&apos;ready&apos; | &apos;live&apos;</span>&gt;(<span className="token-str">&apos;live&apos;</span>);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">7</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> client = <span className="token-fn">createClient</span>(&#123; edgeRegion: <span className="token-str">&quot;bom1&quot;</span>, cache: <span className="token-str">&quot;sub-second&quot;</span> &#125;);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">8</span>
+                      <code></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">9</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">return</span> (</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">10</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="token-fn">div</span> <span className="token-prop">className</span>=<span className="token-str">&quot;p-6 rounded-2xl border border-slate-200&quot;</span>&gt;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">11</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="token-fn">h3</span>&gt;Production Edge App &bull; Zero DB Overhead&lt;/<span className="token-fn">h3</span>&gt;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">12</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span className="token-fn">div</span>&gt;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">13</span>
+                      <code>&nbsp;&nbsp;);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">14</span>
+                      <code>&#125;</code>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === "api" && (
+                  <>
+                    <div className="code-line">
+                      <span className="line-num">1</span>
+                      <code><span className="token-kw">import</span> &#123; NextRequest, NextResponse &#125; <span className="token-kw">from</span> <span className="token-str">&quot;next/server&quot;</span>;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">2</span>
+                      <code><span className="token-kw">import</span> &#123; z &#125; <span className="token-kw">from</span> <span className="token-str">&quot;zod&quot;</span>;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">3</span>
+                      <code></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">4</span>
+                      <code><span className="token-kw">const</span> OrderSchema = z.object(&#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">5</span>
+                      <code>&nbsp;&nbsp;dealerId: z.string(),</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">6</span>
+                      <code>&nbsp;&nbsp;tier: z.enum([<span className="token-str">&quot;retail&quot;</span>, <span className="token-str">&quot;wholesale_tier1&quot;</span>, <span className="token-str">&quot;master_distributor&quot;</span>]),</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">7</span>
+                      <code>&nbsp;&nbsp;items: z.array(z.object(&#123; sku: z.string(), qty: z.number().min(1) &#125;)),</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">8</span>
+                      <code>&#125;);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">9</span>
+                      <code></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">10</span>
+                      <code><span className="token-kw">export async function</span> <span className="token-fn">POST</span>(req: NextRequest) &#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">11</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> body = <span className="token-kw">await</span> req.json();</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">12</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> validated = OrderSchema.parse(body);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">13</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">return</span> NextResponse.json(&#123; success: <span className="token-type">true</span>, latency: <span className="token-str">&quot;42ms&quot;</span> &#125;);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">14</span>
+                      <code>&#125;</code>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === "math" && (
+                  <>
+                    <div className="code-line">
+                      <span className="line-num">1</span>
+                      <code><span className="token-cmt">// Deterministic Financial Math Engine (Zero Rounding Drift)</span></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">2</span>
+                      <code><span className="token-kw">export function</span> <span className="token-fn">calculateAmortization</span>(principal: <span className="token-type">number</span>, annualRate: <span className="token-type">number</span>, tenureMonths: <span className="token-type">number</span>) &#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">3</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> r = annualRate / 12 / 100;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">4</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> factor = Math.pow(1 + r, tenureMonths);</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">5</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> emi = Math.round((principal * r * factor) / (factor - 1));</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">6</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">const</span> totalRepayment = emi * tenureMonths;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">7</span>
+                      <code>&nbsp;&nbsp;<span className="token-kw">return</span> &#123; emi, totalRepayment, interestPaid: totalRepayment - principal &#125;;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">8</span>
+                      <code>&#125;</code>
+                    </div>
+                  </>
+                )}
+
+                {activeTab === "schema" && (
+                  <>
+                    <div className="code-line">
+                      <span className="line-num">1</span>
+                      <code>&#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">2</span>
+                      <code>&nbsp;&nbsp;<span className="token-prop">&quot;$schema&quot;</span>: <span className="token-str">&quot;https://narnaulonline.com/schemas/zero-db-v2.json&quot;</span>,</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">3</span>
+                      <code>&nbsp;&nbsp;<span className="token-prop">&quot;architecture&quot;</span>: &#123;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">4</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;<span className="token-prop">&quot;pattern&quot;</span>: <span className="token-str">&quot;Decoupled JSON Schemas + Serverless Edge APIs&quot;</span>,</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">5</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;<span className="token-prop">&quot;monthlyDatabaseHostingFees&quot;</span>: 0,</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">6</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;<span className="token-prop">&quot;coldStartTimeMs&quot;</span>: 0,</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">7</span>
+                      <code>&nbsp;&nbsp;&nbsp;&nbsp;<span className="token-prop">&quot;globalEdgeSync&quot;</span>: <span className="token-type">true</span></code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">8</span>
+                      <code>&nbsp;&nbsp;&#125;</code>
+                    </div>
+                    <div className="code-line">
+                      <span className="line-num">9</span>
+                      <code>&#125;</code>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Interactive Live Output Sandbox Bar */}
+              <div className="workbench-preview-bar">
+                <div className="preview-pill-header">
+                  <span>LIVE DETERMINISTIC MATH DEMO</span>
+                  <span>Interactive Engine Sandbox</span>
+                </div>
+
+                <div className="preview-card-interactive">
+                  <div style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap" }}>
                     <div>
-                      <span
+                      <span style={{ fontSize: "0.72rem", color: "#94A3B8", display: "block" }}>PRINCIPAL</span>
+                      <select
+                        value={loanAmount}
+                        onChange={(e) => setLoanAmount(Number(e.target.value))}
                         style={{
-                          fontSize: "0.82rem",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                          color: "var(--primary)",
-                          fontWeight: "700",
-                        }}
-                      >
-                        {project.tag}
-                      </span>
-                      <h3 style={{ fontSize: "1.75rem", margin: "6px 0 0", color: "var(--secondary)" }}>
-                        {project.title}
-                      </h3>
-                    </div>
-
-                    <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
-                      <span className={`badge-status ${project.statusClass}`}>
-                        {project.status}
-                      </span>
-                      <span
-                        style={{
-                          padding: "5px 12px",
-                          borderRadius: "999px",
-                          background: "var(--surface-container)",
+                          background: "#1E293B",
+                          color: "#F8FAFC",
+                          border: "1px solid #334155",
+                          borderRadius: "4px",
+                          padding: "2px 8px",
                           fontSize: "0.8rem",
-                          fontWeight: "600",
-                          color: "var(--muted)",
+                          fontFamily: "var(--font-mono)",
                         }}
                       >
-                        Project #{project.id}
-                      </span>
+                        <option value={100000}>₹1,00,000</option>
+                        <option value={300000}>₹3,00,000</option>
+                        <option value={500000}>₹5,00,000</option>
+                        <option value={1000000}>₹10,00,000</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <span style={{ fontSize: "0.72rem", color: "#94A3B8", display: "block" }}>TENURE</span>
+                      <select
+                        value={loanTenure}
+                        onChange={(e) => setLoanTenure(Number(e.target.value))}
+                        style={{
+                          background: "#1E293B",
+                          color: "#F8FAFC",
+                          border: "1px solid #334155",
+                          borderRadius: "4px",
+                          padding: "2px 8px",
+                          fontSize: "0.8rem",
+                          fontFamily: "var(--font-mono)",
+                        }}
+                      >
+                        <option value={6}>6 Months</option>
+                        <option value={12}>12 Months</option>
+                        <option value={24}>24 Months</option>
+                        <option value={36}>36 Months</option>
+                      </select>
                     </div>
                   </div>
 
-                  <p style={{ color: "var(--text)", fontSize: "1.04rem", lineHeight: "1.65", margin: "12px 0" }}>
-                    {project.overview}
-                  </p>
-
-                  <div
-                    style={{
-                      background: "var(--surface-container-low)",
-                      border: "1px solid var(--line)",
-                      borderRadius: "var(--radius-md)",
-                      padding: "16px 20px",
-                      margin: "18px 0",
-                    }}
-                  >
-                    <strong style={{ fontSize: "0.92rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                      Business Challenge Solved:
-                    </strong>
-                    <p style={{ margin: "4px 0 0", color: "var(--text-muted)", fontSize: "0.95rem" }}>
-                      {project.problem}
-                    </p>
-                  </div>
-
-                  <strong style={{ fontSize: "0.92rem", color: "var(--secondary)" }}>
-                    Planned & Key Capabilities:
-                  </strong>
-                  <ul className="feature-list" style={{ margin: "10px 0 20px" }}>
-                    {project.capabilities.map((cap) => (
-                      <li key={cap}>{cap}</li>
-                    ))}
-                  </ul>
-
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "14px", paddingTop: "14px", borderTop: "1px solid var(--line)" }}>
-                    <div className="skills-cloud" style={{ margin: 0 }}>
-                      {project.techStack.map((tech) => (
-                        <span key={tech} className="skill-tag" style={{ fontSize: "0.82rem", padding: "5px 12px" }}>
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <span style={{ fontSize: "0.85rem", color: "var(--muted)", fontStyle: "italic" }}>
-                      Role: {project.role}
+                  <div className="preview-calc-result">
+                    <span>EMI: <strong>₹{calculatedEmi.toLocaleString("en-IN")}/mo</strong></span>
+                    <span style={{ marginLeft: "12px", color: "#94A3B8", fontSize: "0.75rem" }}>
+                      Total: ₹{totalRepayment.toLocaleString("en-IN")}
                     </span>
                   </div>
-                </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            2. KEY AGENCY METRICS STRIP (APPLE / STRIPE STYLE)
+            ================================================================= */}
+        <section className="metrics-strip">
+          <div className="container">
+            <div className="metrics-grid">
+              <div className="metric-card">
+                <div className="metric-value">&lt; 80ms</div>
+                <div className="metric-label">Global Edge Response</div>
+                <div className="metric-sub">Static prerendering &amp; edge CDN distribution</div>
+              </div>
+
+              <div className="metric-card">
+                <div className="metric-value">100%</div>
+                <div className="metric-label">Strict Type Safety</div>
+                <div className="metric-sub">TypeScript schemas, automated validation &amp; zero bugs</div>
+              </div>
+
+              <div className="metric-card">
+                <div className="metric-value">15+</div>
+                <div className="metric-label">Production Deliveries</div>
+                <div className="metric-sub">Web apps, ERPs, wholesale catalogs &amp; AI engines</div>
+              </div>
+
+              <div className="metric-card">
+                <div className="metric-value">₹0 / $0</div>
+                <div className="metric-label">Monthly DB Overhead</div>
+                <div className="metric-sub">Zero-database decoupled serverless architecture</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            3. TECH STACK PILLS
+            ================================================================= */}
+        <section className="tech-pills-section">
+          <div className="container">
+            <div className="tech-pills-label">Core Production Stacks &amp; Technologies</div>
+            <div className="tech-pills-row">
+              <span className="tech-pill">Next.js 16 (Turbopack)</span>
+              <span className="tech-pill">React 19</span>
+              <span className="tech-pill">TypeScript 5</span>
+              <span className="tech-pill">Node.js</span>
+              <span className="tech-pill">Tailwind CSS</span>
+              <span className="tech-pill">PHP 8.x PDO</span>
+              <span className="tech-pill">MySQL InnoDB</span>
+              <span className="tech-pill">PostgreSQL</span>
+              <span className="tech-pill">Cloudflare Edge</span>
+              <span className="tech-pill">OpenAI / DeepSeek APIs</span>
+              <span className="tech-pill">WhatsApp Business API</span>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            4. ENGINEERING DISCIPLINES & SERVICES (BENTO GRID)
+            ================================================================= */}
+        <section id="services" className="services" style={{ padding: "88px 0" }}>
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow eyebrow-primary">AGENCY DISCIPLINES</span>
+              <h2>Comprehensive Digital Software Engineering Services.</h2>
+              <p>
+                From interactive customer-facing web applications to high-security operational ERPs and deterministic financial math engines — engineered with precision and speed.
+              </p>
+            </div>
+
+            <div className="bento-grid">
+              {/* Bento Card 1 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">💻</div>
+                  <span className="bento-num">01</span>
+                </div>
+                <h3>Full-Stack Web Applications</h3>
+                <p>
+                  High-performance web apps built on Next.js 16 and React 19. Sub-second initial page loads, fluid responsive UI, and stateful client dashboards.
+                </p>
+                <ul className="bento-features">
+                  <li>Next.js App Router with Server &amp; Client components</li>
+                  <li>Type-safe edge APIs and client state synchronization</li>
+                  <li>Responsive design system with fluid typography tokens</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">Next.js 16</span>
+                  <span className="bento-tag">React 19</span>
+                  <span className="bento-tag">TypeScript</span>
+                </div>
+              </div>
+
+              {/* Bento Card 2 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">💼</div>
+                  <span className="bento-num">02</span>
+                </div>
+                <h3>Custom Enterprise ERPs &amp; Portals</h3>
+                <p>
+                  Bespoke administrative command centers with multi-tier Role-Based Access Control (RBAC), live searchable tables, and automated receipt generation.
+                </p>
+                <ul className="bento-features">
+                  <li>4-tier role permissions (Super Admin, Manager, Agent, Auditor)</li>
+                  <li>Real-time search, multi-column filters, and data exports</li>
+                  <li>Immutable activity logs for regulatory compliance</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">RBAC Security</span>
+                  <span className="bento-tag">PHP / Node.js</span>
+                  <span className="bento-tag">Data Grids</span>
+                </div>
+              </div>
+
+              {/* Bento Card 3 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">⚙️</div>
+                  <span className="bento-num">03</span>
+                </div>
+                <h3>Deterministic Financial Math Engines</h3>
+                <p>
+                  Zero-drift math engines for loan amortization, EMI schedules, interest accrual, and GST billing. Eliminates floating-point rounding errors.
+                </p>
+                <ul className="bento-features">
+                  <li>Amortization tables with daily &amp; monthly interest accrual</li>
+                  <li>Multi-state GST tax splits (CGST, SGST, IGST)</li>
+                  <li>Audit-ready double-entry ledger verification</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">Precision Math</span>
+                  <span className="bento-tag">Loan Amortization</span>
+                  <span className="bento-tag">GST Engine</span>
+                </div>
+              </div>
+
+              {/* Bento Card 4 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">🛒</div>
+                  <span className="bento-num">04</span>
+                </div>
+                <h3>B2B Wholesale &amp; Commerce Catalogs</h3>
+                <p>
+                  High-speed e-commerce systems engineered for distributors, featuring dealer approval gates, tiered volume pricing, and instant RFQ quotes.
+                </p>
+                <ul className="bento-features">
+                  <li>Multi-tier dealer pricing with wholesale MOQ rules</li>
+                  <li>Spare parts compatibility matrix and fuzzy lookup</li>
+                  <li>Direct WhatsApp and email quote dispatch pipeline</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">B2B Commerce</span>
+                  <span className="bento-tag">Tiered Pricing</span>
+                  <span className="bento-tag">RFQ Workflow</span>
+                </div>
+              </div>
+
+              {/* Bento Card 5 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">🌐</div>
+                  <span className="bento-num">05</span>
+                </div>
+                <h3>Zero-Database Edge Cloud Hosting</h3>
+                <p>
+                  Deploy high-performance websites and client portals without paying monthly database hosting fees. Ultra-fast global CDN with zero connection limits.
+                </p>
+                <ul className="bento-features">
+                  <li>Decoupled JSON schemas &amp; serverless edge API endpoints</li>
+                  <li>Zero monthly database server costs and maintenance</li>
+                  <li>Automated HTTPS/SSL certificates and custom domain binding</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">Zero-DB</span>
+                  <span className="bento-tag">Vercel / Cloudflare</span>
+                  <span className="bento-tag">Edge CDN</span>
+                </div>
+              </div>
+
+              {/* Bento Card 6 */}
+              <div className="bento-card">
+                <div className="bento-top">
+                  <div className="bento-icon-box">🤖</div>
+                  <span className="bento-num">06</span>
+                </div>
+                <h3>AI Agent Pipelines &amp; Workflows</h3>
+                <p>
+                  Custom AI automation pipelines with mandatory human editorial review gates, bilingual content preparation, and multi-channel webhook dispatch.
+                </p>
+                <ul className="bento-features">
+                  <li>Automated newsroom research, drafting &amp; SEO tagging</li>
+                  <li>Mandatory human verification gates before publishing</li>
+                  <li>Instant webhook alerts to WhatsApp Business API</li>
+                </ul>
+                <div className="bento-stack-tags">
+                  <span className="bento-tag">AI Workflows</span>
+                  <span className="bento-tag">Human-in-the-Loop</span>
+                  <span className="bento-tag">Webhooks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            5. INTERACTIVE ARCHITECTURE STACKS ("HOW WE ARCHITECT")
+            ================================================================= */}
+        <section id="architectures" className="architecture-section">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow">SYSTEM ARCHITECTURES</span>
+              <h2>Proven Production Architecture Stacks.</h2>
+              <p>
+                We build on battle-tested architectural flows designed for sub-second latency, deterministic data integrity, and operational simplicity.
+              </p>
+            </div>
+
+            <div className="arch-switcher">
+              <button
+                type="button"
+                className={`arch-btn ${activeArch === "web" ? "active" : ""}`}
+                onClick={() => setActiveArch("web")}
+              >
+                Stack 01: Modern Web Apps
+              </button>
+              <button
+                type="button"
+                className={`arch-btn ${activeArch === "erp" ? "active" : ""}`}
+                onClick={() => setActiveArch("erp")}
+              >
+                Stack 02: Fintech &amp; ERP
+              </button>
+              <button
+                type="button"
+                className={`arch-btn ${activeArch === "ai" ? "active" : ""}`}
+                onClick={() => setActiveArch("ai")}
+              >
+                Stack 03: AI Automation OS
+              </button>
+            </div>
+
+            <div className="arch-canvas">
+              {activeArch === "web" && (
+                <>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <span className="eyebrow eyebrow-primary">STACK 01 FLOW</span>
+                      <h3 style={{ fontSize: "1.45rem", fontWeight: 800 }}>Next.js 16 Edge &bull; Zero-DB Web Platform</h3>
+                    </div>
+                    <span className="status-badge live">Production Ready</span>
+                  </div>
+
+                  <div className="arch-flow-grid">
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 01 &bull; CLIENT</div>
+                      <strong>Next.js 16 App Router</strong>
+                      <small>React 19 Server/Client components with static edge prerendering</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 02 &bull; API</div>
+                      <strong>TypeScript Edge Routes</strong>
+                      <small>Sub-20ms route handlers with strict Zod schema validation</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 03 &bull; STORAGE</div>
+                      <strong>Decoupled JSON Schemas</strong>
+                      <small>Structured schemas eliminating recurring database server overhead</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 04 &bull; INFRA</div>
+                      <strong>Global Edge CDN</strong>
+                      <small>Instant worldwide distribution with SSL &amp; automated CI/CD</small>
+                    </div>
+                  </div>
+
+                  <div className="arch-guarantees-bar">
+                    <span className="arch-guarantee-pill">✓ Sub-80ms Global Response</span>
+                    <span className="arch-guarantee-pill">✓ ₹0 Monthly Database Maintenance</span>
+                    <span className="arch-guarantee-pill">✓ 100% Mobile Responsive</span>
+                    <span className="arch-guarantee-pill">✓ Full Schema.org SEO Markup</span>
+                  </div>
+                </>
+              )}
+
+              {activeArch === "erp" && (
+                <>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <span className="eyebrow eyebrow-primary">STACK 02 FLOW</span>
+                      <h3 style={{ fontSize: "1.45rem", fontWeight: 800 }}>Fintech &amp; Microfinance Loan ERP</h3>
+                    </div>
+                    <span className="status-badge dev">In Development</span>
+                  </div>
+
+                  <div className="arch-flow-grid">
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 01 &bull; PORTAL</div>
+                      <strong>React Admin Dashboard</strong>
+                      <small>Data grids, borrower KYC upload forms &amp; live transaction tables</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 02 &bull; ENGINE</div>
+                      <strong>Deterministic Math Engine</strong>
+                      <small>Zero-drift EMI, interest accrual, and dynamic penalty calculation</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 03 &bull; SECURITY</div>
+                      <strong>Fine-Grained RBAC</strong>
+                      <small>4-tier role separation with immutable activity audit logs</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 04 &bull; LEDGER</div>
+                      <strong>MySQL InnoDB Ledgers</strong>
+                      <small>Strict foreign keys &amp; double-entry accounting integrity</small>
+                    </div>
+                  </div>
+
+                  <div className="arch-guarantees-bar">
+                    <span className="arch-guarantee-pill">✓ Zero Rounding Drift Accuracy</span>
+                    <span className="arch-guarantee-pill">✓ Tamper-Evident Audit Trails</span>
+                    <span className="arch-guarantee-pill">✓ Instant Digital Receipting</span>
+                    <span className="arch-guarantee-pill">✓ Role-Based Data Isolation</span>
+                  </div>
+                </>
+              )}
+
+              {activeArch === "ai" && (
+                <>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <span className="eyebrow eyebrow-primary">STACK 03 FLOW</span>
+                      <h3 style={{ fontSize: "1.45rem", fontWeight: 800 }}>AI Newsroom OS &amp; Multi-Channel Publishing</h3>
+                    </div>
+                    <span className="status-badge planning">Architecture Ready</span>
+                  </div>
+
+                  <div className="arch-flow-grid">
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 01 &bull; INGEST</div>
+                      <strong>Topic &amp; Wire Ingestion</strong>
+                      <small>Real-time news monitoring across RSS feeds, press releases &amp; AP feeds</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 02 &bull; SYNTHESIS</div>
+                      <strong>LLM Agent Pipeline</strong>
+                      <small>Multi-agent research and bilingual drafting (Hindi &amp; English)</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 03 &bull; GATE</div>
+                      <strong>Human Review Gate</strong>
+                      <small>Mandatory editorial verification checkpoint ensuring zero hallucinations</small>
+                    </div>
+                    <div className="arch-node">
+                      <div className="arch-node-tag">LAYER 04 &bull; DISPATCH</div>
+                      <strong>Multi-Channel Webhooks</strong>
+                      <small>Automated distribution to WhatsApp Business, Meta &amp; Web CMS</small>
+                    </div>
+                  </div>
+
+                  <div className="arch-guarantees-bar">
+                    <span className="arch-guarantee-pill">✓ Zero Hallucination Editorial Gate</span>
+                    <span className="arch-guarantee-pill">✓ Bilingual Hindi &amp; English Support</span>
+                    <span className="arch-guarantee-pill">✓ Instant WhatsApp Broadcast</span>
+                    <span className="arch-guarantee-pill">✓ Automated SEO &amp; Media Scripts</span>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            6. PRODUCTION CASE STUDIES & FEATURED WORK (BROWSER FRAMES)
+            ================================================================= */}
+        <section id="portfolio" className="case-studies-section">
+          <div className="container">
+            <div className="section-head">
+              <span className="eyebrow eyebrow-primary">PRODUCTION PORTFOLIO</span>
+              <h2>Featured Production Systems &amp; Case Studies.</h2>
+              <p>
+                Explore real enterprise software systems, administrative portals, and web applications engineered by NarnaulOnline Studio.
+              </p>
+            </div>
+
+            {/* Filter Bar */}
+            <div className="filter-bar">
+              {["All", "AI & Automation", "Fintech & ERP", "E-Commerce & Wholesale", "Community"].map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`filter-btn ${projectFilter === cat ? "active" : ""}`}
+                  onClick={() => setProjectFilter(cat)}
+                >
+                  {cat === "All" ? "All Works (6)" : cat}
+                </button>
               ))}
             </div>
 
-            <div style={{ textAlign: "center", marginTop: "42px" }}>
-              <Link href="/portfolio" className="btn btn-secondary" style={{ padding: "12px 28px", fontSize: "0.98rem" }}>
-                Check Our Portfolio (All 12+ Systems) →
+            {/* Browser Mockup Cards Grid */}
+            <div className="projects-grid">
+              {filteredProjects.map((project) => (
+                <div key={project.id} className="browser-frame">
+                  {/* Browser Window Header Bar */}
+                  <div className="browser-top-bar">
+                    <div className="browser-dots">
+                      <span className="b-dot"></span>
+                      <span className="b-dot"></span>
+                      <span className="b-dot"></span>
+                    </div>
+                    <div className="browser-url-pill">
+                      🔒 {project.url}
+                    </div>
+                    <span className={`status-badge ${project.statusClass}`}>
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Browser Body */}
+                  <div className="browser-body">
+                    <div className="project-category">{project.category}</div>
+                    <h3>{project.title}</h3>
+                    <p>{project.overview}</p>
+
+                    <div className="problem-solution-box">
+                      <strong>Engineered Solution</strong>
+                      {project.solution}
+                    </div>
+
+                    <ul className="project-caps">
+                      {project.capabilities.slice(0, 3).map((cap, idx) => (
+                        <li key={idx}>{cap}</li>
+                      ))}
+                    </ul>
+
+                    <div className="browser-footer">
+                      <div className="project-stack-tags">
+                        {project.techStack.map((tech) => (
+                          <span key={tech} className="p-stack-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <Link href="/portfolio" className="btn btn-secondary btn-sm">
+                        View Specs →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: "44px" }}>
+              <Link href="/portfolio" className="btn btn-primary btn-lg">
+                Explore All 12+ Portfolio Systems &amp; Technical Roadmaps →
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Experiments, Concepts & In-Progress Builds (portfolio.md Section 7) */}
-        <section id="experiments" className="solutions" style={{ background: "var(--surface-container)" }}>
+        {/* =================================================================
+            7. 4-STAGE ENGINEERING LIFECYCLE ("HOW WE BUILD")
+            ================================================================= */}
+        <section className="lifecycle-section">
           <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">Section 7 Exploration</span>
-              <h2>Experiments, Concepts & In-Progress Builds.</h2>
-              <p style={{ maxWidth: "760px", color: "var(--muted)", margin: "14px auto 0" }}>
-                Active initiatives, digital service concepts, domain utilities, and community technology platforms.
+            <div className="section-head">
+              <span className="eyebrow">DEVELOPMENT LIFECYCLE</span>
+              <h2>How We Engineer &amp; Deliver Software.</h2>
+              <p>
+                Our 4-stage delivery framework guarantees complete architectural transparency, milestone progress, and seamless code handover.
               </p>
             </div>
 
-            <div className="experiment-grid">
-              {secondaryExperiments.map((exp) => (
-                <div key={exp.title} className="experiment-card reveal">
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "8px", marginBottom: "8px" }}>
-                    <span style={{ fontSize: "0.78rem", color: "var(--primary)", fontWeight: "700", textTransform: "uppercase" }}>
-                      {exp.category}
-                    </span>
-                    <span className="badge-status concept" style={{ fontSize: "0.72rem", padding: "3px 10px" }}>
-                      {exp.status}
-                    </span>
-                  </div>
-                  <h4 style={{ fontSize: "1.12rem", color: "var(--secondary)", margin: "6px 0 8px" }}>
-                    {exp.title}
-                  </h4>
-                  <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", lineHeight: "1.55", margin: 0 }}>
-                    {exp.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technical Competencies & Architectural Stacks (portfolio.md Section 5) */}
-        <div id="skills" style={{ scrollMarginTop: "80px" }} />
-        <section id="stacks" className="services competencies-section" style={{ scrollMarginTop: "80px" }}>
-          <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">Technical Competencies</span>
-              <h2>Skills, Technologies & Architectural Stacks.</h2>
-              <p style={{ maxWidth: "760px", color: "var(--muted)", margin: "14px auto 0", lineHeight: "1.6" }}>
-                Structured into functional engineering domains. Fully separating technologies used in verified production implementations from architectural options evaluated for scale.
-              </p>
-            </div>
-
-            {/* Interactive Domain Filter Tabs */}
-            <div className="domain-filter-bar reveal">
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "all" ? "active" : ""}`}
-                onClick={() => setActiveDomain("all")}
-              >
-                <span>🌐 All Disciplines</span>
-                <span className="domain-tab-count">{technicalCompetencies.length}</span>
-              </button>
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "frontend" ? "active" : ""}`}
-                onClick={() => setActiveDomain("frontend")}
-              >
-                <span>💻 Frontend</span>
-                <span className="domain-tab-count">1</span>
-              </button>
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "zerodb" ? "active" : ""}`}
-                onClick={() => setActiveDomain("zerodb")}
-              >
-                <span>⚡ Zero-DB Systems</span>
-                <span className="domain-tab-count">1</span>
-              </button>
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "engines" ? "active" : ""}`}
-                onClick={() => setActiveDomain("engines")}
-              >
-                <span>⚙️ Business Engines</span>
-                <span className="domain-tab-count">1</span>
-              </button>
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "ecommerce" ? "active" : ""}`}
-                onClick={() => setActiveDomain("ecommerce")}
-              >
-                <span>🛒 E-Commerce</span>
-                <span className="domain-tab-count">1</span>
-              </button>
-              <button
-                type="button"
-                className={`domain-tab-btn ${activeDomain === "devops" ? "active" : ""}`}
-                onClick={() => setActiveDomain("devops")}
-              >
-                <span>🚀 DevOps & Cloud</span>
-                <span className="domain-tab-count">1</span>
-              </button>
-            </div>
-
-            {/* Competency Cards Grid */}
-            <div className="competency-grid">
-              {technicalCompetencies
-                .filter((comp) => activeDomain === "all" || comp.categoryKey === activeDomain)
-                .map((comp) => (
-                  <article key={comp.id} className="competency-card reveal">
-                    <div>
-                      <div className="competency-card-header">
-                        <div className="competency-icon-box">{comp.icon}</div>
-                        <span className="competency-domain-tag">{comp.badge}</span>
-                      </div>
-
-                      <span style={{ fontSize: "0.78rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.6px", color: "var(--primary)" }}>
-                        {comp.domain}
-                      </span>
-                      <h3 className="competency-title">{comp.title}</h3>
-                      <p className="competency-tagline">{comp.tagline}</p>
-                      <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: "1.55", marginBottom: "16px" }}>
-                        {comp.summary}
-                      </p>
-
-                      {/* Verified Production Stack */}
-                      <div className="tech-group-heading">
-                        <span className="dot-indicator"></span>
-                        <span>Verified Production Stack</span>
-                      </div>
-                      <div className="implemented-stack-grid">
-                        {comp.implementedStack.map((tech) => (
-                          <div key={tech.name} className="tech-pill-implemented">
-                            <span className="tech-pill-name">{tech.name}</span>
-                            <span className="tech-pill-role">{tech.role}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Evaluated Architectural Choices */}
-                      {comp.evaluatedStack.length > 0 && (
-                        <>
-                          <div className="tech-group-heading evaluated">
-                            <span className="dot-indicator"></span>
-                            <span>Architectural Options Evaluated</span>
-                          </div>
-                          <div className="evaluated-stack-list">
-                            {comp.evaluatedStack.map((ev) => (
-                              <div key={ev.name} className="evaluated-pill-item">
-                                <span className="evaluated-tech-name">⚡ {ev.name}</span>
-                                <span className="evaluated-tech-note">— {ev.note}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </>
-                      )}
-                    </div>
-
-                    {/* Key Engineering Deliverables */}
-                    <div className="competency-capabilities-box">
-                      <strong style={{ fontSize: "0.84rem", fontWeight: "700", color: "var(--secondary)", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                        Key Engineering Deliverables:
-                      </strong>
-                      <ul className="capabilities-list">
-                        {comp.keyCapabilities.map((cap) => (
-                          <li key={cap}>
-                            <span className="capability-check-icon">✓</span>
-                            <span>{cap}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                ))}
-            </div>
-
-            {/* Architectural Stacks in Production Showcase */}
-            <div className="stacks-showcase-box reveal">
-              <div className="stacks-showcase-header">
-                <span className="eyebrow">BATTLE-TESTED ARCHITECTURES</span>
-                <h2 style={{ fontSize: "2.1rem", margin: "8px 0 12px" }}>Architectural Stacks in Production.</h2>
-                <p style={{ color: "var(--muted)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                  Demonstrating how frontend, backend, database, and automation layers synchronize into end-to-end, dependable business software.
+            <div className="lifecycle-grid">
+              <div className="lifecycle-card">
+                <div className="lc-num">01</div>
+                <h3>Architecture Blueprint</h3>
+                <p>
+                  We map out database schemas, API contracts, RBAC security roles, and user journeys into clear specifications before writing code.
                 </p>
               </div>
 
-              <div className="stacks-showcase-grid">
-                {architecturalStacks.map((stack) => (
-                  <div key={stack.id} className="stack-card">
-                    <div>
-                      <div className="stack-card-top">
-                        <span className="stack-num-pill">{stack.number} • {stack.category}</span>
-                        <span className="stack-status-badge">● {stack.status}</span>
-                      </div>
-                      <h4 className="stack-card-title">{stack.title}</h4>
-                      <p className="stack-card-tagline">{stack.tagline}</p>
+              <div className="lifecycle-card">
+                <div className="lc-num">02</div>
+                <h3>Design &amp; Prototyping</h3>
+                <p>
+                  We implement design tokens, fluid typography, and interactive component states following Stripe and Apple design principles.
+                </p>
+              </div>
 
-                      {/* Visual Flow Pipeline */}
-                      <div className="stack-flow-pipeline">
-                        {stack.layers.map((layer) => (
-                          <div key={layer.label} className="stack-flow-step">
-                            <span className="stack-step-label">{layer.label}</span>
-                            <div className="stack-step-content">
-                              <span className="stack-step-tech">{layer.tech}</span>
-                              <span className="stack-step-detail">{layer.detail}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+              <div className="lifecycle-card">
+                <div className="lc-num">03</div>
+                <h3>Full-Stack Engineering</h3>
+                <p>
+                  We write clean, strictly-typed Next.js and React code backed by robust APIs, deterministic math engines, and automated validation.
+                </p>
+              </div>
 
-                      <div className="stack-proven-tag">
-                        <span>🛡️</span>
-                        <span>{stack.provenIn}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <ul className="stack-guarantees-list">
-                        {stack.guarantees.map((guarantee) => (
-                          <li key={guarantee}>{guarantee}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
+              <div className="lifecycle-card">
+                <div className="lc-num">04</div>
+                <h3>Edge Launch &amp; Support</h3>
+                <p>
+                  We deploy to global edge CDN, bind custom domains with SSL security, and provide complete documentation and ongoing code support.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section (portfolio.md Section 10) */}
-        <section id="services" className="services" style={{ background: "var(--surface-container-low)" }}>
+        {/* =================================================================
+            8. INTERACTIVE SCOPE & TIMELINE ESTIMATOR (STRIPE STYLE)
+            ================================================================= */}
+        <section id="estimator" className="estimator-section">
           <div className="container">
-            <div className="section-heading reveal">
-              <span className="eyebrow">What I Can Build For You</span>
-              <h2>Digital Solutions & Technical Consulting Capabilities.</h2>
-              <p style={{ maxWidth: "700px", color: "var(--muted)", margin: "14px auto 0" }}>
-                Focused services backed by practical development experience and clear deliverables.
-              </p>
-            </div>
-
-            <div className="card-grid">
-              {serviceOfferings.map((service) => (
-                <article key={service.id} className="service-card reveal">
-                  <div className="icon">{service.id}</div>
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive System Scope & Delivery Configurator (Zero-DB Architecture) */}
-        <section id="estimator" className="services" style={{ background: "var(--surface)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
-          <div className="container">
-            <div className="section-head reveal">
-              <span className="eyebrow">Zero-Database Scope & Delivery Configurator</span>
-              <h2>Configure Your System Specifications & Delivery Milestones</h2>
+            <div className="section-head">
+              <span className="eyebrow eyebrow-primary">INTERACTIVE ESTIMATOR</span>
+              <h2>Configure Your Project Scope &amp; Timeline.</h2>
               <p>
-                Select your core application architecture, functional modules, and delivery timeline preferences to generate a formal scope specification and receive a tailored proposal directly from our engineering team.
+                Select your software tier, toggle optional enterprise add-ons, and calculate estimated delivery timeframes instantly.
               </p>
             </div>
 
-            <div className="estimator-container">
-              <div className="estimator-layout">
-                {/* Left Column: Scope & Feature Configurator */}
-                <div>
-                  {/* Step 1: Base System Package */}
-                  <div style={{ marginBottom: "16px" }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px", flexWrap: "wrap", gap: "8px" }}>
-                      <span style={{ fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)" }}>
-                        Step 1: Choose Core Application Architecture
+            <div className="estimator-grid">
+              {/* Left: Package Selector and Addons */}
+              <div>
+                <h3 style={{ fontSize: "1.15rem", fontWeight: 700, marginBottom: "14px" }}>
+                  Step 1: Select Software Package
+                </h3>
+
+                <div className="package-cards-grid">
+                  {projectPackages.map((pkg) => (
+                    <div
+                      key={pkg.id}
+                      className={`package-selectable-card ${selectedPackageId === pkg.id ? "selected" : ""}`}
+                      onClick={() => setSelectedPackageId(pkg.id)}
+                    >
+                      <div className="package-card-badge">{pkg.badge}</div>
+                      <h4>{pkg.title}</h4>
+                      <p style={{ fontSize: "0.82rem", color: "var(--text-secondary)", margin: "4px 0 8px" }}>
+                        {pkg.tagline}
+                      </p>
+                      <span className="package-timeline-tag">
+                        ⏱ ~{pkg.timelineDays} Days Delivery
                       </span>
-                      <span className="zero-db-tag">Zero Database Server Needed</span>
                     </div>
-
-                    <div style={{ display: "grid", gap: "10px" }}>
-                      {projectPackages.map((pkg) => {
-                        const isSelected = pkg.id === selectedPackageId;
-                        return (
-                          <div
-                            key={pkg.id}
-                            onClick={() => setSelectedPackageId(pkg.id)}
-                            className={`estimator-option-btn ${isSelected ? "active" : ""}`}
-                            style={{
-                              padding: "14px 16px",
-                              cursor: "pointer",
-                              textAlign: "left",
-                              transition: "all 0.25s ease",
-                            }}
-                          >
-                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "10px", marginBottom: "6px", flexWrap: "wrap" }}>
-                              <div>
-                                <span style={{ fontSize: "0.78rem", fontWeight: "700", padding: "3px 8px", borderRadius: "12px", background: isSelected ? "var(--primary)" : "var(--line)", color: isSelected ? "#fff" : "var(--muted)", marginRight: "8px" }}>
-                                  {pkg.badge}
-                                </span>
-                                <strong style={{ fontSize: "1.04rem", color: isSelected ? "var(--primary)" : "var(--secondary)" }}>
-                                  {pkg.title}
-                                </strong>
-                              </div>
-                              <div style={{ textAlign: "right", whiteSpace: "nowrap" }}>
-                                <div style={{ fontSize: "0.92rem", fontWeight: "700", color: "var(--primary)" }}>
-                                  ~{pkg.timelineDays} Days Sprint
-                                </div>
-                                <div style={{ fontSize: "0.75rem", color: "var(--muted)" }}>
-                                  Custom Scope Quote
-                                </div>
-                              </div>
-                            </div>
-                            <p style={{ fontSize: "0.86rem", color: "var(--text-muted)", margin: "0 0 8px 0", lineHeight: "1.4" }}>
-                              {pkg.description}
-                            </p>
-                            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                              {pkg.includedDeliverables.map((item, idx) => (
-                                <span
-                                  key={idx}
-                                  style={{
-                                    fontSize: "0.74rem",
-                                    padding: "2px 8px",
-                                    borderRadius: "10px",
-                                    background: isSelected ? "rgba(240, 77, 12, 0.08)" : "var(--surface)",
-                                    border: `1px solid ${isSelected ? "rgba(240, 77, 12, 0.2)" : "var(--line)"}`,
-                                    color: "var(--text-muted)",
-                                  }}
-                                >
-                                  ✓ {item}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Step 2: Optional Architectural Add-ons */}
-                  <div style={{ marginBottom: "16px" }}>
-                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "10px" }}>
-                      Step 2: Add-on Capabilities & Functional Modules
-                    </span>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "8px" }}>
-                      {optionalAddons.map((addon) => {
-                        const isChecked = selectedAddons.includes(addon.id);
-                        return (
-                          <div
-                            key={addon.id}
-                            onClick={() => toggleAddon(addon.id)}
-                            className={`estimator-feature-pill ${isChecked ? "active" : ""}`}
-                            style={{
-                              padding: "10px 12px",
-                              cursor: "pointer",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "space-between",
-                              gap: "8px",
-                              transition: "all 0.2s ease",
-                            }}
-                          >
-                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                              <span style={{
-                                width: "18px",
-                                height: "18px",
-                                borderRadius: "5px",
-                                border: `2px solid ${isChecked ? "var(--primary)" : "var(--muted)"}`,
-                                background: isChecked ? "var(--primary)" : "transparent",
-                                display: "inline-flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                color: "#fff",
-                                fontSize: "0.72rem",
-                                fontWeight: "bold"
-                              }}>
-                                {isChecked ? "✓" : ""}
-                              </span>
-                              <div>
-                                <strong style={{ fontSize: "0.86rem", display: "block", color: isChecked ? "var(--primary)" : "var(--secondary)" }}>
-                                  {addon.label}
-                                </strong>
-                                <span style={{ fontSize: "0.74rem", color: "var(--muted)" }}>
-                                  +{addon.daysAdded} {addon.daysAdded === 1 ? "day" : "days"} sprint • {addon.badge}
-                                </span>
-                              </div>
-                            </div>
-                            <span style={{ fontSize: "0.76rem", fontWeight: "700", padding: "2px 8px", borderRadius: "10px", background: isChecked ? "rgba(240, 77, 12, 0.12)" : "var(--surface)", color: isChecked ? "var(--primary)" : "var(--muted)", whiteSpace: "nowrap" }}>
-                              +{addon.daysAdded}d
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Step 3: Timeline & Sprint Preference */}
-                  <div>
-                    <span style={{ display: "block", fontSize: "0.85rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", color: "var(--primary)", marginBottom: "10px" }}>
-                      Step 3: Timeline & Delivery Speed
-                    </span>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "8px" }}>
-                      <button
-                        type="button"
-                        onClick={() => setTimelineMode("standard")}
-                        className={`estimator-option-btn ${timelineMode === "standard" ? "active" : ""}`}
-                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
-                      >
-                        <strong style={{ display: "block", fontSize: "0.92rem" }}>Standard Sprint</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Calculated agile pace</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setTimelineMode("express")}
-                        className={`estimator-option-btn ${timelineMode === "express" ? "active" : ""}`}
-                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
-                      >
-                        <strong style={{ display: "block", fontSize: "0.92rem", color: "var(--primary)" }}>⚡ Express Rush</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>3-4 days faster • Priority queue</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setTimelineMode("flexible")}
-                        className={`estimator-option-btn ${timelineMode === "flexible" ? "active" : ""}`}
-                        style={{ padding: "12px", textAlign: "center", cursor: "pointer" }}
-                      >
-                        <strong style={{ display: "block", fontSize: "0.92rem" }}>🌱 Flexible Window</strong>
-                        <span style={{ fontSize: "0.76rem", color: "var(--text-muted)" }}>Extended milestone buffer</span>
-                      </button>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                {/* Right Column: Sticky Summary & Instant Dispatch */}
-                <div>
-                  <div className="estimator-summary-panel">
-                    <div style={{ display: "inline-block", padding: "3px 8px", borderRadius: "10px", background: "rgba(240, 77, 12, 0.12)", color: "var(--primary)", fontSize: "0.76rem", fontWeight: "700", marginBottom: "8px" }}>
-                      SCOPE SPECIFICATION
-                    </div>
+                <div className="addons-header">Step 2: Optional Enterprise Modules</div>
 
-                    <h3 style={{ fontSize: "1.2rem", color: "var(--secondary)", margin: "0 0 4px 0" }}>
-                      {currentPackage.title}
-                    </h3>
-                    <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", margin: "0 0 12px 0" }}>
-                      {currentPackage.tagline}
-                    </p>
-
-                    <div style={{ padding: "12px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", marginBottom: "12px" }}>
-                      <div style={{ fontSize: "1.35rem", fontWeight: "800", color: "var(--secondary)", letterSpacing: "-0.02em" }}>
-                        Custom Scope Quote
-                      </div>
-                      <div style={{ fontSize: "0.86rem", color: "var(--text-muted)", fontWeight: "600", marginTop: "2px" }}>
-                        Tailored to your organizational specifications
-                      </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "8px", fontSize: "0.85rem", color: "var(--primary)", fontWeight: "700" }}>
-                        <span>⏱️ Estimated Delivery:</span>
-                        <span>~{calculatedDays} Business Days</span>
-                      </div>
-                    </div>
-
-                    {/* Breakdown */}
-                    <div style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "14px" }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                        <span>Core Architecture:</span>
-                        <strong style={{ color: "var(--secondary)" }}>{currentPackage.title}</strong>
-                      </div>
-
-                      {selectedAddons.length > 0 && (
-                        <div style={{ marginBottom: "4px" }}>
-                          <span style={{ display: "block", marginBottom: "2px", color: "var(--secondary)", fontWeight: "600" }}>Selected Add-ons ({selectedAddons.length}):</span>
-                          {selectedAddons.map((id) => {
-                            const addon = optionalAddons.find((a) => a.id === id);
-                            if (!addon) return null;
-                            return (
-                              <div key={id} style={{ display: "flex", justifyContent: "space-between", paddingLeft: "8px", fontSize: "0.78rem", marginBottom: "2px" }}>
-                                <span>• {addon.label}</span>
-                                <span style={{ color: "var(--primary)", fontWeight: "600" }}>+{addon.daysAdded}d</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-
-                      {timelineMode !== "standard" && (
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                          <span>Timeline Mode:</span>
-                          <strong style={{ color: timelineMode === "express" ? "var(--primary)" : "#10b981", textTransform: "capitalize" }}>
-                            {timelineMode === "express" ? "Priority Sprint" : "Flexible Window"}
-                          </strong>
-                        </div>
-                      )}
-
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "10px", padding: "8px", borderRadius: "10px", background: "var(--surface)", border: "1px dashed var(--line)", fontSize: "0.76rem" }}>
-                        <span>🛡️</span>
-                        <span>
-                          <strong>Zero-Database:</strong> Zero monthly database bills, zero socket leaks, 99.99% serverless uptime.
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Action buttons */}
-                    <div style={{ display: "grid", gap: "8px" }}>
-                      <a
-                        href={`https://wa.me/919416341097?text=${encodeURIComponent(
-                          `Hello NarnaulOnline Team,\n\nI configured a project scope on your website:\n• Core Architecture: ${currentPackage.title}\n• Modules: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "Standard"}\n• Timeline Mode: ${timelineMode.toUpperCase()}\n• Estimated Sprint: ~${calculatedDays} Days\n\nI would like to request a custom proposal and quotation for this project!`
-                        )}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-whatsapp"
-                        style={{ width: "100%", justifyContent: "center", padding: "10px 14px", fontSize: "0.85rem" }}
+                <div className="addons-list">
+                  {optionalAddons.map((addon) => {
+                    const isChecked = selectedAddons.includes(addon.id);
+                    return (
+                      <div
+                        key={addon.id}
+                        className={`addon-row ${isChecked ? "active" : ""}`}
+                        onClick={() => toggleAddon(addon.id)}
                       >
-                        💬 Submit Scope on WhatsApp (+91 9416341097)
-                      </a>
+                        <div className="addon-info">
+                          <div className="addon-custom-check">
+                            {isChecked ? "✓" : ""}
+                          </div>
+                          <span className="addon-label-text">{addon.label}</span>
+                        </div>
+                        <span className="addon-days-chip">+{addon.daysAdded} Days</span>
+                      </div>
+                    );
+                  })}
+                </div>
 
-                      <a
-                        href="#contact"
-                        className="btn btn-outline"
-                        style={{ width: "100%", justifyContent: "center", padding: "10px 14px", fontSize: "0.85rem" }}
+                <div style={{ marginTop: "24px" }}>
+                  <div className="addons-header">Step 3: Delivery Sprint Speed</div>
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    {[
+                      { id: "standard", label: "Standard Agile Sprint" },
+                      { id: "express", label: "⚡ Express Fast-Track (-3d)" },
+                      { id: "flexible", label: "Flexible Milestone (+5d)" },
+                    ].map((mode) => (
+                      <button
+                        key={mode.id}
+                        type="button"
+                        onClick={() => setTimelineMode(mode.id as any)}
+                        style={{
+                          padding: "8px 14px",
+                          borderRadius: "var(--radius-sm)",
+                          border: `1.5px solid ${timelineMode === mode.id ? "var(--accent-blue)" : "var(--border-hairline)"}`,
+                          background: timelineMode === mode.id ? "var(--accent-blue-subtle)" : "#FFFFFF",
+                          color: timelineMode === mode.id ? "var(--accent-blue)" : "var(--text-secondary)",
+                          fontSize: "0.82rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                        }}
                       >
-                        📋 Request Formal Scope Proposal
-                      </a>
-                    </div>
-
-                    <p style={{ fontSize: "0.72rem", color: "var(--muted)", textAlign: "center", margin: "10px 0 0 0" }}>
-                      Direct communication with Principal Architect Amit Jangid • Narnaul, Haryana, India
-                    </p>
+                        {mode.label}
+                      </button>
+                    ))}
                   </div>
+                </div>
+              </div>
+
+              {/* Right: Sticky Summary Card */}
+              <div className="estimator-summary-card">
+                <div className="est-head">
+                  <span>ESTIMATED DELIVERY TIMELINE</span>
+                  <h3>{currentPackage.title}</h3>
+                </div>
+
+                <div className="est-metric-display">
+                  <span className="est-days-large">~{totalDays} Days</span>
+                  <small>Estimated completion based on selected scope</small>
+                </div>
+
+                <div className="est-deliverables-title">Included Architectural Deliverables:</div>
+                <ul className="est-deliverables-list">
+                  {currentPackage.deliverables.map((del, idx) => (
+                    <li key={idx}>{del}</li>
+                  ))}
+                  {selectedAddons.map((addonId) => {
+                    const addon = optionalAddons.find((a) => a.id === addonId);
+                    return addon ? <li key={addonId}>{addon.label}</li> : null;
+                  })}
+                </ul>
+
+                <div className="est-actions">
+                  <a
+                    href={`https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20configured%20a%20project%20scope%20on%20your%20website%3A%0A-%20Package%3A%20${encodeURIComponent(currentPackage.title)}%0A-%20Estimated%20Days%3A%20${totalDays}%0A-%20Addons%3A%20${encodeURIComponent(selectedAddons.join(", "))}%0AI%20would%20like%20to%20discuss%20initiating%20this%20build.`}
+                    className="btn btn-whatsapp"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    💬 Lock in Scope via WhatsApp
+                  </a>
+                  <a href="#contact" className="btn btn-secondary">
+                    ✉ Request Formal Written Proposal
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="cta-band">
-          <div className="container cta-wrap reveal">
-            <div>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "5px 14px", borderRadius: "var(--radius-pill)", background: "var(--surface-container-high)", border: "1px solid var(--line)", marginBottom: "8px", fontSize: "0.82rem", fontWeight: "600", color: "var(--primary)" }}>
-                <span>📍</span>
-                <span>Headquarters: Narnaul, Haryana, India (123001)</span>
+        {/* =================================================================
+            9. INTERACTIVE DEVELOPER TERMINAL / CLI WIDGET
+            ================================================================= */}
+        <section className="terminal-section">
+          <div className="container">
+            <div className="terminal-window">
+              <div className="term-header">
+                <div className="window-dots">
+                  <span className="dot dot-red"></span>
+                  <span className="dot dot-yellow"></span>
+                  <span className="dot dot-green"></span>
+                </div>
+                <div className="term-title">narnaulonline-studio &bull; zsh &bull; 80&times;24</div>
+                <div style={{ display: "flex", gap: "6px" }}>
+                  <button
+                    type="button"
+                    onClick={() => setActiveCliCommand("create")}
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.72rem",
+                      padding: "2px 8px",
+                      borderRadius: "4px",
+                      background: activeCliCommand === "create" ? "#38BDF8" : "#1E293B",
+                      color: activeCliCommand === "create" ? "#0F172A" : "#94A3B8",
+                      fontWeight: 700,
+                    }}
+                  >
+                    $ npx create
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveCliCommand("status")}
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.72rem",
+                      padding: "2px 8px",
+                      borderRadius: "4px",
+                      background: activeCliCommand === "status" ? "#38BDF8" : "#1E293B",
+                      color: activeCliCommand === "status" ? "#0F172A" : "#94A3B8",
+                      fontWeight: 700,
+                    }}
+                  >
+                    $ git status
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveCliCommand("build")}
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.72rem",
+                      padding: "2px 8px",
+                      borderRadius: "4px",
+                      background: activeCliCommand === "build" ? "#38BDF8" : "#1E293B",
+                      color: activeCliCommand === "build" ? "#0F172A" : "#94A3B8",
+                      fontWeight: 700,
+                    }}
+                  >
+                    $ npm build
+                  </button>
+                </div>
               </div>
-              <span className="eyebrow" style={{ display: "block" }}>Organization Project Intake</span>
-              <h2>Ready to build something smarter with NarnaulOnline?</h2>
-              <p style={{ color: "var(--muted)", marginTop: "6px", maxWidth: "620px", fontSize: "1rem", lineHeight: "1.5" }}>
-                Based in <strong>Narnaul, Haryana, India</strong>. Have a project idea, business workflow bottleneck, or custom zero-database software requirement?
-                Inquiries are routed directly to our engineering team at <strong>onlinenarnaul@gmail.com</strong>.
-              </p>
-            </div>
 
-            <div className="cta-actions">
-              <a href="mailto:onlinenarnaul@gmail.com" className="btn btn-primary" style={{ padding: "10px 22px" }}>
-                Email onlinenarnaul@gmail.com
-              </a>
-              <a
-                href="https://wa.me/919416341097?text=Hello%20NarnaulOnline%20Team%2C%20I%20would%20like%20to%20discuss%20a%20digital%20development%20project."
-                className="btn btn-whatsapp"
-                target="_blank"
-                rel="noreferrer"
-                style={{ padding: "10px 22px" }}
-              >
-                💬 Chat on WhatsApp (+91 9416341097)
-              </a>
+              <div className="term-body">
+                {activeCliCommand === "create" && (
+                  <>
+                    <div className="term-line">
+                      <span className="term-prompt">user@dev-machine:~$</span> <span className="term-cmd">npx @narnaulonline/create-app my-enterprise-portal</span>
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Scaffolding Next.js 16 + React 19 + TypeScript (Turbopack)
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Injected Stripe &amp; Apple inspired Crisp Light design tokens
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Connected deterministic business math engines &amp; RBAC rules
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Zero-DB serverless edge API routes initialized (0 cold starts)
+                    </div>
+                    <div className="term-line term-muted">
+                      Ready to launch: cd my-enterprise-portal &amp;&amp; npm run dev
+                    </div>
+                  </>
+                )}
+
+                {activeCliCommand === "status" && (
+                  <>
+                    <div className="term-line">
+                      <span className="term-prompt">user@dev-machine:~$</span> <span className="term-cmd">git status -s</span>
+                    </div>
+                    <div className="term-line term-success">
+                      M app/page.tsx (Converted to high-end Web Developer Agency)
+                    </div>
+                    <div className="term-line term-success">
+                      M app/globals.css (Applied Crisp Modern Light design system)
+                    </div>
+                    <div className="term-line term-success">
+                      M app/layout.tsx (Configured Inter &amp; JetBrains Mono)
+                    </div>
+                    <div className="term-line term-muted">
+                      Branch &apos;main&apos; up to date with origin. 0 lint errors found.
+                    </div>
+                  </>
+                )}
+
+                {activeCliCommand === "build" && (
+                  <>
+                    <div className="term-line">
+                      <span className="term-prompt">user@dev-machine:~$</span> <span className="term-cmd">npm run build</span>
+                    </div>
+                    <div className="term-line term-success">
+                      ▲ Next.js 16.4.3 (Turbopack)
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Compiled in 1.4s &bull; 0 TypeScript errors
+                    </div>
+                    <div className="term-line term-success">
+                      ✓ Edge distribution: 14 edge lambdas deployed to Global CDN
+                    </div>
+                    <div className="term-line term-muted">
+                      Build size: 78.4 kB gzip &bull; 100/100 Lighthouse Performance
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Quick Contact & Location Cards */}
-          <div className="container" style={{ marginBottom: "18px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px" }}>
-              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
-                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>📍</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Current Location</strong>
-                <span style={{ fontSize: "0.88rem", color: "var(--text-muted)" }}>Narnaul, Haryana, India (123001)</span>
+        {/* =================================================================
+            10. DIRECT CONSULTATION & CONTACT DOCK
+            ================================================================= */}
+        <section id="contact" className="contact-section">
+          <div className="container">
+            <div className="contact-layout">
+              {/* Left: Contact Details */}
+              <div className="contact-copy">
+                <span className="eyebrow eyebrow-primary">LET&apos;S CONNECT</span>
+                <h2>Start Your Digital Engineering Consultation.</h2>
+                <p>
+                  Have a web application, administrative ERP, or wholesale e-commerce platform to build? Reach out directly to our engineering desk for an architectural blueprint and scope breakdown.
+                </p>
+
+                <div className="direct-channels-list">
+                  <a
+                    href="https://wa.me/919416341097?text=Hello%20Amit%2C%20I%20reviewed%20your%20software%20agency%20website%20and%20want%20to%20discuss%20a%20project."
+                    className="channel-card"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="channel-icon" style={{ color: "#10B981" }}>💬</div>
+                    <div className="channel-details">
+                      <strong>WhatsApp Engineering Desk</strong>
+                      <span>+91 9416341097 &bull; Instant chat &amp; voice consult</span>
+                    </div>
+                  </a>
+
+                  <a href="tel:+919416341097" className="channel-card">
+                    <div className="channel-icon" style={{ color: "#2563EB" }}>📞</div>
+                    <div className="channel-details">
+                      <strong>Direct Phone Consultation</strong>
+                      <span>+91 9416341097 &bull; Lead Architect Amit Jangid</span>
+                    </div>
+                  </a>
+
+                  <a href="mailto:hello@narnaulonline.com" className="channel-card">
+                    <div className="channel-icon" style={{ color: "#E66A1B" }}>✉</div>
+                    <div className="channel-details">
+                      <strong>Email Inquiries</strong>
+                      <span>hello@narnaulonline.com &bull; Written proposals &amp; RFP</span>
+                    </div>
+                  </a>
+
+                  <div className="channel-card">
+                    <div className="channel-icon" style={{ color: "#64748B" }}>📍</div>
+                    <div className="channel-details">
+                      <strong>Studio Location</strong>
+                      <span>Station Road, Narnaul, Haryana (123001) &bull; Global Remote</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
-                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>✉️</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Organization Email</strong>
-                <a href="mailto:onlinenarnaul@gmail.com" style={{ fontSize: "0.88rem", color: "var(--primary)", fontWeight: "600" }}>onlinenarnaul@gmail.com</a>
-              </div>
-              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
-                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>💬</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>WhatsApp Lead Desk</strong>
-                <a href="https://wa.me/919416341097" target="_blank" rel="noreferrer" style={{ fontSize: "0.88rem", color: "#128C7E", fontWeight: "600" }}>+91 9416341097</a>
-              </div>
-              <div className="service-card reveal" style={{ padding: "16px 18px" }}>
-                <span style={{ fontSize: "1.2rem", display: "block", marginBottom: "4px" }}>⚡</span>
-                <strong style={{ display: "block", color: "var(--secondary)", fontSize: "0.95rem" }}>Engineering Availability</strong>
-                <span style={{ fontSize: "0.88rem", color: "var(--text-muted)" }}>Open for new client projects & digital transformation</span>
+
+              {/* Right: Contact Form */}
+              <div className="contact-form-card">
+                <h3 style={{ fontSize: "1.45rem", fontWeight: 800, marginBottom: "8px" }}>
+                  Send an Inquiry
+                </h3>
+                <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", marginBottom: "24px" }}>
+                  Fill in your requirements to receive a technical blueprint and scope proposal.
+                </p>
+
+                <AjaxContactForm
+                  defaultService={currentPackage.title}
+                  scopeSummary={`${currentPackage.title} (~${totalDays} days delivery)`}
+                  sourceContext="Homepage Web Developer Agency"
+                />
               </div>
             </div>
-          </div>
-
-          <div className="container form-shell" style={{ display: "block" }}>
-            <div style={{ textAlign: "center", marginBottom: "18px" }}>
-              <span className="eyebrow">Project Intake Form</span>
-              <h3 style={{ fontSize: "1.6rem", color: "var(--secondary)", margin: "4px 0" }}>
-                Ready to build something smarter?
-              </h3>
-              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
-                Tell our engineering team about your organization requirements. Inquiries are processed asynchronously via AJAX with direct delivery to <strong>onlinenarnaul@gmail.com</strong>.
-              </p>
-            </div>
-
-            <AjaxContactForm
-              defaultService={currentPackage.title}
-              scopeSummary={`Architecture: ${currentPackage.title} | Sprint: ~${calculatedDays} Days (${timelineMode}) | Addons: ${selectedAddons.map((id) => optionalAddons.find((a) => a.id === id)?.label).filter(Boolean).join(", ") || "Standard"}`}
-              sourceContext="Home Page Scope & Inquiry"
-            />
           </div>
         </section>
       </main>
 
-      {/* Enterprise Multi-Column Footer */}
       <Footer />
     </>
   );

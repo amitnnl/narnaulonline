@@ -1,7 +1,7 @@
-import { Open_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-sans",
@@ -15,65 +15,62 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-
 export const metadata = {
   metadataBase: new URL("https://narnaulonline.com"),
   title: {
-    default: "NarnaulOnline | Full-Stage Software Development Organization",
-    template: "%s | NarnaulOnline",
+    default: "NarnaulOnline Studio | Web Development & Digital Engineering Agency",
+    template: "%s | NarnaulOnline Studio",
   },
   description:
-    "NarnaulOnline is a full-stage digital software development organization founded by Amit Jangid. Building custom web applications, administrative ERPs, e-commerce systems, and modern digital platforms with zero database overhead.",
+    "NarnaulOnline Studio is a modern web development and digital software engineering agency founded by Amit Jangid. We engineer high-performance web applications, custom enterprise ERPs, B2B commerce platforms, and scalable cloud architectures.",
   keywords: [
-    "NarnaulOnline",
-    "Software Development Company",
-    "Web Application Development Agency",
-    "Full-Stage Development Organization",
+    "NarnaulOnline Studio",
+    "Web Development Agency",
+    "Digital Software Engineering",
+    "Full-Stack Web Developers",
     "Amit Jangid",
-    "Website Design Company in India",
-    "Custom ERP Development",
-    "E-Commerce Solutions",
+    "Next.js Development Company",
+    "React 19 Web Apps",
+    "Custom Enterprise ERP",
+    "B2B Wholesale E-Commerce",
     "Zero-Database Architecture",
-    "React and Next.js Development",
-    "Haryana India Web Developers",
+    "High-Performance Web Design",
+    "TypeScript Engineering",
   ],
-
-  authors: [{ name: "NarnaulOnline • Amit Jangid", url: "https://narnaulonline.com" }],
-  creator: "NarnaulOnline",
+  authors: [{ name: "Amit Jangid • NarnaulOnline Studio", url: "https://narnaulonline.com" }],
+  creator: "NarnaulOnline Studio",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "NarnaulOnline | Full-Stage Digital Software Development Organization",
+    title: "NarnaulOnline Studio | Web Development & Digital Engineering Agency",
     description:
-      "Enterprise-grade web applications, business portals, and digital software development with high performance, tailored milestone scopes, and zero database overhead.",
+      "Engineering high-performance web applications, enterprise administrative ERPs, wholesale catalogs, and modern cloud architectures.",
     url: "https://narnaulonline.com",
-    siteName: "NarnaulOnline",
+    siteName: "NarnaulOnline Studio",
     images: [
       {
         url: "/logo.png",
         width: 1569,
         height: 408,
-        alt: "NarnaulOnline - Digital Development Organization",
+        alt: "NarnaulOnline Studio - Web Development Agency",
       },
     ],
     locale: "en_US",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "NarnaulOnline | Full-Stage Digital Software Development Organization",
+    title: "NarnaulOnline Studio | Web Development & Digital Engineering Agency",
     description:
-      "Custom business software, administrative portals, and modern web applications with tailored milestone scopes and zero database overhead.",
+      "Engineering high-performance web applications, enterprise ERPs, and custom software architectures.",
   },
   alternates: {
     canonical: "https://narnaulonline.com",
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -81,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${openSans.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>{children}</body>
     </html>
   );
